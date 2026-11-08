@@ -9,13 +9,15 @@ const CORE = [
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));
+  // Bypass the HTTP cache so a new deploy never stores the previous deploy's files.
+  const requests = CORE.map((url) => new Request(url, { cache: "reload" }));
+  event.waitUntil(caches.open(CACHE).then((c) => c.addAll(requests)).then(() => self.skipWaiting()));
 });
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith("aperitif-") && k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim()),
   );
 });
@@ -24,16 +26,13 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET" || new URL(request.url).origin !== location.origin) return;
-  event.respondWith(
-    caches.open(CACHE).then(async (cache) => {
-      const cached = await cache.match(request, { ignoreSearch: true });
-      const fresh = fetch(request)
-        .then((res) => {
-          if (res.ok) cache.put(new URL(request.url).pathname, res.clone());
-          return res;
-        })
-        .catch(() => cached);
-      return cached ?? fresh;
-    }),
-  );
+  const cache = caches.open(CACHE);
+  const fresh = fetch(request);
+  // Keep the worker alive until the refreshed copy is stored, even when the cached one is served.
+  event.waitUntil(fresh.then(async (res) => {
+    if (!res.ok) return;
+    const copy = res.clone();
+    await (await cache).put(new URL(request.url).pathname, copy);
+  }).catch(() => {}));
+  event.respondWith(cache.then((c) => c.match(request, { ignoreSearch: true })).then((cached) => cached ?? fresh));
 });

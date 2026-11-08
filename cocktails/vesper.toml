@@ -5,11 +5,11 @@ glass = "martini"
 ice = "none"
 garnish = "large lemon peel"
 tags = ["IBA"]
-notes = "Fleming's spec is shaken; stir it if you prefer it clear."
+notes = "IBA spec. Fleming's original is 90 ml gin, 30 ml vodka and 15 ml Kina Lillet."
 
 [[ingredients]]
 id = "london-dry-gin"
-amount = 60
+amount = 45
 unit = "ml"
 
 [[ingredients]]

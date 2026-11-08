@@ -63,7 +63,7 @@ export function parseState(params) {
   for (const f of FACETS) s[f] = list(f);
   s.ing = list("ing");
   if (params.get("match") === "any") s.match = "any";
-  if (params.get("sort") in SORTS) s.sort = params.get("sort");
+  if (Object.hasOwn(SORTS, params.get("sort") ?? "")) s.sort = params.get("sort");
   return s;
 }
 

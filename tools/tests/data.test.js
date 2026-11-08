@@ -74,6 +74,9 @@ test("sorting", () => {
   const byBase = sortCocktails(data.cocktails, "base", data);
   assert.equal(byBase[0].base[0], "gin");
   assert.equal(byBase.at(-1).base[0], "none");
+  for (const sort of ["toString", "constructor", "__proto__"]) {
+    assert.equal(parseState(new URLSearchParams({ sort })).sort, "name", sort);
+  }
 });
 
 test("my bar: pantry items are assumed, bottles are not", () => {
@@ -98,6 +101,7 @@ test("oz formatting rounds to eighths", () => {
   assert.equal(formatAmount({ amount: 22.5, unit: "ml" }, "ml"), "22.5 ml");
   assert.equal(formatAmount({ amount: 2, unit: "dash" }), "2 dashes");
   assert.equal(formatAmount({ amount: 1, unit: "dash" }), "1 dash");
+  assert.equal(formatAmount({ amount: 0.5, unit: "dash" }), "½ dash");
   assert.equal(formatAmount({ amount: 8, unit: "leaf" }), "8 leaves");
   assert.equal(formatAmount({ amount: 0.5, unit: "piece" }), "½");
   assert.equal(formatAmount({ amount: 1, unit: "top" }), "Top");

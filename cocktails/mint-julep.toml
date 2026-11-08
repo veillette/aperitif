@@ -5,7 +5,6 @@ glass = "julep-cup"
 ice = "crushed"
 garnish = "large mint bouquet"
 tags = ["IBA", "Kentucky"]
-notes = "Churn with crushed ice until the cup frosts, then crown with more ice."
 
 [[ingredients]]
 id = "bourbon"

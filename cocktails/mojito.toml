@@ -5,7 +5,6 @@ glass = "highball"
 ice = "crushed"
 garnish = "mint sprig"
 tags = ["IBA", "Cuban"]
-notes = "Press the mint gently; don't shred it."
 
 [[ingredients]]
 id = "white-rum"

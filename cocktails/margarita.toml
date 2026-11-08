@@ -8,15 +8,15 @@ tags = ["IBA"]
 
 [[ingredients]]
 id = "blanco-tequila"
-amount = 60
+amount = 50
 unit = "ml"
 
 [[ingredients]]
 id = "cointreau"
-amount = 22.5
+amount = 20
 unit = "ml"
 
 [[ingredients]]
 id = "lime-juice"
-amount = 22.5
+amount = 15
 unit = "ml"

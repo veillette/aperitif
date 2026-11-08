@@ -4,7 +4,6 @@ method = "shake"
 glass = "collins"
 ice = "none"
 tags = ["IBA", "New Orleans", "pre-prohibition"]
-notes = "Long dry shake, then a long hard shake on ice; top slowly so the head rises above the rim."
 
 [[ingredients]]
 id = "london-dry-gin"
