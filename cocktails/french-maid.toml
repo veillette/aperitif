@@ -1,0 +1,45 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/3253/french-maid
+name = "French Maid"
+family = "highball"
+method = "shake"
+glass = "collins"
+ice = "cubes"
+garnish = "mint sprig and cucumber slice"
+tags = ["modern classic"]
+notes = "Difford’s adaptation of Jim Meehan’s drink; add ginger beer after straining."
+
+[[ingredients]]
+id = "cucumber"
+amount = 3
+unit = "piece"
+note = "slices, muddled"
+
+[[ingredients]]
+id = "mint"
+amount = 8
+unit = "leaf"
+
+[[ingredients]]
+id = "cognac"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "falernum"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "rich-simple-syrup"
+amount = 10
+unit = "ml"
+
+[[ingredients]]
+id = "ginger-beer"
+amount = 30
+unit = "ml"

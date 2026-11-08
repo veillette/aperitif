@@ -1,0 +1,29 @@
+# Source: https://imbibemagazine.com/recipe/gin-blossom-cocktail/
+name = "Gin Blossom"
+family = "spirit-forward"
+method = "stir"
+glass = "nick-and-nora"
+ice = "none"
+garnish = "orange peel"
+tags = ["modern classic"]
+notes = "Julie Reiner’s spec uses unsweetened apricot eau de vie, rather than apricot liqueur."
+
+[[ingredients]]
+id = "plymouth-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "blanc-vermouth"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "apricot-eau-de-vie"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 2
+unit = "dash"

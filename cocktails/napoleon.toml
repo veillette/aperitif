@@ -1,0 +1,29 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/1386/napoleon (1930 Savoy recipe quoted in History)
+name = "Napoleon"
+family = "spirit-forward"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "lemon peel"
+tags = ["prohibition era"]
+notes = "The Savoy version seasons a full measure of gin with a dash of each modifier."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "fernet-branca"
+amount = 1
+unit = "dash"
+
+[[ingredients]]
+id = "orange-curacao"
+amount = 1
+unit = "dash"
+
+[[ingredients]]
+id = "dubonnet-rouge"
+amount = 1
+unit = "dash"

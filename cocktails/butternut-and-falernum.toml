@@ -1,0 +1,27 @@
+# Eben Freeman, Tailor; New York Magazine recipe reproduced at:
+# https://laurendaversa.blogspot.com/2009/10/
+# Original: https://nymag.com/listings/recipe/butternut-and-falernum/
+name = "Butternut & Falernum"
+family = "savory"
+method = "shake"
+glass = "rocks"
+ice = "cubes"
+garnish = "freshly grated nutmeg"
+tags = ["modern classic"]
+notes = "Eben Freeman’s Tailor spec uses Matusalem Gran Reserva and Velvet Falernum. For the jus, reduce 480 ml freshly juiced butternut squash by one third, dissolve 5 tablespoons brown sugar, add 5 tablespoons brown butter, refrigerate overnight, then sieve out the butter solids."
+
+[[ingredients]]
+id = "aged-rum"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "falernum"
+amount = 22.5
+unit = "ml"
+note = "John D. Taylor’s Velvet Falernum"
+
+[[ingredients]]
+id = "butternut-squash-jus"
+amount = 60
+unit = "ml"

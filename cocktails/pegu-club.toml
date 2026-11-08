@@ -1,0 +1,32 @@
+# Source: https://www.thecocktaildb.com/drink/17249-pegu-club-cocktail
+name = "Pegu Club"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["prohibition era"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "orange-curacao"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 1
+unit = "dash"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 1
+unit = "dash"

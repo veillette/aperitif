@@ -1,0 +1,19 @@
+# Source: https://www.chivas.com/en-us/cocktails/classic-whisky-highball/
+name = "Highball"
+family = "highball"
+method = "build"
+glass = "highball"
+ice = "cubes"
+garnish = "orange peel"
+tags = ["classic"]
+notes = "The Scotch-and-soda version, at one part whisky to three parts soda."
+
+[[ingredients]]
+id = "blended-scotch"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "soda-water"
+amount = 135
+unit = "ml"

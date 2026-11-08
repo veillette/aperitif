@@ -1,0 +1,18 @@
+# Source: https://www.spiritsanddistilling.com/dictionary/acref-9780199311132-e-302
+name = "Dubonnet Cocktail"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "lemon peel"
+tags = ["pre-prohibition"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "dubonnet-rouge"
+amount = 45
+unit = "ml"

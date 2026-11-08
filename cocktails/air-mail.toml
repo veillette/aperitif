@@ -1,0 +1,29 @@
+# Source: https://www.bacardi.com/us/en/rum-cocktails/air-mail/
+name = "Air Mail"
+family = "sparkling"
+method = "shake"
+glass = "flute"
+ice = "none"
+garnish = "orange peel"
+tags = ["prohibition era"]
+notes = "Bacardí’s aged-rum and prosecco version, using the house 3:1 honey syrup; add the wine after straining."
+
+[[ingredients]]
+id = "aged-rum"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "honey-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "prosecco"
+amount = 45
+unit = "ml"

@@ -1,0 +1,34 @@
+# Source: https://imbibemagazine.com/recipe/ritz-cocktail/
+name = "Ritz Cocktail"
+family = "sparkling"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "orange peel"
+tags = ["modern classic"]
+notes = "Dale DeGroff’s spec; add the Champagne after straining."
+
+[[ingredients]]
+id = "cognac"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "maraschino"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "champagne"
+amount = 60
+unit = "ml"

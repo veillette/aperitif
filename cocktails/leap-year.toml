@@ -1,0 +1,29 @@
+# Source: https://www.northuistdistillery.com/blogs/news/recipe-the-leap-year
+name = "Leap Year"
+family = "spirit-forward"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "lemon peel"
+tags = ["prohibition era"]
+notes = "Harry Craddock’s 1928 Savoy spec uses just a dash of lemon juice."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "grand-marnier"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 1
+unit = "dash"

@@ -2,7 +2,7 @@
 #
 # Each table key is the ingredient id used in cocktails/*.toml.
 #   name      display name (lowercase unless a proper noun)
-#   category  spirit | liqueur | fortified-wine | wine | bitters | citrus |
+#   category  spirit | liqueur | fortified-wine | wine | beer | bitters | citrus |
 #             juice | sweetener | dairy-egg | mixer | other
 #   spirit    base-spirit group, only on spirits that can be a base:
 #             gin | whiskey | rum | agave | brandy | vodka
@@ -25,6 +25,16 @@ spirit = "rum"
 name = "applejack"
 category = "spirit"
 spirit = "brandy"
+
+[apricot-eau-de-vie]
+name = "apricot eau de vie"
+category = "spirit"
+spirit = "brandy"
+
+[bacon-fat-washed-bourbon]
+name = "Benton’s bacon fat-washed bourbon"
+category = "spirit"
+spirit = "whiskey"
 
 [black-rum]
 name = "black rum"
@@ -106,6 +116,11 @@ name = "aged Jamaican rum"
 category = "spirit"
 spirit = "rum"
 
+[kirsch]
+name = "kirsch (cherry eau de vie)"
+category = "spirit"
+spirit = "brandy"
+
 [london-dry-gin]
 name = "London dry gin"
 category = "spirit"
@@ -135,6 +150,11 @@ name = "pisco"
 category = "spirit"
 spirit = "brandy"
 
+[plymouth-gin]
+name = "Plymouth gin"
+category = "spirit"
+spirit = "gin"
+
 [rhum-agricole]
 name = "aged rhum agricole"
 category = "spirit"
@@ -149,6 +169,11 @@ spirit = "agave"
 name = "rye whiskey"
 category = "spirit"
 spirit = "whiskey"
+
+[spiced-rum]
+name = "spiced rum"
+category = "spirit"
+spirit = "rum"
 
 [vanilla-vodka]
 name = "vanilla vodka"
@@ -258,6 +283,10 @@ category = "liqueur"
 name = "Frangelico"
 category = "liqueur"
 
+[galliano]
+name = "Galliano L’Autentico"
+category = "liqueur"
+
 [grand-marnier]
 name = "Grand Marnier"
 category = "liqueur"
@@ -287,8 +316,16 @@ category = "liqueur"
 name = "peach schnapps"
 category = "liqueur"
 
+[pimms-no-1]
+name = "Pimm’s No. 1"
+category = "liqueur"
+
 [raspberry-liqueur]
 name = "raspberry liqueur"
+category = "liqueur"
+
+[st-germain-foam]
+name = "St-Germain foam"
 category = "liqueur"
 
 [yellow-chartreuse]
@@ -306,6 +343,10 @@ category = "fortified-wine"
 
 [dry-vermouth]
 name = "dry vermouth"
+category = "fortified-wine"
+
+[dubonnet-rouge]
+name = "Dubonnet rouge"
 category = "fortified-wine"
 
 [lillet-blanc]
@@ -345,6 +386,16 @@ category = "wine"
 [red-wine]
 name = "red wine"
 category = "wine"
+
+# ── Beer ───────────────────────────────────────────────────────────────────
+
+[lager]
+name = "Mexican lager"
+category = "beer"
+
+[stout]
+name = "stout"
+category = "beer"
 
 # ── Bitters ────────────────────────────────────────────────────────────────
 
@@ -397,6 +448,10 @@ category = "citrus"
 citrus = "orange"
 
 # ── Other juices and coffee ────────────────────────────────────────────────
+[butternut-squash-jus]
+name = "butternut squash jus with brown sugar and brown butter"
+category = "juice"
+
 [coffee]
 name = "hot coffee"
 category = "juice"
@@ -452,6 +507,14 @@ citrus = "grapefruit"
 name = "elderflower cordial"
 category = "sweetener"
 
+[ginger-syrup]
+name = "ginger syrup"
+category = "sweetener"
+
+[gomme-syrup]
+name = "gomme syrup"
+category = "sweetener"
+
 [grenadine]
 name = "grenadine"
 category = "sweetener"
@@ -468,12 +531,25 @@ category = "sweetener"
 name = "honey syrup (3:1)"
 category = "sweetener"
 
+[maple-syrup]
+name = "maple syrup"
+category = "sweetener"
+
+[orange-marmalade]
+name = "orange marmalade"
+category = "sweetener"
+citrus = "orange"
+
 [orgeat]
 name = "orgeat"
 category = "sweetener"
 
 [passion-fruit-syrup]
 name = "passion fruit syrup"
+category = "sweetener"
+
+[powdered-sugar]
+name = "powdered sugar"
 category = "sweetener"
 
 [raspberry-syrup]
@@ -514,6 +590,14 @@ category = "dairy-egg"
 name = "lightly whipped cream"
 category = "dairy-egg"
 
+[whole-egg]
+name = "whole egg"
+category = "dairy-egg"
+
+[whole-milk]
+name = "whole milk"
+category = "dairy-egg"
+
 # ── Mixers ─────────────────────────────────────────────────────────────────
 [cola]
 name = "cola"
@@ -536,11 +620,24 @@ citrus = "grapefruit"
 name = "soda water"
 category = "mixer"
 
+[sparkling-lemonade]
+name = "sparkling lemonade"
+category = "mixer"
+citrus = "lemon"
+
+[tonic-water]
+name = "tonic water"
+category = "mixer"
+
 [water]
 name = "water"
 category = "mixer"
 
 # ── Other ──────────────────────────────────────────────────────────────────
+
+[aged-balsamic-vinegar]
+name = "25-year-old traditional balsamic vinegar"
+category = "other"
 
 [basil]
 name = "Italian basil"
@@ -554,12 +651,20 @@ category = "other"
 name = "celery salt"
 category = "other"
 
+[chipotle-in-adobo]
+name = "chipotle in adobo, puréed"
+category = "other"
+
 [cloves]
 name = "cloves"
 category = "other"
 
 [coconut-cream]
 name = "coconut cream"
+category = "other"
+
+[cucumber]
+name = "cucumber"
 category = "other"
 
 [ginger]
@@ -588,6 +693,10 @@ category = "other"
 
 [salt]
 name = "salt"
+category = "other"
+
+[strawberry]
+name = "strawberry"
 category = "other"
 
 [worcestershire]

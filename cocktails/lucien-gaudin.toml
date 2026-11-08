@@ -1,0 +1,28 @@
+# Source: https://www.seriouseats.com/lucien-gaudin-gin-drink-cocktails-recipe
+name = "Lucien Gaudin"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "orange peel"
+tags = ["prohibition era"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "campari"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 15
+unit = "ml"

@@ -1,0 +1,44 @@
+# Source: https://kindredcocktails.com/cocktail/morning-glory
+name = "Morning Glory"
+family = "highball"
+method = "stir"
+glass = "rocks"
+ice = "none"
+garnish = "lemon peel"
+tags = ["pre-prohibition"]
+notes = "The brandy-and-whiskey version, with Angostura as the aromatic bitters; add soda after straining."
+
+[[ingredients]]
+id = "cognac"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "gomme-syrup"
+amount = 3
+unit = "dash"
+
+[[ingredients]]
+id = "orange-curacao"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "absinthe"
+amount = 1
+unit = "dash"
+
+[[ingredients]]
+id = "soda-water"
+amount = 60
+unit = "ml"

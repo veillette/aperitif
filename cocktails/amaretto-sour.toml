@@ -1,0 +1,35 @@
+# Source: https://jeffreymorgenthaler.com/i-make-the-best-amaretto-sour-in-the-world/
+name = "Amaretto Sour"
+family = "sour"
+method = "shake"
+glass = "rocks"
+ice = "cubes"
+garnish = "lemon peel and brandied cherries"
+tags = ["modern classic"]
+notes = "Jeffrey Morgenthaler’s bourbon-strengthened version."
+
+[[ingredients]]
+id = "amaretto"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "bourbon"
+amount = 22.5
+unit = "ml"
+note = "cask proof"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "rich-simple-syrup"
+amount = 5
+unit = "ml"
+
+[[ingredients]]
+id = "egg-white"
+amount = 15
+unit = "ml"

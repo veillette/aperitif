@@ -1,0 +1,19 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/2461/kangaroo
+name = "Kangaroo"
+family = "spirit-forward"
+method = "stir"
+glass = "martini"
+ice = "none"
+garnish = "lemon peel"
+tags = ["post-war"]
+notes = "The vodka Martini, in 4:1 proportions."
+
+[[ingredients]]
+id = "vodka"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 15
+unit = "ml"

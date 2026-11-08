@@ -1,0 +1,33 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/1755/scofflaw (1924 MacElhone recipe quoted in History)
+name = "Scofflaw"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["prohibition era"]
+notes = "The 1924 Harry’s ABC proportions, using rye for the Canadian whiskey."
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "grenadine"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 1
+unit = "dash"

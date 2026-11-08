@@ -1,0 +1,29 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/4945/mexican-firing-squad-special
+name = "Mexican Firing Squad"
+family = "sour"
+method = "shake"
+glass = "highball"
+ice = "cubes"
+garnish = "orange slice, pineapple wedge and cherry"
+tags = ["prohibition era"]
+notes = "Difford’s adaptation of Baker’s 1939 spec; serve without soda."
+
+[[ingredients]]
+id = "reposado-tequila"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "grenadine"
+amount = 12.5
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"

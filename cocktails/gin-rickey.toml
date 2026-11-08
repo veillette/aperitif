@@ -1,0 +1,23 @@
+# Source: https://www.tanqueray.com/en-us/recipes/tanqueray-gin-rickey
+name = "Gin Rickey"
+family = "highball"
+method = "build"
+glass = "highball"
+ice = "cubes"
+garnish = "lime wedge"
+tags = ["pre-prohibition"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "soda-water"
+amount = 1
+unit = "top"

@@ -1,0 +1,39 @@
+# Source: https://www.saveur.com/article/Wine-and-Drink/Barbacoa-Cocktail/
+name = "Barbacoa"
+family = "savory"
+method = "build"
+glass = "rocks"
+ice = "cubes"
+garnish = "red bell pepper strip and beef jerky"
+tags = ["modern classic"]
+notes = "Julian Cox’s Saveur spec: muddle the lime and modifiers, then add mezcal and ice and transfer the whole drink to the serving glass."
+
+[[ingredients]]
+id = "mezcal"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "agave-syrup"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "ginger-syrup"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "chipotle-in-adobo"
+amount = 1
+unit = "tsp"
+
+[[ingredients]]
+id = "lime"
+amount = 0.5
+unit = "piece"

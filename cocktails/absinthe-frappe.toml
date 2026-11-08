@@ -1,0 +1,28 @@
+# Source: https://www.neworleans.com/drink/cocktails/absinthe-frappe/
+name = "Absinthe Frappé"
+family = "highball"
+method = "build"
+glass = "rocks"
+ice = "crushed"
+tags = ["pre-prohibition"]
+notes = "The New Orleans tourism board’s mint version; fold in the soda gently."
+
+[[ingredients]]
+id = "absinthe"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "soda-water"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "mint"
+amount = 6
+unit = "leaf"

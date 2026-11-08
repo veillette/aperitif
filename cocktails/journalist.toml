@@ -1,0 +1,38 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/1072/journalist (1930 Savoy recipe quoted in History)
+name = "Journalist"
+family = "spirit-forward"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["prohibition era"]
+notes = "The Savoy proportions, with just two dashes each of lemon and curaçao."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "orange-curacao"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "angostura"
+amount = 1
+unit = "dash"

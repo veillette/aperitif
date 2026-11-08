@@ -1,0 +1,24 @@
+# Source: https://galliano.com/cocktail/harvey-wallbanger/
+name = "Harvey Wallbanger"
+family = "highball"
+method = "build"
+glass = "highball"
+ice = "cubes"
+garnish = "orange slice"
+tags = ["post-war"]
+notes = "Galliano’s published metric spec."
+
+[[ingredients]]
+id = "vodka"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "orange-juice"
+amount = 120
+unit = "ml"
+
+[[ingredients]]
+id = "galliano"
+amount = 15
+unit = "ml"

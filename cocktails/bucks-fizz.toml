@@ -1,0 +1,18 @@
+# Source: https://www.bbcgoodfood.com/recipes/bucks-fizz
+name = "Buck's Fizz"
+family = "sparkling"
+method = "build"
+glass = "flute"
+ice = "none"
+tags = ["prohibition era"]
+notes = "Two parts Champagne to one part orange juice."
+
+[[ingredients]]
+id = "orange-juice"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "champagne"
+amount = 100
+unit = "ml"

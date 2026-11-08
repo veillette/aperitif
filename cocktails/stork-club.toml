@@ -1,0 +1,33 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/1877/stork-club (1946 Beebe recipe quoted in History)
+name = "Stork Club Cocktail"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["post-war"]
+notes = "Beebe’s 1946 spec, measuring the juice of half an orange as 30 ml."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "orange-juice"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 1
+unit = "dash"
+
+[[ingredients]]
+id = "cointreau"
+amount = 1
+unit = "dash"
+
+[[ingredients]]
+id = "angostura"
+amount = 1
+unit = "dash"

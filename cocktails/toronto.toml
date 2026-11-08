@@ -1,0 +1,29 @@
+# Source: https://www.liquor.com/recipes/toronto/
+name = "Toronto"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "orange peel"
+tags = ["prohibition era"]
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 60
+unit = "ml"
+note = "Canadian rye preferred"
+
+[[ingredients]]
+id = "fernet-branca"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"

@@ -1,0 +1,28 @@
+# Source: https://tile.loc.gov/storage-services/public/gdcmassbookdig/modernamericandr00kapp/modernamericandr00kapp.pdf (George Kappeler, 1895)
+name = "Widow's Kiss"
+family = "spirit-forward"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["pre-prohibition"]
+notes = "Kappeler’s original 2:1:1 proportions, with yellow Chartreuse."
+
+[[ingredients]]
+id = "calvados"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "yellow-chartreuse"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "benedictine"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"

@@ -1,0 +1,34 @@
+# Source: https://www.bonappetit.com/recipe/intro-to-aperol
+name = "Intro to Aperol"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "flamed orange peel"
+tags = ["modern classic"]
+notes = "Audrey Saunders’s Aperol-led sour."
+
+[[ingredients]]
+id = "aperol"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 1
+unit = "dash"

@@ -69,8 +69,10 @@ test("facet counts ignore the facet's own selection", () => {
 });
 
 test("sorting", () => {
-  const names = slugs(sortCocktails(data.cocktails, "name", data));
-  assert.equal(names[0], "americano");
+  const sample = [get("martini"), get("daiquiri"), get("americano")];
+  const names = slugs(sortCocktails(sample, "name", data));
+  assert.deepEqual(names, ["americano", "daiquiri", "martini"]);
+  assert.deepEqual(slugs(sample), ["martini", "daiquiri", "americano"], "sorting preserves the input order");
   const byBase = sortCocktails(data.cocktails, "base", data);
   assert.equal(byBase[0].base[0], "gin");
   assert.equal(byBase.at(-1).base[0], "none");
@@ -85,6 +87,10 @@ test("my bar: pantry items are assumed, bottles are not", () => {
   const pickford = oneAway.find((x) => x.cocktail.slug === "mary-pickford");
   assert.equal(pickford?.missing, "maraschino");
   assert.equal(whatCanIMake(data, new Set()).ready.length, 0);
+  const mezcalada = whatCanIMake(data, new Set(["mezcal"])).oneAway
+    .find((x) => x.cocktail.slug === "mezcalada");
+  assert.equal(mezcalada?.missing, "lager", "beer must be owned rather than assumed on hand");
+  assert.ok(slugs(whatCanIMake(data, new Set(["mezcal", "lager"])).ready).includes("mezcalada"));
 });
 
 test("related drinks share ingredients", () => {

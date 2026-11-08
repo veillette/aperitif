@@ -1,0 +1,33 @@
+# Source: https://stevethebartender.com.au/pink-lady-cocktail-recipe/
+name = "Pink Lady"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["pre-prohibition"]
+notes = "The gin-and-applejack version, using Steve the Bartender’s proportions."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "applejack"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "grenadine"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "egg-white"
+amount = 0.5
+unit = "piece"

@@ -1,0 +1,29 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/3245/betsy-ross
+name = "Betsy Ross"
+family = "spirit-forward"
+method = "stir"
+glass = "nick-and-nora"
+ice = "none"
+garnish = "orange peel"
+tags = ["classic"]
+notes = "Difford’s equal-parts brandy and tawny port version."
+
+[[ingredients]]
+id = "cognac"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "tawny-port"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "orange-curacao"
+amount = 5
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 1
+unit = "dash"

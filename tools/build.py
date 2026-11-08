@@ -59,7 +59,7 @@ VOCAB = {
     },
     "category": {
         "spirit": "Spirits", "liqueur": "Liqueurs & amari",
-        "fortified-wine": "Vermouth & aromatised wine", "wine": "Wine",
+        "fortified-wine": "Vermouth & aromatised wine", "wine": "Wine", "beer": "Beer",
         "bitters": "Bitters & aromatics", "citrus": "Citrus", "juice": "Juice & coffee",
         "sweetener": "Sweeteners", "dairy-egg": "Dairy & egg",
         "mixer": "Mixers", "other": "Other",

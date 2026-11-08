@@ -1,0 +1,24 @@
+# Source: https://cocktailsdistilled.com/recipe/italian-greyhound/
+name = "Italian Greyhound"
+family = "highball"
+method = "shake"
+glass = "highball"
+ice = "cubes"
+garnish = "grapefruit slice"
+tags = ["classic"]
+notes = "The vodka, Campari and grapefruit version."
+
+[[ingredients]]
+id = "vodka"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "campari"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "grapefruit-juice"
+amount = 150
+unit = "ml"

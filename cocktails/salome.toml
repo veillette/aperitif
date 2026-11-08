@@ -1,0 +1,23 @@
+# Source: https://www.absolutdrinks.com/en/drinks/salome/
+name = "Salomé"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+tags = ["pre-prohibition"]
+notes = "The equal-parts gin, dry vermouth and Dubonnet version."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "dubonnet-rouge"
+amount = 30
+unit = "ml"

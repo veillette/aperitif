@@ -1,0 +1,18 @@
+# Source: https://en.wikisource.org/wiki/Page:Jerry_Thomas_-_The_bar-tender%27s_guide_(1887).djvu/106
+name = "Rock and Rye"
+family = "spirit-forward"
+method = "build"
+glass = "rocks"
+ice = "none"
+tags = ["pre-prohibition"]
+notes = "Thomas’s simple whiskey-and-syrup serve, measuring the wineglass as 60 ml and using rich simple syrup for rock-candy syrup."
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "rich-simple-syrup"
+amount = 15
+unit = "ml"

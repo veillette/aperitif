@@ -1,0 +1,40 @@
+# Source: https://vinepair.com/cocktail-recipe/art-of-choke/
+name = "Art of Choke"
+family = "spirit-forward"
+method = "stir"
+glass = "rocks"
+ice = "cubes"
+garnish = "mint sprig"
+tags = ["modern classic"]
+notes = "Kyle Davidson’s spec uses only ¾ teaspoon each of lime juice and rich demerara syrup."
+
+[[ingredients]]
+id = "white-rum"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "cynar"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "green-chartreuse"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 0.75
+unit = "tsp"
+
+[[ingredients]]
+id = "demerara-syrup"
+amount = 0.75
+unit = "tsp"
+
+[[ingredients]]
+id = "mint"
+amount = 1
+unit = "piece"
+note = "sprig, muddled"

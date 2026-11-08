@@ -1,0 +1,29 @@
+# Source: https://www.abc.virginia.gov/products/recipes/classic/saratoga
+name = "Saratoga"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "lemon peel"
+tags = ["pre-prohibition"]
+notes = "The brandy-and-whiskey Saratoga, in equal parts with sweet vermouth."
+
+[[ingredients]]
+id = "cognac"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"

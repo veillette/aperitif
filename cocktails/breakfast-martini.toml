@@ -1,0 +1,29 @@
+# Source: https://www.cointreau.com/int/en/cocktails/breakfast-martini
+name = "Breakfast Martini"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "orange wedge"
+tags = ["modern classic"]
+notes = "Salvatore Calabrese’s marmalade sour."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "orange-marmalade"
+amount = 1
+unit = "barspoon"

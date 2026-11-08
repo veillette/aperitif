@@ -1,0 +1,19 @@
+# Source: https://www.thebar.com/en/recipes/pimms-no-1-and-lemonade-bp
+name = "Pimm's Cup"
+family = "highball"
+method = "build"
+glass = "highball"
+ice = "cubes"
+garnish = "orange slice, cucumber slice, strawberry and mint sprig"
+tags = ["classic"]
+notes = "The British serve uses sparkling lemonade."
+
+[[ingredients]]
+id = "pimms-no-1"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "sparkling-lemonade"
+amount = 150
+unit = "ml"

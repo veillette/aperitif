@@ -1,0 +1,29 @@
+# Source: https://xn--cocktailnrden-jnb.dk/wp-content/uploads/2016/02/Arthur-Stanley-Clisby-Famous-New-Orleans-Drinks-and-How-to-Mix-em-1937.pdf
+name = "Old Hickory"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "lemon peel"
+tags = ["classic"]
+notes = "Stanley Clisby Arthur’s 1937 equal-parts vermouth spec."
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 1
+unit = "dash"
+
+[[ingredients]]
+id = "peychauds"
+amount = 2
+unit = "dash"

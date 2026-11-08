@@ -1,0 +1,29 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/700/el-diablo-cocktail
+name = "El Diablo"
+family = "highball"
+method = "shake"
+glass = "collins"
+ice = "cubes"
+garnish = "lime wedge"
+tags = ["post-war"]
+notes = "Add the ginger beer after straining."
+
+[[ingredients]]
+id = "reposado-tequila"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "creme-de-cassis"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "ginger-beer"
+amount = 60
+unit = "ml"

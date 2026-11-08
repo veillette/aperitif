@@ -1,0 +1,34 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/396/champs-elysees
+name = "Champs-Élysées"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "lemon peel"
+tags = ["prohibition era"]
+notes = "Difford’s modern proportions, with green Chartreuse and rich syrup; saline omitted."
+
+[[ingredients]]
+id = "cognac"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "green-chartreuse"
+amount = 10
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "rich-simple-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 1
+unit = "dash"

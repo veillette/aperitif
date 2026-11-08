@@ -1,0 +1,29 @@
+# Source: https://vinepair.com/cocktail-college/jasmine/
+name = "Jasmine"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "lemon peel"
+tags = ["modern classic"]
+notes = "Paul Harrington’s original proportions."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "campari"
+amount = 7.5
+unit = "ml"

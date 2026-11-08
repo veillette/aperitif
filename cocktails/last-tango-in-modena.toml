@@ -1,0 +1,30 @@
+# Source: https://www.hallmarkchannel.com/home-and-family/recipes/eat-your-drink-recipes
+name = "Last Tango in Modena"
+family = "sour"
+method = "shake"
+glass = "rocks"
+ice = "cubes"
+garnish = "strawberry slice"
+tags = ["modern classic"]
+notes = "Biancaniello’s Home & Family spec: muddle the strawberries with the vinegar and top the finished drink with foam. For the foam, charge 240 ml each St-Germain and egg whites in a siphon with two N2O cartridges and chill overnight."
+
+[[ingredients]]
+id = "strawberry"
+amount = 4
+unit = "piece"
+
+[[ingredients]]
+id = "aged-balsamic-vinegar"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 30
+unit = "ml"
+note = "Hendrick’s in the source"
+
+[[ingredients]]
+id = "st-germain-foam"
+amount = 1
+unit = "top"

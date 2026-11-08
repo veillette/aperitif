@@ -1,0 +1,29 @@
+# Source: https://altonbrown.com/recipes/classic-hurricane-cocktail/
+name = "Hurricane"
+family = "tiki"
+method = "shake"
+glass = "hurricane"
+ice = "crushed"
+garnish = "lemon peel"
+tags = ["post-war"]
+notes = "Alton Brown’s large single serve of the three-ingredient New Orleans style, with bitters added in the glass."
+
+[[ingredients]]
+id = "black-rum"
+amount = 120
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "passion-fruit-syrup"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "peychauds"
+amount = 3
+unit = "dash"
