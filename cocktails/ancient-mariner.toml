@@ -1,0 +1,39 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/4853/ancient-mariner
+name = "Ancient Mariner"
+family = "tiki"
+method = "shake"
+glass = "rocks"
+ice = "crushed"
+garnish = "lime wedge and mint sprigs"
+tags = ["modern classic"]
+notes = "Difford’s adaptation of Jeff “Beachbum” Berry’s drink."
+
+[[ingredients]]
+id = "aged-rum"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "black-rum"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "allspice-dram"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "grapefruit-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "rich-simple-syrup"
+amount = 15
+unit = "ml"

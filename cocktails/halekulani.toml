@@ -1,0 +1,45 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/11559/halekulani
+name = "Halekulani"
+family = "tiki"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "cherry and pineapple wedge"
+tags = ["revived classic"]
+notes = "Bourbon version in Difford’s proportions; his adaptation of Shannon Mustipher’s spec substitutes rye."
+
+[[ingredients]]
+id = "bourbon"
+amount = 45
+unit = "ml"
+note = "high proof"
+
+[[ingredients]]
+id = "demerara-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "orange-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "pineapple-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "grenadine"
+amount = 5
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 1
+unit = "dash"

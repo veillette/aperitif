@@ -1,0 +1,29 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/2599/vieux-mot
+name = "Vieux Mot"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "maraschino cherry"
+tags = ["modern classic"]
+notes = "Difford’s adaptation of Don Lee’s PDT spec, with rich syrup."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "elderflower-liqueur"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "rich-simple-syrup"
+amount = 10
+unit = "ml"

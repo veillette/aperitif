@@ -31,6 +31,10 @@ name = "apricot eau de vie"
 category = "spirit"
 spirit = "brandy"
 
+[aquavit]
+name = "aquavit"
+category = "spirit"
+
 [bacon-fat-washed-bourbon]
 name = "Benton’s bacon fat-washed bourbon"
 category = "spirit"
@@ -288,6 +292,10 @@ category = "liqueur"
 name = "Drambuie"
 category = "liqueur"
 
+[elderflower-liqueur]
+name = "elderflower liqueur"
+category = "liqueur"
+
 [falernum]
 name = "falernum"
 category = "liqueur"
@@ -442,6 +450,10 @@ category = "bitters"
 
 [orange-bitters]
 name = "orange bitters"
+category = "bitters"
+
+[peach-bitters]
+name = "peach bitters"
 category = "bitters"
 
 [peychauds]

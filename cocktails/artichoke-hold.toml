@@ -1,0 +1,35 @@
+# Source: https://punchdrink.com/recipes/artichoke-hold/
+name = "Artichoke Hold"
+family = "tiki"
+method = "shake"
+glass = "rocks"
+ice = "crushed"
+garnish = "mint sprig"
+tags = ["modern classic"]
+notes = "Jeremy Oertel’s Donna spec uses lime juice and Jamaican rum."
+
+[[ingredients]]
+id = "jamaican-rum"
+amount = 22.5
+unit = "ml"
+note = "Smith & Cross preferred"
+
+[[ingredients]]
+id = "cynar"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "elderflower-liqueur"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "orgeat"
+amount = 15
+unit = "ml"

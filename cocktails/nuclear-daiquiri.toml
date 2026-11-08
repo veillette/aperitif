@@ -1,0 +1,29 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/2719/nuclear-daiquiri
+name = "Nuclear Daiquiri"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "lime wedge"
+tags = ["modern classic"]
+notes = "Gregor de Gruyther’s drink in Difford’s proportions; use wet ice and omit the source’s optional added water."
+
+[[ingredients]]
+id = "overproof-white-jamaican-rum"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "green-chartreuse"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "falernum"
+amount = 10
+unit = "ml"

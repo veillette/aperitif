@@ -1,0 +1,18 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/138/b-and-b (traditional equal-parts proportions noted in Review)
+name = "B & B"
+family = "spirit-forward"
+method = "build"
+glass = "rocks"
+ice = "none"
+tags = ["classic"]
+notes = "Traditional equal parts, served at room temperature."
+
+[[ingredients]]
+id = "cognac"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "benedictine"
+amount = 30
+unit = "ml"
