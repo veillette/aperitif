@@ -5,6 +5,8 @@ import {
   filterCocktails, facetOptions, facetCounts, isBottle, whatCanIMake, cardMeta, cardSpec,
 } from "./data.js";
 
+import { recipeURL } from "./navigation.js";
+
 const FACET_LABELS = {
   base: "Base spirit", citrus: "Citrus", family: "Family", method: "Method", glass: "Glass", tag: "Tags",
 };
@@ -19,9 +21,9 @@ let bar = new Set(store.get(BAR_KEY, []));
 
 const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
 
-function card(c, extra) {
+function card(c, extra, group) {
   return h("li", {},
-    h("a", { class: "card", href: `recipe.html?c=${encodeURIComponent(c.slug)}` },
+    h("a", { class: "card", href: recipeURL(c.slug, group ? "./?view=bar" : `./?${stateToParams(state)}`, group) },
       h("h3", {}, c.name),
       h("p", { class: "meta" }, cardMeta(c, data)),
       h("p", { class: "spec" }, cardSpec(c, data)),
@@ -204,9 +206,9 @@ function renderBar() {
   $("ready-count").textContent = `(${ready.length})`;
   $("away-count").textContent = `(${oneAway.length})`;
   const none = (text) => [h("li", { class: "empty" }, text)];
-  $("ready").replaceChildren(...(ready.length ? ready.map((c) => card(c)) : none(bar.size ? "Nothing yet. Check the list below for what to buy next." : "Tick a few bottles to start.")));
+  $("ready").replaceChildren(...(ready.length ? ready.map((c) => card(c, null, "ready")) : none(bar.size ? "Nothing yet. Check the list below for what to buy next." : "Tick a few bottles to start.")));
   $("away").replaceChildren(...(oneAway.length
-    ? oneAway.map(({ cocktail, missing }) => card(cocktail, h("p", { class: "need" }, `Need: ${data.ingredients[missing].name}`)))
+    ? oneAway.map(({ cocktail, missing }) => card(cocktail, h("p", { class: "need" }, `Need: ${data.ingredients[missing].name}`), "away"))
     : none("—")));
 }
 

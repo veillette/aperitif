@@ -357,3 +357,9 @@ input[type="search"]::placeholder { color: var(--muted); }
   .bar-layout { display: grid; grid-template-columns: 300px 1fr; gap: 28px; align-items: start; }
   .bottles { position: sticky; top: 72px; max-height: calc(100dvh - 88px); overflow-y: auto; margin: 0; }
 }
+
+.recipe-navigation { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+.recipe-navigation > * { min-height: 44px; padding: 12px; border: 1px solid var(--line); border-radius: 10px; overflow-wrap: anywhere; }
+.recipe-navigation > :last-child { text-align: right; }
+.recipe-navigation [aria-disabled] { color: var(--muted); }
+.swipe-hint { color: var(--muted); font-size: 0.85rem; margin-bottom: 24px; }

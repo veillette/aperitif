@@ -4,7 +4,7 @@ Classic cocktail specs for people who already know how to make them. No techniqu
 
 - **Browse and filter** (`index.html`): search, plus filters for base spirit, citrus (lemon / lime / grapefruit / orange / none), family, method, glass, tags and any ingredient (*all of* / *any of*). Filters live in the URL, so a filtered view can be shared or bookmarked, e.g. `?base=gin&citrus=lemon`.
 - **My bar** (`?view=bar`): tick the bottles you own and see what you can make now, and what one more bottle would unlock. Citrus, juices, syrups, eggs, cream and mixers are assumed on hand. The bottle list stays in your browser.
-- **Recipe** (`recipe.html?c=<slug>`): the spec with an **ml / oz** toggle (30 ml = 1 oz, oz rounded to the nearest ⅛), plus links to similar drinks.
+- **Recipe** (`recipe.html?c=<slug>`): the spec with an **ml / oz** toggle (30 ml = 1 oz, oz rounded to the nearest ⅛), plus links to similar drinks. Swipe left for the next recipe or right for the previous one, or use the Previous / Next links. Navigation follows the originating filters and sort order (or My bar group), and stops at either end. Direct recipe links browse all drinks alphabetically.
 
 Built phone-first: the filters open in a bottom drawer on phones and become a sidebar on wide screens. Once a page has loaded, the site works offline through a service worker.
 

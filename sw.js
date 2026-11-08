@@ -5,7 +5,7 @@ const CACHE = `aperitif-${VERSION}`;
 const CORE = [
   "./", "index.html", "recipe.html", "manifest.webmanifest",
   "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png", "icons/apple-touch-icon.png",
-  "css/style.css", "js/app.js", "js/recipe.js", "js/data.js", "js/units.js", "js/dom.js",
+  "css/style.css", "js/app.js", "js/recipe.js", "js/data.js", "js/units.js", "js/dom.js", "js/navigation.js",
   "data/cocktails.json",
 ];
 

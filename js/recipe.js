@@ -3,6 +3,13 @@ import { h, store, registerServiceWorker } from "./dom.js";
 import { loadData, related, cardMeta, cardSpec } from "./data.js";
 import { formatAmount } from "./units.js";
 
+import { browseContext, recipeURL, recipeSequence, setupSwipe } from "./navigation.js";
+
+const params = new URLSearchParams(location.search);
+const from = browseContext(params.get("from"), location.href);
+const group = ["ready", "away"].includes(params.get("group")) ? params.get("group") : null;
+let sequence = [];
+
 const UNIT_KEY = "aperitif.unit";
 const $ = (id) => document.getElementById(id);
 const index = (params) => `./?${new URLSearchParams(params)}`;
@@ -43,6 +50,14 @@ function render() {
 
   const others = related(c, data);
 
+  const position = sequence.findIndex((o) => o.slug === c.slug);
+  const neighbor = (offset, label) => {
+    const drink = sequence[position + offset];
+    return drink
+      ? h("a", { href: recipeURL(drink.slug, from, group), rel: offset < 0 ? "prev" : "next" }, `${label}: ${drink.name}`)
+      : h("span", { "aria-disabled": "true" }, label);
+  };
+
   $("recipe").replaceChildren(
     h("article", { class: "recipe" },
       h("h1", {}, c.name),
@@ -56,10 +71,13 @@ function render() {
       h("nav", { class: "more", "aria-label": "Similar drinks" },
         more.map(([label, params]) => h("a", { class: "chip", href: index(params) }, `${label} →`))),
     ),
+    h("nav", { class: "recipe-navigation", "aria-label": "Recipe navigation" },
+      neighbor(-1, "← Previous"), neighbor(1, "Next →")),
+    h("p", { class: "swipe-hint" }, "Swipe left for next · right for previous"),
     others.length
       ? h("section", { class: "related" }, h("h2", {}, "Shares ingredients with"),
           h("ol", { class: "cards" }, others.map((o) =>
-            h("li", {}, h("a", { class: "card", href: `recipe.html?c=${encodeURIComponent(o.slug)}` },
+            h("li", {}, h("a", { class: "card", href: recipeURL(o.slug, from, group) },
               h("h3", {}, o.name), h("p", { class: "meta" }, cardMeta(o, data)), h("p", { class: "spec" }, cardSpec(o, data)))))))
       : null,
   );
@@ -81,11 +99,7 @@ async function main() {
   }
   setUnit(unit);
 
-  // Back to the filtered list the reader came from, when there is one.
-  const ref = document.referrer && new URL(document.referrer);
-  if (ref && ref.origin === location.origin && !ref.pathname.endsWith("recipe.html")) {
-    $("back").href = ref.href;
-  }
+  if (from) $("back").href = from;
 
   try {
     data = await loadData();
@@ -100,7 +114,14 @@ async function main() {
     $("recipe").replaceChildren(h("p", { class: "empty" }, "No such drink. ", h("a", { href: "./" }, "Browse all drinks")));
     return;
   }
+  const savedBar = store.get("aperitif.bar", []);
+  sequence = recipeSequence(data, cocktail.slug, from, group, new Set(Array.isArray(savedBar) ? savedBar : []));
   render();
+  setupSwipe($("recipe"), (direction) => {
+    const position = sequence.findIndex((c) => c.slug === cocktail.slug);
+    const next = sequence[position + direction];
+    if (next) location.assign(recipeURL(next.slug, from, group));
+  });
 }
 
 main();
