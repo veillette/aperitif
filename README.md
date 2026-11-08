@@ -34,6 +34,10 @@ The collection includes all 102 cocktails on the [official IBA list](https://iba
 
 New entries cite their individual IBA pages in TOML comments. Recipe notes identify ingredient substitutions and service details. Tom Collins remains alongside the official John Collins as an Old Tom gin variant.
 
+## Cocktail revival
+
+Filter by `modern classic` for drinks such as Paper Plane, Naked and Famous, Penicillin, Final Ward, Division Bell, and Oaxaca Old Fashioned. The `revived classic` tag identifies Last Word, an older recipe that returned to prominence during the cocktail revival. New recipes cite their source in TOML comments and use the source proportions, with ounce volumes converted at 30 ml per ounce. Notes identify adaptations such as the Gin-Gin Mule’s commercial ginger beer spec.
+
 ## Adding a cocktail
 
 1. Create `cocktails/<slug>.toml`. The filename is the URL slug, in lowercase-kebab form:

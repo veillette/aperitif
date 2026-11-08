@@ -1,0 +1,28 @@
+# Source: https://punchdrink.com/recipes/final-ward/
+name = "Final Ward"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["modern classic", "equal parts"]
+notes = "Phil Ward’s rye-and-lemon variation on the Last Word."
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "green-chartreuse"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "maraschino"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"

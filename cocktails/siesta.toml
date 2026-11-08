@@ -1,0 +1,34 @@
+# Source: https://punchdrink.com/recipes/siesta/
+name = "Siesta"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "lime wheel"
+tags = ["modern classic"]
+notes = "Katie Stipe’s tequila-and-Campari variation on the Hemingway Daiquiri."
+
+[[ingredients]]
+id = "blanco-tequila"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "grapefruit-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "campari"
+amount = 7.5
+unit = "ml"

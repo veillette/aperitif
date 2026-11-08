@@ -1,0 +1,29 @@
+# Source: https://www.luxardousa.com/mezcal-last-word
+name = "Closing Argument"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "lime wedge"
+tags = ["modern classic", "equal parts"]
+notes = "A Last Word with mezcal in place of gin; also known as the Mezcal Last Word."
+
+[[ingredients]]
+id = "mezcal"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "green-chartreuse"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "maraschino"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"

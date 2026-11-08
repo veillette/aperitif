@@ -5,7 +5,7 @@ method = "swizzle"
 glass = "highball"
 ice = "crushed"
 garnish = "mint and grated nutmeg"
-tags = ["IBA"]
+tags = ["modern classic", "IBA"]
 
 [[ingredients]]
 id = "green-chartreuse"

@@ -1,10 +1,13 @@
+# History: https://www.spiritsanddistilling.com/dictionary/acref-9780199311132-e-353
 name = "Last Word"
 family = "sour"
 method = "shake"
 glass = "coupe"
 ice = "none"
 garnish = "brandied cherry, optional"
-tags = ["IBA", "equal parts", "prohibition era"]
+tags = ["IBA", "equal parts", "pre-prohibition", "revived classic"]
+
+notes = "Revived by Murray Stenson at Seattle’s Zig Zag Café in the early 2000s."
 
 [[ingredients]]
 id = "london-dry-gin"

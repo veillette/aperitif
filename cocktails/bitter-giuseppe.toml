@@ -1,0 +1,29 @@
+# Source: https://punchdrink.com/recipes/bitter-giuseppe/
+name = "Bitter Giuseppe"
+family = "spirit-forward"
+method = "stir"
+glass = "rocks"
+ice = "large-cube"
+garnish = "lemon twist"
+tags = ["modern classic", "low-ABV"]
+notes = "Stephen Cole, The Violet Hour. The original is stirred despite its lemon juice."
+
+[[ingredients]]
+id = "cynar"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 6
+unit = "dash"

@@ -1,0 +1,28 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/25001/industry-sour
+name = "Industry Sour"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["modern classic", "equal parts"]
+notes = "Ted Kilgore’s original equal-parts spec, without the egg white and saline of later versions."
+
+[[ingredients]]
+id = "fernet-branca"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "green-chartreuse"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 22.5
+unit = "ml"

@@ -5,7 +5,7 @@ method = "shake"
 glass = "martini"
 ice = "none"
 garnish = "expressed lemon oil"
-tags = ["IBA"]
+tags = ["modern classic", "IBA"]
 
 [[ingredients]]
 id = "vodka"

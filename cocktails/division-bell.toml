@@ -1,0 +1,29 @@
+# Source: https://punchdrink.com/recipes/division-bell/
+name = "Division Bell"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "expressed grapefruit twist, discarded"
+tags = ["modern classic"]
+notes = "Phil Ward’s mezcal riff on the Last Word."
+
+[[ingredients]]
+id = "mezcal"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "aperol"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "maraschino"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"

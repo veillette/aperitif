@@ -1,0 +1,35 @@
+# Source: https://static.tecnichenuove.it/bargiornale/2020/03/Audrey-Saunders-and-the-Modern-Classic-Cocktails-Bargiornale-March-2020.pdf
+name = "Gin-Gin Mule"
+family = "highball"
+method = "shake"
+glass = "highball"
+ice = "cubes"
+garnish = "mint sprig, lime wheel and candied ginger"
+tags = ["modern classic"]
+notes = "Audrey Saunders’ allowance for commercial ginger beer uses 15 ml syrup; her homemade version uses 30 ml. Add carbonated ginger beer after shaking."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 52.5
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "mint"
+amount = 1
+unit = "piece"
+note = "sprig"
+
+[[ingredients]]
+id = "ginger-beer"
+amount = 30
+unit = "ml"

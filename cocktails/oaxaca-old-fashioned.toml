@@ -1,0 +1,29 @@
+# Source: https://www.deathandcompanymarket.com/blogs/recipes/oaxaca-old-fashioned
+name = "Oaxaca Old Fashioned"
+family = "spirit-forward"
+method = "stir"
+glass = "rocks"
+ice = "large-cube"
+garnish = "flamed orange twist"
+tags = ["modern classic"]
+notes = "Phil Ward, Death & Co, 2007. Use undiluted agave nectar."
+
+[[ingredients]]
+id = "reposado-tequila"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "mezcal"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "agave-syrup"
+amount = 1
+unit = "tsp"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"

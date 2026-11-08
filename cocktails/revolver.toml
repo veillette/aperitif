@@ -1,0 +1,24 @@
+# Source: https://punchdrink.com/recipes/revolver/
+name = "Revolver"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "flamed orange twist"
+tags = ["modern classic"]
+notes = "Jon Santer’s bourbon-and-coffee riff, created at Bruno’s in San Francisco."
+
+[[ingredients]]
+id = "bourbon"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "coffee-liqueur"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 2
+unit = "dash"

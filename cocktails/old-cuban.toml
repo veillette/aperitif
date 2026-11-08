@@ -5,7 +5,7 @@ method = "shake"
 glass = "coupe"
 ice = "none"
 garnish = "mint sprig"
-tags = ["IBA"]
+tags = ["modern classic", "IBA"]
 notes = "Add the Champagne after straining."
 
 [[ingredients]]

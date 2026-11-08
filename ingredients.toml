@@ -126,6 +126,10 @@ name = "overproof white Jamaican rum"
 category = "spirit"
 spirit = "rum"
 
+[pastis]
+name = "pastis"
+category = "spirit"
+
 [pisco]
 name = "pisco"
 category = "spirit"
@@ -135,6 +139,11 @@ spirit = "brandy"
 name = "aged rhum agricole"
 category = "spirit"
 spirit = "rum"
+
+[reposado-tequila]
+name = "reposado tequila"
+category = "spirit"
+spirit = "agave"
 
 [rye-whiskey]
 name = "rye whiskey"
@@ -175,6 +184,10 @@ category = "liqueur"
 
 [apricot-brandy]
 name = "apricot brandy liqueur"
+category = "liqueur"
+
+[averna]
+name = "Averna"
 category = "liqueur"
 
 [benedictine]
@@ -301,6 +314,10 @@ category = "fortified-wine"
 
 [palo-cortado-sherry]
 name = "palo cortado sherry"
+category = "fortified-wine"
+
+[punt-e-mes]
+name = "Punt e Mes"
 category = "fortified-wine"
 
 [sweet-vermouth]
