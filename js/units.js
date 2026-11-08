@@ -20,7 +20,8 @@ export function formatOz(ml) {
   return `${fraction(ml / ML_PER_OZ)} oz`;
 }
 
-const plural = (n, one, many) => `${fraction(n)} ${n === 1 ? one : many}`;
+// "½ dash", "1 dash", "2 dashes".
+const plural = (n, one, many) => `${fraction(n)} ${n <= 1 ? one : many}`;
 
 // Text for the amount column of a recipe. system is "ml" or "oz".
 export function formatAmount({ amount, unit }, system = "ml") {

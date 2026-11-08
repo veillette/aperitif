@@ -4,7 +4,6 @@ method = "build"
 glass = "rocks"
 ice = "crushed"
 tags = ["IBA", "Brazilian"]
-notes = "Muddle the lime and sugar in the glass, then add cachaça and ice."
 
 [[ingredients]]
 id = "lime"

@@ -4,7 +4,7 @@
     python3 tools/build.py           # validate, then write data/cocktails.json
     python3 tools/build.py --check   # validate, and fail if the JSON is stale
 
-Standard library only (Python 3.11+ for tomllib).
+Standard library only. tomllib needs Python 3.11+; CI runs the release in .python-version.
 """
 import json
 import math
@@ -60,7 +60,7 @@ VOCAB = {
     "category": {
         "spirit": "Spirits", "liqueur": "Liqueurs & amari",
         "fortified-wine": "Vermouth & aromatised wine", "wine": "Wine",
-        "bitters": "Bitters", "citrus": "Citrus", "juice": "Juice & coffee",
+        "bitters": "Bitters & aromatics", "citrus": "Citrus", "juice": "Juice & coffee",
         "sweetener": "Sweeteners", "dairy-egg": "Dairy & egg",
         "mixer": "Mixers", "other": "Other",
     },
@@ -74,19 +74,28 @@ SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 BASE_SHARE = 0.5
 
 
+def in_vocab(value, kind):
+    # TOML can hand back lists or tables, which can't be dict keys.
+    return isinstance(value, str) and value in VOCAB[kind]
+
+
 def load_ingredients(errors):
     data = tomllib.loads(INGREDIENTS.read_text(encoding="utf-8"))
-    for iid, ing in data.items():
+    for iid, ing in list(data.items()):
         where = f"ingredients.toml [{iid}]"
+        if not isinstance(ing, dict):
+            errors.append(f"{where}: must be a table")
+            del data[iid]
+            continue
         if not SLUG.match(iid):
             errors.append(f"{where}: id must be lowercase-kebab")
         if not isinstance(ing.get("name"), str) or not ing["name"]:
             errors.append(f"{where}: missing name")
-        if ing.get("category") not in VOCAB["category"]:
+        if not in_vocab(ing.get("category"), "category"):
             errors.append(f"{where}: category {ing.get('category')!r} not in {sorted(VOCAB['category'])}")
-        if "spirit" in ing and (ing["spirit"] not in VOCAB["spirit"] or ing["spirit"] == "none"):
+        if "spirit" in ing and (not in_vocab(ing["spirit"], "spirit") or ing["spirit"] == "none"):
             errors.append(f"{where}: spirit {ing['spirit']!r} is not a base-spirit group")
-        if "citrus" in ing and (ing["citrus"] not in VOCAB["citrus"] or ing["citrus"] == "none"):
+        if "citrus" in ing and (not in_vocab(ing["citrus"], "citrus") or ing["citrus"] == "none"):
             errors.append(f"{where}: citrus {ing['citrus']!r} is not a citrus")
         extra = set(ing) - {"name", "category", "spirit", "citrus"}
         if extra:
@@ -134,16 +143,29 @@ def load_cocktail(path, vocab_ings, errors):
     extra = set(raw) - set(REQUIRED) - set(OPTIONAL)
     if extra:
         errors.append(f"{where}: unknown keys {sorted(extra)}")
+    for key in ("name", "garnish", "notes"):
+        if key in raw and (not isinstance(raw[key], str) or not raw[key].strip()):
+            errors.append(f"{where}: {key} must be a non-empty string")
     for key in ("family", "method", "glass", "ice"):
-        if key in raw and raw[key] not in VOCAB[key]:
+        if key in raw and not in_vocab(raw[key], key):
             errors.append(f"{where}: {key} {raw[key]!r} not in {sorted(VOCAB[key])}")
-    if not isinstance(raw.get("tags", []), list):
-        errors.append(f"{where}: tags must be a list")
-    for g in raw.get("base", []):
-        if g not in VOCAB["spirit"]:
+    tags = raw.get("tags", [])
+    if not isinstance(tags, list) or not all(isinstance(t, str) and t.strip() for t in tags):
+        errors.append(f"{where}: tags must be a list of non-empty strings")
+    base = raw.get("base", [])
+    if not isinstance(base, list):
+        errors.append(f"{where}: base must be a list")
+        base = []
+    for g in base:
+        if not in_vocab(g, "spirit"):
             errors.append(f"{where}: base {g!r} not in {sorted(VOCAB['spirit'])}")
+    if "none" in base and len(base) > 1:
+        errors.append(f"{where}: base 'none' can't be combined with a spirit")
 
     ingredients = raw.get("ingredients", [])
+    if not isinstance(ingredients, list) or not all(isinstance(i, dict) for i in ingredients):
+        errors.append(f"{where}: ingredients must be [[ingredients]] tables")
+        return None
     if not ingredients:
         errors.append(f"{where}: needs at least one [[ingredients]]")
     for i, ing in enumerate(ingredients, 1):
@@ -151,13 +173,15 @@ def load_cocktail(path, vocab_ings, errors):
         extra = set(ing) - ING_KEYS
         if extra:
             errors.append(f"{iw}: unknown keys {sorted(extra)}")
-        if ing.get("id") not in vocab_ings:
+        if not isinstance(ing.get("id"), str) or ing["id"] not in vocab_ings:
             errors.append(f"{iw}: unknown ingredient id {ing.get('id')!r} (add it to ingredients.toml)")
-        if ing.get("unit") not in VOCAB["unit"]:
+        if not in_vocab(ing.get("unit"), "unit"):
             errors.append(f"{iw}: unit {ing.get('unit')!r} not in {sorted(VOCAB['unit'])}")
         amount = ing.get("amount")
         if isinstance(amount, bool) or not isinstance(amount, (int, float)) or not math.isfinite(amount) or amount <= 0:
             errors.append(f"{iw}: amount must be a finite positive number")
+        if "note" in ing and (not isinstance(ing["note"], str) or not ing["note"].strip()):
+            errors.append(f"{iw}: note must be a non-empty string")
     if len(errors) > n_before:
         return None
 

@@ -252,6 +252,8 @@ async function main() {
   });
   for (const a of document.querySelectorAll(".views a")) {
     a.addEventListener("click", (e) => {
+      // Let the browser handle new-tab and new-window clicks.
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       e.preventDefault();
       history.pushState(null, "", a.getAttribute("href"));
       showView();
