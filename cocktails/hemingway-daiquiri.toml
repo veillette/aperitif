@@ -1,0 +1,28 @@
+name = "Hemingway Daiquiri"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "lime wheel"
+tags = ["IBA", "Cuban"]
+notes = "No added sugar; it should be tart."
+
+[[ingredients]]
+id = "white-rum"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "grapefruit-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "maraschino"
+amount = 7.5
+unit = "ml"

@@ -1,0 +1,53 @@
+name = "Zombie"
+family = "tiki"
+method = "blend"
+glass = "collins"
+ice = "crushed"
+garnish = "mint sprig"
+tags = ["IBA", "Don the Beachcomber"]
+notes = "Flash blend for about five seconds with 180 ml crushed ice. Limit two per guest."
+
+[[ingredients]]
+id = "jamaican-rum"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "aged-rum"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "demerara-rum-151"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "dons-mix"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "falernum"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "grenadine"
+amount = 1
+unit = "tsp"
+
+[[ingredients]]
+id = "absinthe"
+amount = 6
+unit = "drop"
+
+[[ingredients]]
+id = "angostura"
+amount = 1
+unit = "dash"

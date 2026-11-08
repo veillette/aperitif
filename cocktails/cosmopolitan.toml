@@ -1,0 +1,27 @@
+name = "Cosmopolitan"
+family = "sour"
+method = "shake"
+glass = "martini"
+ice = "none"
+garnish = "flamed orange peel"
+tags = ["IBA", "modern classic"]
+
+[[ingredients]]
+id = "citron-vodka"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "cranberry-juice"
+amount = 30
+unit = "ml"

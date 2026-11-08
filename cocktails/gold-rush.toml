@@ -1,0 +1,22 @@
+name = "Gold Rush"
+family = "sour"
+method = "shake"
+glass = "rocks"
+ice = "large-cube"
+garnish = "lemon peel"
+tags = ["modern classic"]
+
+[[ingredients]]
+id = "bourbon"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "honey-syrup"
+amount = 22.5
+unit = "ml"

@@ -1,0 +1,32 @@
+name = "Corpse Reviver #2"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "orange peel"
+tags = ["IBA", "equal parts", "Savoy"]
+
+[[ingredients]]
+id = "absinthe"
+amount = 1
+unit = "rinse"
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lillet-blanc"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"

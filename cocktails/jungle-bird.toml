@@ -1,0 +1,32 @@
+name = "Jungle Bird"
+family = "tiki"
+method = "shake"
+glass = "rocks"
+ice = "cubes"
+garnish = "pineapple wedge"
+tags = ["IBA", "Kuala Lumpur"]
+
+[[ingredients]]
+id = "black-rum"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "campari"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "pineapple-juice"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "demerara-syrup"
+amount = 15
+unit = "ml"

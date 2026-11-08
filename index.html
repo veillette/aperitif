@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Aperitif</title>
+  <meta name="description" content="Classic cocktail specs for people who already know how to make them. Filter by spirit, citrus, ingredient, method and glass.">
+  <meta name="theme-color" content="#f7f3ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14110e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-row">
+      <a class="brand" href="./">Aperitif</a>
+      <nav class="views" aria-label="Views">
+        <a href="./" data-view="recipes">Recipes</a>
+        <a href="./?view=bar" data-view="bar">My bar</a>
+      </nav>
+    </div>
+    <div class="topbar-row search-row" data-for="recipes">
+      <label class="visually-hidden" for="q">Search</label>
+      <input id="q" type="search" placeholder="Search drinks, ingredients, garnish…" autocomplete="off" enterkeyhint="search">
+    </div>
+  </header>
+
+  <main id="recipes" class="layout" data-for="recipes">
+    <aside id="filters" class="filters" aria-label="Filters" tabindex="-1">
+      <div class="filters-head">
+        <h2>Filters</h2>
+        <button type="button" class="link-btn" id="clear-all">Clear all</button>
+        <button type="button" class="icon-btn" id="close-filters" aria-label="Close filters">✕</button>
+      </div>
+      <div id="facets" class="filters-body"></div>
+      <div class="filters-foot">
+        <button type="button" class="primary-btn" id="show-results">Show drinks</button>
+      </div>
+    </aside>
+
+    <section class="results" aria-labelledby="count">
+      <div class="toolbar">
+        <button type="button" class="filter-btn" id="open-filters" aria-controls="filters" aria-expanded="false">
+          Filters <span class="badge" id="filter-badge" hidden></span>
+        </button>
+        <p id="count" class="count" aria-live="polite"></p>
+        <label class="sort">
+          <span class="visually-hidden">Sort by</span>
+          <select id="sort"></select>
+        </label>
+      </div>
+      <div id="active" class="active-chips"></div>
+      <ol id="list" class="cards"></ol>
+    </section>
+  </main>
+
+  <main id="bar" class="bar-layout" data-for="bar" hidden>
+    <details class="bottles" id="bottles" open>
+      <summary><h2>Your bottles <span id="bottle-count" class="muted"></span></h2></summary>
+      <p class="muted small">Tick what you have. Citrus, juices, syrups, eggs, cream and mixers are assumed on hand.</p>
+      <div class="bottle-actions">
+        <input id="bottle-q" type="search" placeholder="Find a bottle…" autocomplete="off" aria-label="Find a bottle">
+        <button type="button" class="link-btn" id="bottles-clear">Clear</button>
+      </div>
+      <div id="bottle-list"></div>
+    </details>
+    <section class="bar-results">
+      <h2>Ready to make <span id="ready-count" class="muted"></span></h2>
+      <ol id="ready" class="cards"></ol>
+      <h2>One bottle away <span id="away-count" class="muted"></span></h2>
+      <ol id="away" class="cards"></ol>
+    </section>
+  </main>
+
+  <div id="backdrop" class="backdrop" hidden></div>
+  <noscript><p class="empty">This site needs JavaScript to list and filter recipes.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,22 @@
+name = "Hanky Panky"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "orange peel"
+tags = ["IBA", "Savoy"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "fernet-branca"
+amount = 7.5
+unit = "ml"

@@ -1,0 +1,27 @@
+name = "Last Word"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "brandied cherry, optional"
+tags = ["IBA", "equal parts", "prohibition era"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "green-chartreuse"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "maraschino"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"

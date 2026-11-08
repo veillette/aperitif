@@ -1,0 +1,37 @@
+name = "Mai Tai"
+family = "tiki"
+method = "shake"
+glass = "rocks"
+ice = "crushed"
+garnish = "mint sprig and spent lime shell"
+tags = ["IBA", "Trader Vic"]
+
+[[ingredients]]
+id = "jamaican-rum"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "rhum-agricole"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "orange-curacao"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "orgeat"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "rich-simple-syrup"
+amount = 7.5
+unit = "ml"

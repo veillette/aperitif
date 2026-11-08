@@ -1,0 +1,22 @@
+name = "Caipirinha"
+family = "julep-smash"
+method = "build"
+glass = "rocks"
+ice = "crushed"
+tags = ["IBA", "Brazilian"]
+notes = "Muddle the lime and sugar in the glass, then add cachaça and ice."
+
+[[ingredients]]
+id = "lime"
+amount = 0.5
+unit = "piece"
+
+[[ingredients]]
+id = "sugar"
+amount = 2
+unit = "tsp"
+
+[[ingredients]]
+id = "cachaca"
+amount = 60
+unit = "ml"

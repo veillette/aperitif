@@ -1,0 +1,27 @@
+name = "Aviation"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "brandied cherry"
+tags = ["IBA", "pre-prohibition"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "maraschino"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "creme-de-violette"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"

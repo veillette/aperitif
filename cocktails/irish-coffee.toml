@@ -1,0 +1,28 @@
+name = "Irish Coffee"
+family = "hot"
+method = "build"
+glass = "irish-coffee"
+ice = "none"
+tags = ["IBA", "Irish"]
+notes = "Warm the glass first. Cream poured over a spoon, not stirred in."
+
+[[ingredients]]
+id = "irish-whiskey"
+amount = 40
+unit = "ml"
+
+[[ingredients]]
+id = "demerara-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "coffee"
+amount = 120
+unit = "ml"
+
+[[ingredients]]
+id = "whipped-cream"
+amount = 30
+unit = "ml"
+note = "floated on top"

@@ -1,0 +1,37 @@
+name = "Vieux Carré"
+family = "spirit-forward"
+method = "stir"
+glass = "rocks"
+ice = "large-cube"
+garnish = "lemon peel or cherry"
+tags = ["IBA", "New Orleans"]
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "cognac"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "benedictine"
+amount = 1
+unit = "barspoon"
+
+[[ingredients]]
+id = "peychauds"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"

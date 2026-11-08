@@ -1,0 +1,22 @@
+name = "Rob Roy"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "brandied cherry or lemon peel"
+tags = ["IBA", "pre-prohibition"]
+
+[[ingredients]]
+id = "blended-scotch"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"

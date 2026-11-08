@@ -1,0 +1,27 @@
+name = "Paloma"
+family = "highball"
+method = "build"
+glass = "highball"
+ice = "cubes"
+garnish = "lime wedge, optional salt rim"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "blanco-tequila"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "salt"
+amount = 1
+unit = "pinch"
+
+[[ingredients]]
+id = "grapefruit-soda"
+amount = 1
+unit = "top"

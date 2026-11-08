@@ -1,0 +1,62 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          check-latest: true
+          package-manager-cache: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version-file: .python-version
+          check-latest: true
+
+      - name: Validate recipes and check data/cocktails.json is up to date
+        run: python3 tools/build.py --check
+
+      - name: Test filters and unit formatting
+        run: node --test tools/tests/*.test.js
+
+      - name: Assemble the site (without sources and tools)
+        run: |
+          rsync -a ./ _site/ \
+            --exclude .git --exclude .github --exclude _site --exclude __pycache__ \
+            --exclude /tools --exclude /cocktails --exclude /ingredients.toml \
+            --exclude /package.json --exclude /.nvmrc --exclude /.python-version --exclude '/*.md'
+
+      - name: Stamp the service worker with the commit
+        run: |
+          sed -i "s/^const VERSION = .*/const VERSION = \"${GITHUB_SHA::12}\";/" _site/sw.js
+          grep -q "^const VERSION = \"${GITHUB_SHA::12}\";" _site/sw.js
+
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v5

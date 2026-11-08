@@ -1,0 +1,32 @@
+name = "Clover Club"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "raspberries"
+tags = ["IBA", "pre-prohibition"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "raspberry-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "egg-white"
+amount = 1
+unit = "piece"

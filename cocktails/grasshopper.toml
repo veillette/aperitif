@@ -1,0 +1,22 @@
+name = "Grasshopper"
+family = "dessert"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "mint leaf"
+tags = ["IBA", "New Orleans", "low-ABV"]
+
+[[ingredients]]
+id = "creme-de-menthe"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "creme-de-cacao-white"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "cream"
+amount = 30
+unit = "ml"

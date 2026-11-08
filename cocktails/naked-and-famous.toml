@@ -1,0 +1,26 @@
+name = "Naked and Famous"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["equal parts", "modern classic"]
+
+[[ingredients]]
+id = "mezcal"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "yellow-chartreuse"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "aperol"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"

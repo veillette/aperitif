@@ -1,0 +1,22 @@
+name = "Dry Martini"
+family = "spirit-forward"
+method = "stir"
+glass = "martini"
+ice = "none"
+garnish = "lemon twist or olive"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 1
+unit = "dash"

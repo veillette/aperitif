@@ -1,0 +1,22 @@
+name = "Sidecar"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "orange peel, optional sugar rim"
+tags = ["IBA", "prohibition era"]
+
+[[ingredients]]
+id = "cognac"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"

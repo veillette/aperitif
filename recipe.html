@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Aperitif</title>
+  <meta name="description" content="A classic cocktail spec.">
+  <meta name="theme-color" content="#f7f3ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14110e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/recipe.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-row">
+      <a class="back" id="back" href="./">← All drinks</a>
+      <a class="brand" href="./">Aperitif</a>
+      <div class="segmented units" role="group" aria-label="Units">
+        <button type="button" class="seg" data-unit="ml" aria-pressed="true">ml</button>
+        <button type="button" class="seg" data-unit="oz" aria-pressed="false">oz</button>
+      </div>
+    </div>
+  </header>
+  <main id="recipe" class="recipe-page"></main>
+</body>
+</html>

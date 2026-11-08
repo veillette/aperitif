@@ -1,0 +1,27 @@
+name = "Mary Pickford"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "brandied cherry"
+tags = ["IBA", "Cuban", "prohibition era"]
+
+[[ingredients]]
+id = "white-rum"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "pineapple-juice"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "maraschino"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "grenadine"
+amount = 1
+unit = "barspoon"

@@ -1,0 +1,28 @@
+name = "Bramble"
+family = "sour"
+method = "shake"
+glass = "rocks"
+ice = "crushed"
+garnish = "blackberry and lemon half wheel"
+tags = ["IBA", "modern classic"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "creme-de-mure"
+amount = 15
+unit = "ml"
+note = "drizzled over the crushed ice"

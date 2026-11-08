@@ -1,0 +1,33 @@
+name = "Sazerac"
+family = "spirit-forward"
+method = "stir"
+glass = "rocks"
+ice = "none"
+garnish = "lemon peel, expressed and discarded"
+tags = ["IBA", "New Orleans", "pre-prohibition"]
+notes = "Served neat in a chilled glass. Half rye, half cognac is a good variation."
+
+[[ingredients]]
+id = "absinthe"
+amount = 1
+unit = "rinse"
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "demerara-syrup"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "peychauds"
+amount = 3
+unit = "dash"
+
+[[ingredients]]
+id = "angostura"
+amount = 1
+unit = "dash"

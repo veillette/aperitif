@@ -1,0 +1,22 @@
+name = "Brandy Alexander"
+family = "dessert"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "grated nutmeg"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "cognac"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "creme-de-cacao-dark"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "cream"
+amount = 30
+unit = "ml"

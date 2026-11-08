@@ -1,0 +1,27 @@
+name = "White Lady"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["IBA", "Savoy"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "egg-white"
+amount = 1
+unit = "piece"
+note = "optional"

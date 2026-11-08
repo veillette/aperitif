@@ -1,0 +1,22 @@
+name = "Americano"
+family = "highball"
+method = "build"
+glass = "highball"
+ice = "cubes"
+garnish = "orange half wheel"
+tags = ["IBA", "low-ABV"]
+
+[[ingredients]]
+id = "campari"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "soda-water"
+amount = 1
+unit = "top"

@@ -1,0 +1,27 @@
+name = "Blood and Sand"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "orange peel"
+tags = ["IBA", "Savoy"]
+
+[[ingredients]]
+id = "blended-scotch"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "cherry-heering"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "orange-juice"
+amount = 22.5
+unit = "ml"

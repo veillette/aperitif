@@ -1,0 +1,28 @@
+name = "El Presidente"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "orange peel"
+tags = ["Cuban", "prohibition era"]
+notes = "Use a blanc (bianco) vermouth, not a French dry."
+
+[[ingredients]]
+id = "white-rum"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "blanc-vermouth"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "orange-curacao"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "grenadine"
+amount = 1
+unit = "barspoon"

@@ -1,0 +1,383 @@
+# Controlled vocabulary for every ingredient a recipe may use.
+#
+# Each table key is the ingredient id used in cocktails/*.toml.
+#   name      display name (lowercase unless a proper noun)
+#   category  spirit | liqueur | fortified-wine | wine | bitters | citrus |
+#             juice | sweetener | dairy-egg | mixer | other
+#   spirit    base-spirit group, only on spirits that can be a base:
+#             gin | whiskey | rum | agave | brandy | vodka
+#   citrus    lemon | lime | grapefruit | orange, on anything that brings that
+#             citrus to the drink (juices, but also grapefruit soda, Don's Mix)
+#
+# Keep ids lowercase-kebab. Group by category, alphabetical inside a group.
+
+# ── Spirits ────────────────────────────────────────────────────────────────
+[absinthe]
+name = "absinthe"
+category = "spirit"
+
+[aged-rum]
+name = "aged rum"
+category = "spirit"
+spirit = "rum"
+
+[applejack]
+name = "applejack"
+category = "spirit"
+spirit = "brandy"
+
+[black-rum]
+name = "black rum"
+category = "spirit"
+spirit = "rum"
+
+[blanco-tequila]
+name = "blanco tequila"
+category = "spirit"
+spirit = "agave"
+
+[blended-scotch]
+name = "blended Scotch"
+category = "spirit"
+spirit = "whiskey"
+
+[bourbon]
+name = "bourbon"
+category = "spirit"
+spirit = "whiskey"
+
+[cachaca]
+name = "cachaça"
+category = "spirit"
+spirit = "rum"
+
+[citron-vodka]
+name = "citron vodka"
+category = "spirit"
+spirit = "vodka"
+
+[cognac]
+name = "cognac"
+category = "spirit"
+spirit = "brandy"
+
+[demerara-rum-151]
+name = "overproof demerara rum"
+category = "spirit"
+spirit = "rum"
+
+[irish-whiskey]
+name = "Irish whiskey"
+category = "spirit"
+spirit = "whiskey"
+
+[islay-scotch]
+name = "Islay Scotch"
+category = "spirit"
+spirit = "whiskey"
+
+[jamaican-rum]
+name = "aged Jamaican rum"
+category = "spirit"
+spirit = "rum"
+
+[london-dry-gin]
+name = "London dry gin"
+category = "spirit"
+spirit = "gin"
+
+[mezcal]
+name = "mezcal"
+category = "spirit"
+spirit = "agave"
+
+[old-tom-gin]
+name = "Old Tom gin"
+category = "spirit"
+spirit = "gin"
+
+[pisco]
+name = "pisco"
+category = "spirit"
+spirit = "brandy"
+
+[rhum-agricole]
+name = "aged rhum agricole"
+category = "spirit"
+spirit = "rum"
+
+[rye-whiskey]
+name = "rye whiskey"
+category = "spirit"
+spirit = "whiskey"
+
+[vodka]
+name = "vodka"
+category = "spirit"
+spirit = "vodka"
+
+[white-rum]
+name = "white rum"
+category = "spirit"
+spirit = "rum"
+
+# ── Liqueurs, amari, aperitivi ─────────────────────────────────────────────
+[amaro-nonino]
+name = "Amaro Nonino"
+category = "liqueur"
+
+[aperol]
+name = "Aperol"
+category = "liqueur"
+
+[benedictine]
+name = "Bénédictine"
+category = "liqueur"
+
+[campari]
+name = "Campari"
+category = "liqueur"
+
+[cherry-heering]
+name = "cherry Heering"
+category = "liqueur"
+
+[coffee-liqueur]
+name = "coffee liqueur"
+category = "liqueur"
+
+[cointreau]
+name = "Cointreau"
+category = "liqueur"
+
+[creme-de-cacao-dark]
+name = "dark crème de cacao"
+category = "liqueur"
+
+[creme-de-cacao-white]
+name = "white crème de cacao"
+category = "liqueur"
+
+[creme-de-menthe]
+name = "green crème de menthe"
+category = "liqueur"
+
+[creme-de-mure]
+name = "crème de mûre"
+category = "liqueur"
+
+[creme-de-violette]
+name = "crème de violette"
+category = "liqueur"
+
+[falernum]
+name = "falernum"
+category = "liqueur"
+
+[fernet-branca]
+name = "Fernet-Branca"
+category = "liqueur"
+
+[green-chartreuse]
+name = "green Chartreuse"
+category = "liqueur"
+
+[maraschino]
+name = "maraschino liqueur"
+category = "liqueur"
+
+[orange-curacao]
+name = "dry orange curaçao"
+category = "liqueur"
+
+[yellow-chartreuse]
+name = "yellow Chartreuse"
+category = "liqueur"
+
+# ── Fortified and aromatised wines ─────────────────────────────────────────
+[blanc-vermouth]
+name = "blanc vermouth"
+category = "fortified-wine"
+
+[dry-vermouth]
+name = "dry vermouth"
+category = "fortified-wine"
+
+[lillet-blanc]
+name = "Lillet blanc"
+category = "fortified-wine"
+
+[sweet-vermouth]
+name = "sweet vermouth"
+category = "fortified-wine"
+
+# ── Wines ──────────────────────────────────────────────────────────────────
+[champagne]
+name = "Champagne"
+category = "wine"
+
+[prosecco]
+name = "prosecco"
+category = "wine"
+
+# ── Bitters ────────────────────────────────────────────────────────────────
+[angostura]
+name = "Angostura bitters"
+category = "bitters"
+
+[orange-bitters]
+name = "orange bitters"
+category = "bitters"
+
+[peychauds]
+name = "Peychaud's bitters"
+category = "bitters"
+
+# ── Citrus ─────────────────────────────────────────────────────────────────
+[grapefruit-juice]
+name = "grapefruit juice"
+category = "citrus"
+citrus = "grapefruit"
+
+[lemon-juice]
+name = "lemon juice"
+category = "citrus"
+citrus = "lemon"
+
+[lime]
+name = "lime, cut in wedges"
+category = "citrus"
+citrus = "lime"
+
+[lime-juice]
+name = "lime juice"
+category = "citrus"
+citrus = "lime"
+
+[orange-juice]
+name = "orange juice"
+category = "citrus"
+citrus = "orange"
+
+# ── Other juices and coffee ────────────────────────────────────────────────
+[coffee]
+name = "hot coffee"
+category = "juice"
+
+[cranberry-juice]
+name = "cranberry juice"
+category = "juice"
+
+[espresso]
+name = "espresso"
+category = "juice"
+
+[pineapple-juice]
+name = "pineapple juice"
+category = "juice"
+
+[tomato-juice]
+name = "tomato juice"
+category = "juice"
+
+# ── Sweeteners ─────────────────────────────────────────────────────────────
+[agave-syrup]
+name = "agave syrup"
+category = "sweetener"
+
+[demerara-syrup]
+name = "demerara syrup (2:1)"
+category = "sweetener"
+
+[dons-mix]
+name = "Don's Mix (2 grapefruit : 1 cinnamon syrup)"
+category = "sweetener"
+citrus = "grapefruit"
+
+[grenadine]
+name = "grenadine"
+category = "sweetener"
+
+[honey-ginger-syrup]
+name = "honey-ginger syrup"
+category = "sweetener"
+
+[honey-syrup]
+name = "honey syrup (3:1)"
+category = "sweetener"
+
+[orgeat]
+name = "orgeat"
+category = "sweetener"
+
+[raspberry-syrup]
+name = "raspberry syrup"
+category = "sweetener"
+
+[rich-simple-syrup]
+name = "rich simple syrup (2:1)"
+category = "sweetener"
+
+[simple-syrup]
+name = "simple syrup (1:1)"
+category = "sweetener"
+
+[sugar]
+name = "white sugar"
+category = "sweetener"
+
+# ── Dairy and egg ──────────────────────────────────────────────────────────
+[cream]
+name = "heavy cream"
+category = "dairy-egg"
+
+[egg-white]
+name = "egg white"
+category = "dairy-egg"
+
+[whipped-cream]
+name = "lightly whipped cream"
+category = "dairy-egg"
+
+# ── Mixers ─────────────────────────────────────────────────────────────────
+[ginger-beer]
+name = "ginger beer"
+category = "mixer"
+
+[grapefruit-soda]
+name = "grapefruit soda"
+category = "mixer"
+citrus = "grapefruit"
+
+[soda-water]
+name = "soda water"
+category = "mixer"
+
+# ── Other ──────────────────────────────────────────────────────────────────
+[black-pepper]
+name = "black pepper"
+category = "other"
+
+[celery-salt]
+name = "celery salt"
+category = "other"
+
+[hot-sauce]
+name = "hot sauce"
+category = "other"
+
+[mint]
+name = "mint"
+category = "other"
+
+[orange-flower-water]
+name = "orange flower water"
+category = "other"
+
+[salt]
+name = "salt"
+category = "other"
+
+[worcestershire]
+name = "Worcestershire sauce"
+category = "other"

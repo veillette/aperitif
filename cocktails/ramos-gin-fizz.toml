@@ -1,0 +1,47 @@
+name = "Ramos Gin Fizz"
+family = "fizz-collins"
+method = "shake"
+glass = "collins"
+ice = "none"
+tags = ["IBA", "New Orleans", "pre-prohibition"]
+notes = "Long dry shake, then a long hard shake on ice; top slowly so the head rises above the rim."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "cream"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "egg-white"
+amount = 1
+unit = "piece"
+
+[[ingredients]]
+id = "orange-flower-water"
+amount = 3
+unit = "drop"
+
+[[ingredients]]
+id = "soda-water"
+amount = 1
+unit = "top"

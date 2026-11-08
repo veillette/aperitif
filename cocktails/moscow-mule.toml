@@ -1,0 +1,22 @@
+name = "Moscow Mule"
+family = "highball"
+method = "build"
+glass = "copper-mug"
+ice = "cubes"
+garnish = "lime wedge"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "vodka"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "ginger-beer"
+amount = 120
+unit = "ml"

@@ -1,0 +1,26 @@
+name = "Paper Plane"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["IBA", "equal parts", "modern classic"]
+
+[[ingredients]]
+id = "bourbon"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "aperol"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "amaro-nonino"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"

@@ -1,0 +1,42 @@
+name = "Bloody Mary"
+family = "savory"
+method = "roll"
+glass = "highball"
+ice = "cubes"
+garnish = "celery stalk and lemon wedge"
+tags = ["IBA", "brunch"]
+
+[[ingredients]]
+id = "vodka"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "tomato-juice"
+amount = 120
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "worcestershire"
+amount = 4
+unit = "dash"
+
+[[ingredients]]
+id = "hot-sauce"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "celery-salt"
+amount = 1
+unit = "pinch"
+
+[[ingredients]]
+id = "black-pepper"
+amount = 1
+unit = "pinch"

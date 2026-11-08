@@ -1,0 +1,29 @@
+name = "French 75"
+family = "sparkling"
+method = "shake"
+glass = "flute"
+ice = "none"
+garnish = "lemon twist"
+tags = ["IBA", "prohibition era"]
+notes = "Cognac instead of gin is the other classic."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "champagne"
+amount = 60
+unit = "ml"
+note = "to top"

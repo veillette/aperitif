@@ -1,0 +1,28 @@
+name = "Espresso Martini"
+family = "dessert"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "three coffee beans"
+tags = ["IBA", "modern classic"]
+
+[[ingredients]]
+id = "vodka"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "coffee-liqueur"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "espresso"
+amount = 30
+unit = "ml"
+note = "freshly pulled"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 7.5
+unit = "ml"

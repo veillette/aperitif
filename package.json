@@ -1,0 +1,14 @@
+{
+  "name": "aperitif",
+  "private": true,
+  "type": "module",
+  "description": "Classic cocktail recipes, static site for GitHub Pages.",
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "build": "python3 tools/build.py",
+    "check": "python3 tools/build.py --check && node --test tools/tests/*.test.js",
+    "serve": "python3 -m http.server 8000"
+  }
+}

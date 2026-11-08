@@ -1,0 +1,22 @@
+name = "Daiquiri"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "lime wheel"
+tags = ["IBA", "Cuban"]
+
+[[ingredients]]
+id = "white-rum"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"

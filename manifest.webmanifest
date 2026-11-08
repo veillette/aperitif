@@ -1,0 +1,11 @@
+{
+  "name": "Aperitif",
+  "short_name": "Aperitif",
+  "description": "Classic cocktail specs, filterable by spirit, citrus and ingredient.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f3ec",
+  "theme_color": "#9c3d1c",
+  "icons": [{ "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

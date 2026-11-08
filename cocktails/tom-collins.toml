@@ -1,0 +1,28 @@
+name = "Tom Collins"
+family = "fizz-collins"
+method = "shake"
+glass = "collins"
+ice = "cubes"
+garnish = "lemon wheel and cherry"
+tags = ["IBA", "pre-prohibition"]
+notes = "London dry makes a drier drink."
+
+[[ingredients]]
+id = "old-tom-gin"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "soda-water"
+amount = 1
+unit = "top"
