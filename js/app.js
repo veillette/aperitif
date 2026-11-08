@@ -1,5 +1,5 @@
 // Index page: the filterable recipe list and the "My bar" view.
-import { h, store, registerServiceWorker } from "./dom.js";
+import { h, store, registerServiceWorker, setupDrawer } from "./dom.js";
 import {
   FACETS, SORTS, loadData, parseState, stateToParams, emptyState, activeCount,
   filterCocktails, facetOptions, facetCounts, isBottle, whatCanIMake, cardMeta, cardSpec,
@@ -164,16 +164,6 @@ function update() {
   history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
 }
 
-// ── Mobile filter drawer ───────────────────────────────────────────────────
-
-function setDrawer(open) {
-  $("filters").classList.toggle("open", open);
-  $("backdrop").hidden = !open;
-  document.documentElement.classList.toggle("locked", open);
-  $("open-filters").setAttribute("aria-expanded", String(open));
-  (open ? $("close-filters") : $("open-filters")).focus({ preventScroll: true });
-}
-
 // ── My bar ─────────────────────────────────────────────────────────────────
 
 function buildBottles() {
@@ -254,12 +244,11 @@ async function main() {
   $("q").addEventListener("input", (e) => { state.q = e.target.value; update(); });
   $("q").addEventListener("keydown", (e) => { if (e.key === "Enter") e.target.blur(); });
   $("clear-all").addEventListener("click", clearAll);
-  $("open-filters").addEventListener("click", () => setDrawer(true));
-  $("close-filters").addEventListener("click", () => setDrawer(false));
-  $("show-results").addEventListener("click", () => setDrawer(false));
-  $("backdrop").addEventListener("click", () => setDrawer(false));
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && $("filters").classList.contains("open")) setDrawer(false);
+  setupDrawer({
+    panel: $("filters"), trigger: $("open-filters"), backdrop: $("backdrop"),
+    dismiss: [$("close-filters"), $("show-results")],
+    background: document.querySelectorAll(".topbar, .results, #bar"),
+    desktop: matchMedia("(min-width: 1024px)"),
   });
   for (const a of document.querySelectorAll(".views a")) {
     a.addEventListener("click", (e) => {

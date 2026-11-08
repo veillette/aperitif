@@ -31,6 +31,60 @@ export const store = {
   },
 };
 
+// A modal drawer on small screens; the panel becomes a normal sidebar on desktop.
+export function setupDrawer({ panel, trigger, backdrop, dismiss, background, desktop }) {
+  const doc = panel.ownerDocument;
+  let open = false;
+  let previousInert = [];
+
+  function setOpen(next, restoreFocus = true) {
+    if (next === open || (next && desktop.matches)) return;
+    open = next;
+    panel.classList.toggle("open", open);
+    backdrop.hidden = !open;
+    doc.documentElement.classList.toggle("locked", open);
+    trigger.setAttribute("aria-expanded", String(open));
+    if (open) {
+      previousInert = [...background].map((el) => [el, el.inert]);
+      panel.setAttribute("role", "dialog");
+      panel.setAttribute("aria-modal", "true");
+      dismiss[0].focus({ preventScroll: true });
+      for (const [el] of previousInert) el.inert = true;
+    } else {
+      for (const [el, inert] of previousInert) el.inert = inert;
+      previousInert = [];
+      panel.removeAttribute("role");
+      panel.removeAttribute("aria-modal");
+      if (restoreFocus) trigger.focus({ preventScroll: true });
+    }
+  }
+
+  trigger.addEventListener("click", () => setOpen(true));
+  for (const el of [...dismiss, backdrop]) el.addEventListener("click", () => setOpen(false));
+  panel.addEventListener("keydown", (e) => {
+    if (!open) return;
+    if (e.key === "Escape") {
+      e.preventDefault();
+      setOpen(false);
+    } else if (e.key === "Tab") {
+      const controls = [...panel.querySelectorAll('button, [href], input, select, textarea, [tabindex]')]
+        .filter((el) => !el.disabled && el.tabIndex >= 0 && el.getClientRects().length);
+      const first = controls[0] ?? panel;
+      const last = controls.at(-1) ?? panel;
+      if (!controls.length || (e.shiftKey ? doc.activeElement === first : doc.activeElement === last)) {
+        e.preventDefault();
+        (e.shiftKey ? last : first).focus({ preventScroll: true });
+      }
+    }
+  });
+  desktop.addEventListener("change", () => {
+    if (desktop.matches && open) {
+      setOpen(false, false);
+      panel.focus({ preventScroll: true });
+    }
+  });
+}
+
 export function registerServiceWorker() {
   const local = ["localhost", "127.0.0.1", ""].includes(location.hostname);
   if ("serviceWorker" in navigator && !local) {

@@ -7,6 +7,7 @@
 Standard library only (Python 3.11+ for tomllib).
 """
 import json
+import math
 import pathlib
 import re
 import sys
@@ -155,8 +156,8 @@ def load_cocktail(path, vocab_ings, errors):
         if ing.get("unit") not in VOCAB["unit"]:
             errors.append(f"{iw}: unit {ing.get('unit')!r} not in {sorted(VOCAB['unit'])}")
         amount = ing.get("amount")
-        if isinstance(amount, bool) or not isinstance(amount, (int, float)) or amount <= 0:
-            errors.append(f"{iw}: amount must be a positive number")
+        if isinstance(amount, bool) or not isinstance(amount, (int, float)) or not math.isfinite(amount) or amount <= 0:
+            errors.append(f"{iw}: amount must be a finite positive number")
     if len(errors) > n_before:
         return None
 
@@ -199,7 +200,10 @@ def build():
     unused = sorted(set(vocab_ings) - used)
 
     cocktails.sort(key=lambda c: c["name"].casefold())
-    dump = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":"))
+    # Invalid recipes are reported below; never serialize their nonfinite amounts.
+    if errors:
+        return errors, "", len(cocktails), unused
+    dump = lambda o: json.dumps(o, ensure_ascii=False, allow_nan=False, separators=(",", ":"))
     # One cocktail per line keeps git diffs readable.
     text = (
         '{"vocab":' + dump(VOCAB) + ",\n"
