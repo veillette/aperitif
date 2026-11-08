@@ -1,0 +1,23 @@
+# Source: https://iba-world.com/iba-cocktail/sea-breeze/
+name = "Sea Breeze"
+family = "highball"
+method = "build"
+glass = "highball"
+ice = "cubes"
+garnish = "orange zest and cherry"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "vodka"
+amount = 40
+unit = "ml"
+
+[[ingredients]]
+id = "cranberry-juice"
+amount = 120
+unit = "ml"
+
+[[ingredients]]
+id = "grapefruit-juice"
+amount = 30
+unit = "ml"

@@ -1,0 +1,48 @@
+# Source: https://iba-world.com/iba-cocktail/long-island-iced-tea/
+name = "Long Island Iced Tea"
+family = "highball"
+method = "build"
+glass = "highball"
+ice = "cubes"
+garnish = "lemon slice"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "vodka"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "blanco-tequila"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "white-rum"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 25
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "cola"
+amount = 1
+unit = "top"

@@ -1,0 +1,35 @@
+# Source: https://iba-world.com/iba-cocktail/porn-star-martini/
+name = "Porn Star Martini"
+family = "sour"
+method = "shake"
+glass = "martini"
+ice = "none"
+garnish = "half passion fruit and sugar"
+tags = ["IBA"]
+notes = "Serve the Champagne separately alongside the cocktail."
+
+[[ingredients]]
+id = "vanilla-vodka"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "passion-fruit-liqueur"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "passion-fruit-puree"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "vanilla-sugar"
+amount = 2
+unit = "barspoon"
+
+[[ingredients]]
+id = "champagne"
+amount = 50
+unit = "ml"
+note = "serve on the side"

@@ -1,0 +1,17 @@
+# Source: https://iba-world.com/iba-cocktail/black-russian/
+name = "Black Russian"
+family = "spirit-forward"
+method = "build"
+glass = "rocks"
+ice = "cubes"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "vodka"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "coffee-liqueur"
+amount = 20
+unit = "ml"

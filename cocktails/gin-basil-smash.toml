@@ -1,0 +1,27 @@
+# Source: https://iba-world.com/iba-cocktail/gin-basil-smash/
+name = "Gin Basil Smash"
+family = "julep-smash"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "basil"
+amount = 10
+unit = "leaf"

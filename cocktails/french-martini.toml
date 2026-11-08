@@ -1,0 +1,23 @@
+# Source: https://iba-world.com/iba-cocktail/french-martini/
+name = "French Martini"
+family = "sour"
+method = "shake"
+glass = "martini"
+ice = "none"
+garnish = "expressed lemon oil"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "vodka"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "raspberry-liqueur"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "pineapple-juice"
+amount = 15
+unit = "ml"

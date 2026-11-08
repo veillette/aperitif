@@ -1,0 +1,38 @@
+# Source: https://iba-world.com/iba-cocktail/illegal/
+name = "Illegal"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["IBA"]
+notes = "IBA allows a few drops of egg white as an optional addition."
+
+[[ingredients]]
+id = "mezcal"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "overproof-white-jamaican-rum"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "falernum"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "maraschino"
+amount = 1
+unit = "barspoon"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"

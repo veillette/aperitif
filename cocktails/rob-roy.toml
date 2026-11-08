@@ -4,7 +4,7 @@ method = "stir"
 glass = "coupe"
 ice = "none"
 garnish = "brandied cherry or lemon peel"
-tags = ["IBA", "pre-prohibition"]
+tags = ["pre-prohibition"]
 
 [[ingredients]]
 id = "blended-scotch"

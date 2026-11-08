@@ -1,0 +1,34 @@
+# Source: https://iba-world.com/iba-cocktail/suffering-bastard/
+name = "Suffering Bastard"
+family = "highball"
+method = "shake"
+glass = "collins"
+ice = "cubes"
+garnish = "mint sprig and orange slice"
+tags = ["IBA"]
+notes = "Pour unstrained and finish with ginger beer."
+
+[[ingredients]]
+id = "cognac"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "ginger-beer"
+amount = 1
+unit = "top"

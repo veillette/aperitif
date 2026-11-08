@@ -3,7 +3,7 @@ family = "sour"
 method = "shake"
 glass = "coupe"
 ice = "none"
-tags = ["equal parts", "modern classic"]
+tags = ["IBA", "equal parts", "modern classic"]
 
 [[ingredients]]
 id = "mezcal"

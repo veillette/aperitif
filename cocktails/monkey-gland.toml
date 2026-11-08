@@ -1,0 +1,27 @@
+# Source: https://iba-world.com/iba-cocktail/monkey-gland/
+name = "Monkey Gland"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "orange-juice"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "absinthe"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "grenadine"
+amount = 15
+unit = "ml"

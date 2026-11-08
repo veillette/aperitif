@@ -1,0 +1,17 @@
+# Source: https://iba-world.com/iba-cocktail/fernandito/
+name = "Fernandito"
+family = "highball"
+method = "build"
+glass = "rocks"
+ice = "cubes"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "fernet-branca"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "cola"
+amount = 1
+unit = "top"

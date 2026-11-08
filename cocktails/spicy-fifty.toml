@@ -1,0 +1,35 @@
+# Source: https://iba-world.com/iba-cocktail/spicy-fifty/
+name = "Spicy Fifty"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "red chili pepper"
+tags = ["IBA"]
+notes = "Use thin chili slices; double-strain."
+
+[[ingredients]]
+id = "vanilla-vodka"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "elderflower-cordial"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "honey-syrup"
+amount = 10
+unit = "ml"
+
+[[ingredients]]
+id = "red-chili"
+amount = 2
+unit = "piece"
+note = "thin slices"

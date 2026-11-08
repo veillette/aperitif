@@ -1,0 +1,18 @@
+# Source: https://iba-world.com/iba-cocktail/garibaldi/
+name = "Garibaldi"
+family = "highball"
+method = "build"
+glass = "highball"
+ice = "cubes"
+garnish = "orange wedge"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "campari"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "orange-juice"
+amount = 120
+unit = "ml"

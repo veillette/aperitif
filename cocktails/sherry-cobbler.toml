@@ -1,0 +1,36 @@
+# Source: https://iba-world.com/iba-cocktail/sherry-cobbler/
+name = "Sherry Cobbler"
+family = "julep-smash"
+method = "shake"
+glass = "julep-cup"
+ice = "crushed"
+garnish = "berries, orange and lemon quarter wheels"
+tags = ["IBA"]
+notes = "Use half a wheel each of orange and lemon, cut into quarters."
+
+[[ingredients]]
+id = "amontillado-sherry"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "palo-cortado-sherry"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "sugar"
+amount = 1
+unit = "tsp"
+
+[[ingredients]]
+id = "orange"
+amount = 0.5
+unit = "piece"
+note = "half wheel"
+
+[[ingredients]]
+id = "lemon"
+amount = 0.5
+unit = "piece"
+note = "half wheel"

@@ -1,0 +1,28 @@
+# Source: https://iba-world.com/iba-cocktail/tipperary/
+name = "Tipperary"
+family = "spirit-forward"
+method = "stir"
+glass = "martini"
+ice = "none"
+garnish = "orange slice"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "irish-whiskey"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 25
+unit = "ml"
+
+[[ingredients]]
+id = "green-chartreuse"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"

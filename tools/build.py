@@ -43,7 +43,7 @@ VOCAB = {
     "glass": {
         "coupe": "Coupe", "nick-and-nora": "Nick & Nora", "martini": "Martini",
         "rocks": "Rocks", "highball": "Highball", "collins": "Collins",
-        "flute": "Flute", "wine": "Wine glass", "julep-cup": "Julep cup",
+        "hurricane": "Hurricane", "flute": "Flute", "wine": "Wine glass", "julep-cup": "Julep cup",
         "copper-mug": "Copper mug", "tiki-mug": "Tiki mug",
         "irish-coffee": "Irish coffee glass",
     },

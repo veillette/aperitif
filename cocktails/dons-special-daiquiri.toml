@@ -1,0 +1,33 @@
+# Source: https://iba-world.com/iba-cocktail/dons-special-daiquiri/
+name = "Don's Special Daiquiri"
+family = "tiki"
+method = "blend"
+glass = "wine"
+ice = "crushed"
+garnish = "half passion fruit"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "jamaican-rum"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "white-rum"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "passion-fruit-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "honey-syrup"
+amount = 15
+unit = "ml"

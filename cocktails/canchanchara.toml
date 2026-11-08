@@ -1,0 +1,29 @@
+# Source: https://iba-world.com/iba-cocktail/canchanchara/
+name = "Canchanchara"
+family = "sour"
+method = "build"
+glass = "rocks"
+ice = "crushed"
+garnish = "lime wedge"
+tags = ["IBA"]
+notes = "Dissolve the honey in the water and lime juice before adding ice and aguardiente."
+
+[[ingredients]]
+id = "cuban-aguardiente"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "honey"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "water"
+amount = 50
+unit = "ml"

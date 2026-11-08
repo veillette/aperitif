@@ -1,0 +1,28 @@
+# Source: https://iba-world.com/iba-cocktail/chartreuse-swizzle/
+name = "Chartreuse Swizzle"
+family = "tiki"
+method = "swizzle"
+glass = "highball"
+ice = "crushed"
+garnish = "mint and grated nutmeg"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "green-chartreuse"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "pineapple-juice"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "falernum"
+amount = 15
+unit = "ml"

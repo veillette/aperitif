@@ -1,0 +1,39 @@
+# Source: https://iba-world.com/iba-cocktail/old-cuban/
+name = "Old Cuban"
+family = "sparkling"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "mint sprig"
+tags = ["IBA"]
+notes = "Add the Champagne after straining."
+
+[[ingredients]]
+id = "mint"
+amount = 6
+unit = "leaf"
+
+[[ingredients]]
+id = "aged-rum"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "champagne"
+amount = 60
+unit = "ml"

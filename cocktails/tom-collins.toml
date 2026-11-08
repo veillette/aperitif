@@ -4,7 +4,7 @@ method = "shake"
 glass = "collins"
 ice = "cubes"
 garnish = "lemon wheel and cherry"
-tags = ["IBA", "pre-prohibition"]
+tags = ["pre-prohibition"]
 notes = "London dry makes a drier drink."
 
 [[ingredients]]

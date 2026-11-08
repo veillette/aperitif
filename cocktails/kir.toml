@@ -1,0 +1,17 @@
+# Source: https://iba-world.com/iba-cocktail/kir/
+name = "Kir"
+family = "spirit-forward"
+method = "build"
+glass = "wine"
+ice = "none"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "dry-white-wine"
+amount = 90
+unit = "ml"
+
+[[ingredients]]
+id = "creme-de-cassis"
+amount = 10
+unit = "ml"

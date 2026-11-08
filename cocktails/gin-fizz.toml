@@ -1,0 +1,29 @@
+# Source: https://iba-world.com/iba-cocktail/gin-fizz/
+name = "Gin Fizz"
+family = "fizz-collins"
+method = "shake"
+glass = "highball"
+ice = "none"
+garnish = "lemon slice"
+tags = ["IBA"]
+notes = "Serve without ice; add just a splash of soda."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 10
+unit = "ml"
+
+[[ingredients]]
+id = "soda-water"
+amount = 1
+unit = "top"

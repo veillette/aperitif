@@ -1,0 +1,22 @@
+# Source: https://iba-world.com/iba-cocktail/paradise/
+name = "Paradise"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "apricot-brandy"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "orange-juice"
+amount = 15
+unit = "ml"

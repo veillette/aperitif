@@ -1,0 +1,48 @@
+# Source: https://iba-world.com/iba-cocktail/three-dots-and-a-dash/
+name = "Three Dots and a Dash"
+family = "tiki"
+method = "blend"
+glass = "wine"
+ice = "crushed"
+garnish = "three cherries and a rectangular pineapple chunk"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "rhum-agricole"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "aged-rum"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "falernum"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "allspice-dram"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "orange-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "honey-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"

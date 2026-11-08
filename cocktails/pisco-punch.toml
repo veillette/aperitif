@@ -1,0 +1,38 @@
+# Source: https://iba-world.com/iba-cocktail/pisco-punch/
+name = "Pisco Punch"
+family = "sour"
+method = "shake"
+glass = "wine"
+ice = "none"
+tags = ["IBA"]
+notes = "Muddle the cloves in the syrup; add the wine after double-straining."
+
+[[ingredients]]
+id = "pisco"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "pineapple-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "dry-white-wine"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "cloves"
+amount = 3
+unit = "piece"

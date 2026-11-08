@@ -1,0 +1,30 @@
+# Source: https://iba-world.com/iba-cocktail/champagne-cocktail/
+name = "Champagne Cocktail"
+family = "sparkling"
+method = "build"
+glass = "flute"
+ice = "none"
+garnish = "orange zest and maraschino cherry"
+tags = ["IBA"]
+notes = "IBA allows a few drops of Grand Marnier as an optional addition."
+
+[[ingredients]]
+id = "champagne"
+amount = 90
+unit = "ml"
+
+[[ingredients]]
+id = "cognac"
+amount = 10
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "sugar"
+amount = 1
+unit = "piece"
+note = "one cube"

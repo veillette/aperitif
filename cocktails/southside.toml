@@ -4,7 +4,7 @@ method = "shake"
 glass = "coupe"
 ice = "none"
 garnish = "mint leaf"
-tags = ["prohibition era"]
+tags = ["IBA", "prohibition era"]
 notes = "Lemon is also traditional; top with soda in a highball for a Southside Fizz."
 
 [[ingredients]]

@@ -28,6 +28,12 @@ line. Run `nvm install && nvm use` for Node.js, and `pyenv install -s` or
 | `js/app.js`, `js/recipe.js` | The two pages. |
 | `tools/tests/` | `node --test` tests for filters, derivations and formatting. |
 
+## IBA coverage
+
+The collection includes all 102 cocktails on the [official IBA list](https://iba-world.com/cocktails/all-cocktails/) (checked 2026-11-08), plus other classics. Filter by the `IBA` tag to see the current list. Existing URLs are retained for Alexander (Brandy Alexander), Spritz (Aperol Spritz), Hemingway Special (Hemingway Daiquiri), Ramos Fizz (Ramos Gin Fizz), and South Side (Southside).
+
+New entries cite their individual IBA pages in TOML comments. Recipe notes identify ingredient substitutions and service details. Tom Collins remains alongside the official John Collins as an Old Tom gin variant.
+
 ## Adding a cocktail
 
 1. Create `cocktails/<slug>.toml`. The filename is the URL slug, in lowercase-kebab form:

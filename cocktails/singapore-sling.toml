@@ -1,0 +1,49 @@
+# Source: https://iba-world.com/iba-cocktail/singapore-sling/
+name = "Singapore Sling"
+family = "highball"
+method = "shake"
+glass = "hurricane"
+ice = "none"
+garnish = "pineapple and maraschino cherry"
+tags = ["IBA"]
+notes = "Cherry Heering replaces the IBA-specified Sangue Morlacco cherry liqueur."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "cherry-heering"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "benedictine"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "pineapple-juice"
+amount = 120
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "grenadine"
+amount = 10
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 1
+unit = "dash"

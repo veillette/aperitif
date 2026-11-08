@@ -1,0 +1,18 @@
+# Source: https://iba-world.com/iba-cocktail/rusty-nail/
+name = "Rusty Nail"
+family = "spirit-forward"
+method = "build"
+glass = "rocks"
+ice = "cubes"
+garnish = "lemon zest"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "blended-scotch"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "drambuie"
+amount = 25
+unit = "ml"

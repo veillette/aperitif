@@ -1,0 +1,35 @@
+# Source: https://iba-world.com/iba-cocktail/new-york-sour/
+name = "New York Sour"
+family = "sour"
+method = "shake"
+glass = "rocks"
+ice = "cubes"
+garnish = "lemon zest and cherry"
+tags = ["IBA"]
+notes = "Float the red wine; rye or bourbon may be used."
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "egg-white"
+amount = 3
+unit = "drop"
+
+[[ingredients]]
+id = "red-wine"
+amount = 15
+unit = "ml"
+note = "float"

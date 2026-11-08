@@ -1,0 +1,17 @@
+# Source: https://iba-world.com/iba-cocktail/bellini/
+name = "Bellini"
+family = "sparkling"
+method = "stir"
+glass = "flute"
+ice = "none"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "prosecco"
+amount = 100
+unit = "ml"
+
+[[ingredients]]
+id = "white-peach-puree"
+amount = 50
+unit = "ml"

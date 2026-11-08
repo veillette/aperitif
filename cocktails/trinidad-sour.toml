@@ -1,0 +1,27 @@
+# Source: https://iba-world.com/iba-cocktail/trinidad-sour/
+name = "Trinidad Sour"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "angostura"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "orgeat"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 15
+unit = "ml"

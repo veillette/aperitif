@@ -1,0 +1,55 @@
+# Source: https://iba-world.com/iba-cocktail/iba-tiki/
+name = "IBA Tiki"
+family = "tiki"
+method = "shake"
+glass = "tiki-mug"
+ice = "crushed"
+garnish = "citrus and dried pineapple"
+tags = ["IBA"]
+notes = "Muddle a thin slice of ginger before shaking."
+
+[[ingredients]]
+id = "havana-club-profundo"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "havana-club-smoky"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "amaretto"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "frangelico"
+amount = 5
+unit = "ml"
+
+[[ingredients]]
+id = "maraschino"
+amount = 5
+unit = "drop"
+
+[[ingredients]]
+id = "passion-fruit-puree"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "pineapple-juice"
+amount = 90
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "ginger"
+amount = 1
+unit = "piece"
+note = "thin slice"

@@ -1,0 +1,29 @@
+# Source: https://iba-world.com/iba-cocktail/ve-n-to/
+name = "Ve.N.To"
+family = "sour"
+method = "shake"
+glass = "rocks"
+ice = "cubes"
+garnish = "lemon zest and white grapes"
+tags = ["IBA"]
+notes = "The honey mix may use chamomile infusion in place of water; egg white is optional."
+
+[[ingredients]]
+id = "grappa"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "honey-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "chamomile-cordial"
+amount = 15
+unit = "ml"

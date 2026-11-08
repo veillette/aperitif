@@ -1,0 +1,23 @@
+# Source: https://iba-world.com/iba-cocktail/cardinale/
+name = "Cardinale"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "lemon zest"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 40
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "campari"
+amount = 10
+unit = "ml"

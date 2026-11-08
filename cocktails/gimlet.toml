@@ -4,7 +4,7 @@ method = "shake"
 glass = "coupe"
 ice = "none"
 garnish = "lime wheel"
-tags = ["IBA"]
+tags = []
 notes = "Fresh-lime version. For the original, use 22.5 ml lime cordial and stir."
 
 [[ingredients]]

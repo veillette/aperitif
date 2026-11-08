@@ -1,0 +1,22 @@
+# Source: https://iba-world.com/iba-cocktail/angel-face/
+name = "Angel Face"
+family = "spirit-forward"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "apricot-brandy"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "calvados"
+amount = 30
+unit = "ml"

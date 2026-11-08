@@ -1,0 +1,23 @@
+# Source: https://iba-world.com/iba-cocktail/grand-margarita/
+name = "Grand Margarita"
+family = "sour"
+method = "shake"
+glass = "rocks"
+ice = "cubes"
+garnish = "sea-salt rim and lime slice"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "blanco-tequila"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "grand-marnier"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"

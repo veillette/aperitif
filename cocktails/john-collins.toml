@@ -1,0 +1,29 @@
+# Source: https://iba-world.com/iba-cocktail/john-collins/
+name = "John Collins"
+family = "fizz-collins"
+method = "build"
+glass = "collins"
+ice = "cubes"
+garnish = "lemon slice and maraschino cherry"
+tags = ["IBA"]
+notes = "Old Tom gin makes the Tom Collins variant."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "soda-water"
+amount = 60
+unit = "ml"

@@ -1,0 +1,23 @@
+# Source: https://iba-world.com/iba-cocktail/porto-flip/
+name = "Porto Flip"
+family = "dessert"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "grated nutmeg"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "cognac"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "tawny-port"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "egg-yolk"
+amount = 10
+unit = "ml"

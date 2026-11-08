@@ -1,0 +1,18 @@
+# Source: https://iba-world.com/iba-cocktail/stinger/
+name = "Stinger"
+family = "spirit-forward"
+method = "stir"
+glass = "martini"
+ice = "none"
+garnish = "mint leaf"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "cognac"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "creme-de-menthe-white"
+amount = 20
+unit = "ml"

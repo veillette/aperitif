@@ -1,0 +1,17 @@
+# Source: https://iba-world.com/iba-cocktail/french-connection/
+name = "French Connection"
+family = "spirit-forward"
+method = "build"
+glass = "rocks"
+ice = "cubes"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "cognac"
+amount = 35
+unit = "ml"
+
+[[ingredients]]
+id = "amaretto"
+amount = 35
+unit = "ml"

@@ -1,0 +1,24 @@
+# Source: https://iba-world.com/iba-cocktail/planters-punch/
+name = "Planter's Punch"
+family = "tiki"
+method = "build"
+glass = "rocks"
+ice = "cubes"
+garnish = "orange zest"
+tags = ["IBA"]
+notes = "IBA leaves dilution to taste; this version uses ice."
+
+[[ingredients]]
+id = "jamaican-rum"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "sugar-cane-juice"
+amount = 30
+unit = "ml"

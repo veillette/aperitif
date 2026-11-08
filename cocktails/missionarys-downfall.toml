@@ -1,0 +1,39 @@
+# Source: https://iba-world.com/iba-cocktail/missionarys-downfall/
+name = "Missionary's Downfall"
+family = "tiki"
+method = "blend"
+glass = "wine"
+ice = "crushed"
+garnish = "mint sprig and pineapple slice"
+tags = ["IBA"]
+notes = "Blend with half a cup of crushed ice."
+
+[[ingredients]]
+id = "white-rum"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "peach-brandy"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "honey-syrup"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "mint"
+amount = 10
+unit = "leaf"
+
+[[ingredients]]
+id = "pineapple"
+amount = 4
+unit = "piece"

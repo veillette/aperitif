@@ -1,0 +1,28 @@
+# Source: https://iba-world.com/iba-cocktail/casino/
+name = "Casino"
+family = "sour"
+method = "shake"
+glass = "rocks"
+ice = "cubes"
+garnish = "lemon zest and maraschino cherry"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "old-tom-gin"
+amount = 40
+unit = "ml"
+
+[[ingredients]]
+id = "maraschino"
+amount = 10
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 10
+unit = "ml"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 2
+unit = "dash"

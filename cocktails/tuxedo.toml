@@ -1,0 +1,33 @@
+# Source: https://iba-world.com/iba-cocktail/tuxedo/
+name = "Tuxedo"
+family = "spirit-forward"
+method = "stir"
+glass = "martini"
+ice = "none"
+garnish = "cherry and lemon zest"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "old-tom-gin"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "maraschino"
+amount = 0.5
+unit = "barspoon"
+
+[[ingredients]]
+id = "absinthe"
+amount = 0.25
+unit = "barspoon"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 3
+unit = "dash"

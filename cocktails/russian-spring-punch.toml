@@ -1,0 +1,33 @@
+# Source: https://iba-world.com/iba-cocktail/russian-spring-punch/
+name = "Russian Spring Punch"
+family = "sparkling"
+method = "shake"
+glass = "highball"
+ice = "cubes"
+garnish = "blackberries and lemon slice"
+tags = ["IBA"]
+
+[[ingredients]]
+id = "vodka"
+amount = 25
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 25
+unit = "ml"
+
+[[ingredients]]
+id = "creme-de-cassis"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 10
+unit = "ml"
+
+[[ingredients]]
+id = "prosecco"
+amount = 1
+unit = "top"
