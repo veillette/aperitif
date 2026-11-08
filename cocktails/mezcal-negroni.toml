@@ -1,0 +1,22 @@
+name = "Mezcal Negroni"
+family = "spirit-forward"
+method = "stir"
+glass = "rocks"
+ice = "large-cube"
+garnish = "orange peel"
+tags = ["modern classic", "equal parts"]
+
+[[ingredients]]
+id = "mezcal"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "campari"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 30
+unit = "ml"

@@ -1,0 +1,34 @@
+# Source: Jeff Berry, Beachbum Berry’s Sippin’ Safari (2007)
+name = "Saturn"
+family = "tiki"
+method = "blend"
+glass = "rocks"
+ice = "crushed"
+garnish = "lemon peel ring around a cherry"
+tags = ["post-war"]
+notes = "J. “Popo” Galsini’s 1967 gin tiki drink."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 37.5
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "passion-fruit-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "falernum"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "orgeat"
+amount = 7.5
+unit = "ml"

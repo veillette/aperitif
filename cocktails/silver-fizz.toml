@@ -1,0 +1,32 @@
+name = "Silver Fizz"
+family = "fizz-collins"
+method = "shake"
+glass = "highball"
+ice = "none"
+tags = ["pre-prohibition"]
+notes = "The Gin Fizz with egg white; a yolk instead makes a Golden Fizz."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "egg-white"
+amount = 1
+unit = "piece"
+
+[[ingredients]]
+id = "soda-water"
+amount = 1
+unit = "top"

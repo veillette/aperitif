@@ -1,0 +1,18 @@
+name = "Carajillo"
+family = "dessert"
+method = "shake"
+glass = "rocks"
+ice = "cubes"
+tags = ["Mexican"]
+notes = "The Mexican shaken style; in Spain it’s brandy or rum stirred into hot coffee."
+
+[[ingredients]]
+id = "licor-43"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "espresso"
+amount = 45
+unit = "ml"
+note = "freshly pulled"

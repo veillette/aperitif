@@ -1,0 +1,22 @@
+name = "Adonis"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "orange twist"
+tags = ["pre-prohibition", "low-ABV"]
+
+[[ingredients]]
+id = "fino-sherry"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 2
+unit = "dash"

@@ -1,0 +1,22 @@
+# Source: Harry Craddock, The Savoy Cocktail Book (1930)
+name = "Corpse Reviver #1"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+tags = ["Savoy"]
+
+[[ingredients]]
+id = "cognac"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "calvados"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 22.5
+unit = "ml"

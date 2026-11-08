@@ -1,0 +1,28 @@
+name = "Hot Toddy"
+family = "hot"
+method = "build"
+glass = "irish-coffee"
+ice = "none"
+garnish = "lemon wheel studded with cloves"
+tags = ["classic"]
+
+[[ingredients]]
+id = "blended-scotch"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "honey-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "water"
+amount = 120
+unit = "ml"
+note = "hot"

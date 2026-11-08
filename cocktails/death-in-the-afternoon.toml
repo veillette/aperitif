@@ -1,0 +1,18 @@
+# Source: So Red the Nose, or Breath in the Afternoon (1935)
+name = "Death in the Afternoon"
+family = "sparkling"
+method = "build"
+glass = "flute"
+ice = "none"
+tags = ["classic"]
+notes = "Hemingway: add iced Champagne until it attains the proper opalescent milkiness."
+
+[[ingredients]]
+id = "absinthe"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "champagne"
+amount = 120
+unit = "ml"

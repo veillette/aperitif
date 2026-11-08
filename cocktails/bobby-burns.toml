@@ -1,0 +1,23 @@
+# Source: Harry Craddock, The Savoy Cocktail Book (1930)
+name = "Bobby Burns"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "lemon twist"
+tags = ["Savoy"]
+
+[[ingredients]]
+id = "blended-scotch"
+amount = 40
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 40
+unit = "ml"
+
+[[ingredients]]
+id = "benedictine"
+amount = 3
+unit = "dash"

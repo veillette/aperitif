@@ -1,0 +1,34 @@
+# Source: Vincenzo Errico, Milk & Honey, New York (2003)
+name = "Enzoni"
+family = "sour"
+method = "shake"
+glass = "rocks"
+ice = "cubes"
+garnish = "grapes"
+tags = ["modern classic"]
+
+[[ingredients]]
+id = "grapes"
+amount = 5
+unit = "piece"
+note = "muddled"
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "campari"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"

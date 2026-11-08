@@ -1,0 +1,29 @@
+# Source: Audrey Saunders, Pegu Club, New York (c. 2005)
+name = "Earl Grey MarTEAni"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "half sugar rim and lemon twist"
+tags = ["modern classic"]
+notes = "Infuse the gin with loose Earl Grey for about two hours."
+
+[[ingredients]]
+id = "earl-grey-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "egg-white"
+amount = 1
+unit = "piece"

@@ -86,6 +86,11 @@ name = "overproof demerara rum"
 category = "spirit"
 spirit = "rum"
 
+[earl-grey-gin]
+name = "Earl Grey-infused gin"
+category = "spirit"
+spirit = "gin"
+
 [grappa]
 name = "white grappa"
 category = "spirit"
@@ -203,6 +208,10 @@ category = "liqueur"
 name = "Amaro Nonino"
 category = "liqueur"
 
+[amer-picon]
+name = "Amer Picon"
+category = "liqueur"
+
 [aperol]
 name = "Aperol"
 category = "liqueur"
@@ -217,6 +226,10 @@ category = "liqueur"
 
 [benedictine]
 name = "Bénédictine"
+category = "liqueur"
+
+[blue-curacao]
+name = "blue curaçao"
 category = "liqueur"
 
 [campari]
@@ -259,6 +272,10 @@ category = "liqueur"
 name = "crème de mûre"
 category = "liqueur"
 
+[creme-de-noyaux]
+name = "crème de noyaux"
+category = "liqueur"
+
 [creme-de-violette]
 name = "crème de violette"
 category = "liqueur"
@@ -296,6 +313,10 @@ citrus = "orange"
 name = "green Chartreuse"
 category = "liqueur"
 
+[licor-43]
+name = "Licor 43"
+category = "liqueur"
+
 [maraschino]
 name = "maraschino liqueur"
 category = "liqueur"
@@ -328,6 +349,10 @@ category = "liqueur"
 name = "St-Germain foam"
 category = "liqueur"
 
+[suze]
+name = "Suze"
+category = "liqueur"
+
 [yellow-chartreuse]
 name = "yellow Chartreuse"
 category = "liqueur"
@@ -341,12 +366,20 @@ category = "fortified-wine"
 name = "blanc vermouth"
 category = "fortified-wine"
 
+[cream-sherry]
+name = "cream sherry"
+category = "fortified-wine"
+
 [dry-vermouth]
 name = "dry vermouth"
 category = "fortified-wine"
 
 [dubonnet-rouge]
 name = "Dubonnet rouge"
+category = "fortified-wine"
+
+[fino-sherry]
+name = "fino sherry"
 category = "fortified-wine"
 
 [lillet-blanc]
@@ -401,6 +434,10 @@ category = "beer"
 
 [angostura]
 name = "Angostura bitters"
+category = "bitters"
+
+[mole-bitters]
+name = "mole bitters"
 category = "bitters"
 
 [orange-bitters]
@@ -490,8 +527,16 @@ category = "juice"
 name = "agave syrup"
 category = "sweetener"
 
+[cane-syrup]
+name = "cane syrup"
+category = "sweetener"
+
 [chamomile-cordial]
 name = "chamomile cordial"
+category = "sweetener"
+
+[cinnamon-syrup]
+name = "cinnamon syrup"
 category = "sweetener"
 
 [demerara-syrup]
@@ -573,6 +618,10 @@ name = "vanilla sugar"
 category = "sweetener"
 
 # ── Dairy and egg ──────────────────────────────────────────────────────────
+
+[condensed-milk]
+name = "sweetened condensed milk"
+category = "dairy-egg"
 
 [cream]
 name = "heavy cream"
@@ -671,12 +720,20 @@ category = "other"
 name = "fresh ginger"
 category = "other"
 
+[grapes]
+name = "white grapes"
+category = "other"
+
 [hot-sauce]
 name = "hot sauce"
 category = "other"
 
 [mint]
 name = "mint"
+category = "other"
+
+[olive-brine]
+name = "olive brine"
 category = "other"
 
 [orange-flower-water]

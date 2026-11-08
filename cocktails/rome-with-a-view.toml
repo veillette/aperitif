@@ -1,0 +1,33 @@
+# Source: Michael McIlroy, Milk & Honey, New York
+name = "Rome with a View"
+family = "fizz-collins"
+method = "shake"
+glass = "collins"
+ice = "cubes"
+garnish = "orange slice"
+tags = ["modern classic", "low-ABV"]
+
+[[ingredients]]
+id = "campari"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "soda-water"
+amount = 1
+unit = "top"

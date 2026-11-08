@@ -1,0 +1,22 @@
+name = "Golden Cadillac"
+family = "dessert"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["post-war", "equal parts"]
+notes = "From Poor Red’s in El Dorado, California, 1952."
+
+[[ingredients]]
+id = "galliano"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "creme-de-cacao-white"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "cream"
+amount = 30
+unit = "ml"

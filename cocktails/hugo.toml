@@ -1,0 +1,29 @@
+# Source: Roland Gruber, Naturns, South Tyrol (2005)
+name = "Hugo"
+family = "sparkling"
+method = "build"
+glass = "wine"
+ice = "cubes"
+garnish = "lime wheel and mint sprig"
+tags = ["modern classic", "low-ABV"]
+
+[[ingredients]]
+id = "mint"
+amount = 6
+unit = "leaf"
+note = "lightly bruised"
+
+[[ingredients]]
+id = "elderflower-cordial"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "prosecco"
+amount = 120
+unit = "ml"
+
+[[ingredients]]
+id = "soda-water"
+amount = 30
+unit = "ml"

@@ -1,0 +1,29 @@
+name = "Painkiller"
+family = "tiki"
+method = "shake"
+glass = "highball"
+ice = "cubes"
+garnish = "grated nutmeg and orange wheel"
+tags = ["post-war"]
+notes = "From the Soggy Dollar Bar on Jost Van Dyke in the 1970s; navy rum is the standard pour."
+
+[[ingredients]]
+id = "black-rum"
+amount = 60
+unit = "ml"
+note = "navy-style"
+
+[[ingredients]]
+id = "pineapple-juice"
+amount = 120
+unit = "ml"
+
+[[ingredients]]
+id = "orange-juice"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "coconut-cream"
+amount = 30
+unit = "ml"

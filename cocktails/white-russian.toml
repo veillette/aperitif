@@ -1,0 +1,23 @@
+name = "White Russian"
+family = "dessert"
+method = "build"
+glass = "rocks"
+ice = "cubes"
+tags = ["post-war"]
+notes = "The Black Russian with cream on top."
+
+[[ingredients]]
+id = "vodka"
+amount = 50
+unit = "ml"
+
+[[ingredients]]
+id = "coffee-liqueur"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "cream"
+amount = 30
+unit = "ml"
+note = "floated"

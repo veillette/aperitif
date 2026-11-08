@@ -1,0 +1,23 @@
+# Source: Andy MacElhone, Harry’s New York Bar, Paris (c. 1960)
+name = "Blue Lagoon"
+family = "highball"
+method = "build"
+glass = "highball"
+ice = "cubes"
+garnish = "lemon slice"
+tags = ["post-war"]
+
+[[ingredients]]
+id = "vodka"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "blue-curacao"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "sparkling-lemonade"
+amount = 120
+unit = "ml"

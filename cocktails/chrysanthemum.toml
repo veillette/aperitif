@@ -1,0 +1,23 @@
+# Source: Harry Craddock, The Savoy Cocktail Book (1930)
+name = "Chrysanthemum"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "orange twist"
+tags = ["Savoy", "low-ABV"]
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "benedictine"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "absinthe"
+amount = 3
+unit = "dash"

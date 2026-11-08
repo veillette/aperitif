@@ -1,0 +1,17 @@
+name = "Godfather"
+family = "spirit-forward"
+method = "stir"
+glass = "rocks"
+ice = "large-cube"
+tags = ["post-war"]
+notes = "The old IBA spec was equal parts; most bars now pour 2:1."
+
+[[ingredients]]
+id = "blended-scotch"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "amaretto"
+amount = 22.5
+unit = "ml"

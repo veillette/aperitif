@@ -1,0 +1,23 @@
+# Source: Harry Craddock, The Savoy Cocktail Book (1930)
+name = "Alaska"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "lemon twist"
+tags = ["Savoy"]
+
+[[ingredients]]
+id = "old-tom-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "yellow-chartreuse"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 1
+unit = "dash"

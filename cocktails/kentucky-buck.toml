@@ -1,0 +1,39 @@
+# Source: Erick Castro, Rickhouse, San Francisco (2009)
+name = "Kentucky Buck"
+family = "highball"
+method = "shake"
+glass = "highball"
+ice = "cubes"
+garnish = "lemon wheel"
+tags = ["modern classic"]
+
+[[ingredients]]
+id = "strawberry"
+amount = 1
+unit = "piece"
+note = "muddled"
+
+[[ingredients]]
+id = "bourbon"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "ginger-beer"
+amount = 1
+unit = "top"

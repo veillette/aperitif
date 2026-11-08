@@ -1,0 +1,22 @@
+name = "Kamikaze"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "lime wedge"
+tags = ["post-war", "equal parts"]
+
+[[ingredients]]
+id = "vodka"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 30
+unit = "ml"

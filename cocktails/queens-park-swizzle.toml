@@ -1,0 +1,35 @@
+name = "Queen’s Park Swizzle"
+family = "julep-smash"
+method = "swizzle"
+glass = "collins"
+ice = "crushed"
+garnish = "mint sprig"
+tags = ["prohibition era"]
+notes = "From the Queen’s Park Hotel in Port of Spain, Trinidad; the bitters layer on top after swizzling."
+
+[[ingredients]]
+id = "mint"
+amount = 8
+unit = "leaf"
+
+[[ingredients]]
+id = "aged-rum"
+amount = 60
+unit = "ml"
+note = "Demerara"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "demerara-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 6
+unit = "dash"
+note = "on top"

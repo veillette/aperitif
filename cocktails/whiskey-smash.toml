@@ -1,0 +1,30 @@
+# Source: Dale DeGroff, The Craft of the Cocktail (2002)
+name = "Whiskey Smash"
+family = "julep-smash"
+method = "shake"
+glass = "rocks"
+ice = "crushed"
+garnish = "mint sprig"
+tags = ["modern classic"]
+notes = "DeGroff’s revival of the 1880s smash; double-strain over fresh crushed ice."
+
+[[ingredients]]
+id = "lemon"
+amount = 0.5
+unit = "piece"
+note = "cut in wedges, muddled"
+
+[[ingredients]]
+id = "mint"
+amount = 6
+unit = "leaf"
+
+[[ingredients]]
+id = "bourbon"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 22.5
+unit = "ml"

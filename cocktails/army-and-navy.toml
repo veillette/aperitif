@@ -1,0 +1,24 @@
+# Source: David Embury, The Fine Art of Mixing Drinks (1948)
+name = "Army & Navy"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "lemon twist"
+tags = ["post-war"]
+notes = "Embury ran it drier; this is the common modern balance."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 60
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "orgeat"
+amount = 15
+unit = "ml"

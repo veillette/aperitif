@@ -1,0 +1,43 @@
+# Source: Brian Miller, Death & Co, New York (2008)
+name = "Conference"
+family = "spirit-forward"
+method = "stir"
+glass = "rocks"
+ice = "large-cube"
+garnish = "lemon and orange twists"
+tags = ["modern classic"]
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "bourbon"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "calvados"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "cognac"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "demerara-syrup"
+amount = 1
+unit = "tsp"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "mole-bitters"
+amount = 1
+unit = "dash"

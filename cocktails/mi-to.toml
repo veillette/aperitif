@@ -1,0 +1,18 @@
+name = "Milano-Torino"
+family = "spirit-forward"
+method = "build"
+glass = "rocks"
+ice = "cubes"
+garnish = "orange slice"
+tags = ["pre-prohibition", "equal parts", "low-ABV"]
+notes = "Campari from Milan, vermouth from Turin: the Americano before the soda."
+
+[[ingredients]]
+id = "campari"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 30
+unit = "ml"

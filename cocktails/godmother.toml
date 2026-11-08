@@ -1,0 +1,17 @@
+name = "Godmother"
+family = "spirit-forward"
+method = "stir"
+glass = "rocks"
+ice = "large-cube"
+tags = ["post-war"]
+notes = "The Godfather with vodka."
+
+[[ingredients]]
+id = "vodka"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "amaretto"
+amount = 22.5
+unit = "ml"

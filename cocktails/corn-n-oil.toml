@@ -1,0 +1,28 @@
+name = "Corn ’n’ Oil"
+family = "spirit-forward"
+method = "build"
+glass = "rocks"
+ice = "cubes"
+garnish = "lime wedge"
+tags = ["Barbadian"]
+
+[[ingredients]]
+id = "black-rum"
+amount = 60
+unit = "ml"
+note = "blackstrap"
+
+[[ingredients]]
+id = "falernum"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 7.5
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 3
+unit = "dash"

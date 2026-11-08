@@ -1,0 +1,23 @@
+# Source: Ted Saucier, Bottoms Up (1951)
+name = "Diamondback"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "cherry"
+tags = ["post-war"]
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "applejack"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "yellow-chartreuse"
+amount = 22.5
+unit = "ml"

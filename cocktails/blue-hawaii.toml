@@ -1,0 +1,39 @@
+# Source: Harry Yee, Hilton Hawaiian Village, Honolulu (1957)
+name = "Blue Hawaii"
+family = "tiki"
+method = "shake"
+glass = "hurricane"
+ice = "crushed"
+garnish = "pineapple wedge and cherry"
+tags = ["post-war"]
+notes = "Harry Yee’s 1957 spec; lemon and syrup replace his sweet-and-sour mix."
+
+[[ingredients]]
+id = "white-rum"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "vodka"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "blue-curacao"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "pineapple-juice"
+amount = 90
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"

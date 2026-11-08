@@ -1,0 +1,23 @@
+name = "Ti’ Punch"
+family = "spirit-forward"
+method = "build"
+glass = "rocks"
+ice = "none"
+tags = ["Martinique"]
+notes = "In Martinique the bottle, limes and syrup go on the table and each guest builds their own."
+
+[[ingredients]]
+id = "lime"
+amount = 1
+unit = "piece"
+note = "coin-sized disc, squeezed"
+
+[[ingredients]]
+id = "cane-syrup"
+amount = 1
+unit = "tsp"
+
+[[ingredients]]
+id = "rhum-agricole"
+amount = 60
+unit = "ml"

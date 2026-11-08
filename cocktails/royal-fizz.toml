@@ -1,0 +1,32 @@
+name = "Royal Fizz"
+family = "fizz-collins"
+method = "shake"
+glass = "highball"
+ice = "none"
+tags = ["pre-prohibition"]
+notes = "The Gin Fizz with a whole egg; dry-shake first."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "whole-egg"
+amount = 1
+unit = "piece"
+
+[[ingredients]]
+id = "soda-water"
+amount = 1
+unit = "top"

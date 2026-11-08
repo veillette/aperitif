@@ -1,0 +1,34 @@
+# Source: Stanley Clisby Arthur, Famous New Orleans Drinks and How to Mix ’Em (1937)
+name = "De La Louisiane"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "cherry"
+tags = ["New Orleans", "equal parts"]
+notes = "Arthur’s 1937 equal-parts spec; many bars now double the rye."
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "benedictine"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "absinthe"
+amount = 3
+unit = "dash"
+
+[[ingredients]]
+id = "peychauds"
+amount = 3
+unit = "dash"

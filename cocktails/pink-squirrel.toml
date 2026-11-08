@@ -1,0 +1,22 @@
+name = "Pink Squirrel"
+family = "dessert"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["post-war"]
+notes = "From Bryant’s Cocktail Lounge in Milwaukee, which still blends it with ice cream."
+
+[[ingredients]]
+id = "creme-de-noyaux"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "creme-de-cacao-white"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "cream"
+amount = 45
+unit = "ml"

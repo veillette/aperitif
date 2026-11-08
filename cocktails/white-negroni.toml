@@ -1,0 +1,23 @@
+# Source: Wayne Collins, London (2001)
+name = "White Negroni"
+family = "spirit-forward"
+method = "stir"
+glass = "rocks"
+ice = "large-cube"
+garnish = "lemon twist"
+tags = ["modern classic"]
+
+[[ingredients]]
+id = "plymouth-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lillet-blanc"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "suze"
+amount = 22.5
+unit = "ml"

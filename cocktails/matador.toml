@@ -1,0 +1,22 @@
+name = "Matador"
+family = "sour"
+method = "shake"
+glass = "rocks"
+ice = "cubes"
+garnish = "pineapple wedge"
+tags = ["post-war"]
+
+[[ingredients]]
+id = "blanco-tequila"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "pineapple-juice"
+amount = 90
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"

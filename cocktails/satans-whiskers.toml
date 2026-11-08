@@ -1,0 +1,39 @@
+# Source: Harry Craddock, The Savoy Cocktail Book (1930)
+name = "Satan’s Whiskers"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "orange twist"
+tags = ["Savoy", "equal parts"]
+notes = "The Savoy’s “straight” version; orange curaçao in place of Grand Marnier makes it “curled”."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "orange-juice"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "grand-marnier"
+amount = 20
+unit = "ml"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 1
+unit = "dash"

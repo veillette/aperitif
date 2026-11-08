@@ -1,0 +1,23 @@
+# Source: Harry MacElhone, ABC of Mixing Cocktails (1922)
+name = "Old Pal"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "lemon twist"
+tags = ["prohibition era", "equal parts"]
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "campari"
+amount = 30
+unit = "ml"

@@ -1,0 +1,28 @@
+# Source: Dale DeGroff, The Craft of the Cocktail (2002)
+name = "Fitzgerald"
+family = "sour"
+method = "shake"
+glass = "rocks"
+ice = "cubes"
+garnish = "lemon wheel"
+tags = ["modern classic"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "simple-syrup"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"

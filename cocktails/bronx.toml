@@ -1,0 +1,28 @@
+# Source: Harry Craddock, The Savoy Cocktail Book (1930)
+name = "Bronx"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "orange twist"
+tags = ["pre-prohibition", "Savoy"]
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "orange-juice"
+amount = 15
+unit = "ml"

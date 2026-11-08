@@ -1,0 +1,17 @@
+name = "Kir Royale"
+family = "sparkling"
+method = "build"
+glass = "flute"
+ice = "none"
+tags = ["low-ABV"]
+notes = "The Kir with Champagne in place of white wine."
+
+[[ingredients]]
+id = "creme-de-cassis"
+amount = 10
+unit = "ml"
+
+[[ingredients]]
+id = "champagne"
+amount = 90
+unit = "ml"

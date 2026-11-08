@@ -1,0 +1,24 @@
+# Source: Mirko Stocchetto, Bar Basso, Milan (1972)
+name = "Negroni Sbagliato"
+family = "sparkling"
+method = "build"
+glass = "rocks"
+ice = "cubes"
+garnish = "orange slice"
+tags = ["Milan", "low-ABV"]
+notes = "Bar Basso’s “mistaken” Negroni, with sparkling wine where the gin should be."
+
+[[ingredients]]
+id = "campari"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "prosecco"
+amount = 30
+unit = "ml"

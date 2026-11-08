@@ -1,0 +1,22 @@
+name = "El Capitán"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "lemon twist"
+tags = ["Peruvian", "equal parts"]
+
+[[ingredients]]
+id = "pisco"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "sweet-vermouth"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"

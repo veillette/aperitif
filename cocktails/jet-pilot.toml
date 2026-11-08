@@ -1,0 +1,53 @@
+# Source: Jeff Berry, Beachbum Berry’s Sippin’ Safari (2007); Steve Crane, The Luau, Beverly Hills (1958)
+name = "Jet Pilot"
+family = "tiki"
+method = "blend"
+glass = "rocks"
+ice = "crushed"
+tags = ["post-war"]
+notes = "Flash-blend for a few seconds only."
+
+[[ingredients]]
+id = "jamaican-rum"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "aged-rum"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "demerara-rum-151"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "grapefruit-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "cinnamon-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "falernum"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 1
+unit = "dash"
+
+[[ingredients]]
+id = "absinthe"
+amount = 6
+unit = "drop"

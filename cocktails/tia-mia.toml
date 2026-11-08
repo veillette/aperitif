@@ -1,0 +1,34 @@
+# Source: Ivy Mix, New York (c. 2013)
+name = "Tía Mía"
+family = "tiki"
+method = "shake"
+glass = "rocks"
+ice = "crushed"
+garnish = "mint sprig and lime wheel"
+tags = ["modern classic"]
+notes = "A split-base Mai Tai."
+
+[[ingredients]]
+id = "mezcal"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "jamaican-rum"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "orange-curacao"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "orgeat"
+amount = 15
+unit = "ml"

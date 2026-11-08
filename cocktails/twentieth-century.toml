@@ -1,0 +1,29 @@
+# Source: C. A. Tuck, Café Royal Cocktail Book (1937)
+name = "Twentieth Century"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "lemon twist"
+tags = ["classic"]
+notes = "Named for the New York–Chicago train; Lillet stands in for the original Kina Lillet."
+
+[[ingredients]]
+id = "london-dry-gin"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "lillet-blanc"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "creme-de-cacao-white"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"

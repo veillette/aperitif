@@ -1,0 +1,22 @@
+# Source: C. A. Tuck, Café Royal Cocktail Book (1937)
+name = "Toreador"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["classic"]
+
+[[ingredients]]
+id = "blanco-tequila"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "apricot-brandy"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"

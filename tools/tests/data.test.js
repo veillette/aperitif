@@ -44,13 +44,13 @@ test("facets AND together, values within a facet OR", () => {
 
 test("ingredient filter: all vs any", () => {
   const all = slugs(query("ing=campari,sweet-vermouth"));
-  assert.deepEqual(all.sort(), ["americano", "boulevardier", "negroni"]);
+  assert.deepEqual(all.sort(), ["americano", "boulevardier", "mezcal-negroni", "mi-to", "negroni", "negroni-sbagliato"]);
   const any = query("ing=campari,aperol&match=any");
   assert.ok(slugs(any).includes("jungle-bird") && slugs(any).includes("paper-plane"));
 });
 
 test("search matches name, ingredient and garnish words", () => {
-  assert.deepEqual(slugs(query("q=corpse")), ["corpse-reviver-2"]);
+  assert.deepEqual(slugs(query("q=corpse")), ["corpse-reviver-1", "corpse-reviver-2"]);
   assert.ok(slugs(query("q=chartreuse")).includes("last-word"));
   assert.ok(slugs(query("q=nutmeg")).includes("brandy-alexander"));
   assert.deepEqual(query("q=zzzz"), []);

@@ -1,0 +1,33 @@
+name = "Seelbach"
+family = "sparkling"
+method = "build"
+glass = "flute"
+ice = "none"
+garnish = "orange twist"
+tags = ["modern classic", "Kentucky"]
+notes = "Adam Seger launched it in 1995 as a lost 1912 house recipe and admitted in 2016 he made that up."
+
+[[ingredients]]
+id = "bourbon"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 7
+unit = "dash"
+
+[[ingredients]]
+id = "peychauds"
+amount = 7
+unit = "dash"
+
+[[ingredients]]
+id = "champagne"
+amount = 150
+unit = "ml"

@@ -1,0 +1,28 @@
+name = "Bamboo"
+family = "spirit-forward"
+method = "stir"
+glass = "coupe"
+ice = "none"
+garnish = "lemon twist"
+tags = ["pre-prohibition", "low-ABV"]
+notes = "Credited to Louis Eppinger at the Grand Hotel, Yokohama, in the 1890s."
+
+[[ingredients]]
+id = "fino-sherry"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "dry-vermouth"
+amount = 45
+unit = "ml"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "orange-bitters"
+amount = 2
+unit = "dash"

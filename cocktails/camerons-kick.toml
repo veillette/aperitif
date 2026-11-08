@@ -1,0 +1,27 @@
+# Source: Harry Craddock, The Savoy Cocktail Book (1930)
+name = "Cameron’s Kick"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["Savoy"]
+
+[[ingredients]]
+id = "blended-scotch"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "irish-whiskey"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "orgeat"
+amount = 15
+unit = "ml"

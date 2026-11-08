@@ -1,0 +1,44 @@
+# Source: Jeff Berry, Beachbum Berry’s Sippin’ Safari (2007)
+name = "Navy Grog"
+family = "tiki"
+method = "shake"
+glass = "rocks"
+ice = "crushed"
+tags = ["Don the Beachcomber"]
+notes = "Don’s 1941 spec; traditionally served around a shaved-ice cone with the straw through it."
+
+[[ingredients]]
+id = "aged-rum"
+amount = 30
+unit = "ml"
+note = "Demerara"
+
+[[ingredients]]
+id = "jamaican-rum"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "white-rum"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "lime-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "grapefruit-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "honey-syrup"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "soda-water"
+amount = 22.5
+unit = "ml"
