@@ -1,0 +1,28 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/42803/up-to-date (1916 Ensslin recipe quoted in History)
+name = "Up to Date"
+family = "spirit-forward"
+method = "shake"
+glass = "coupe"
+ice = "none"
+tags = ["pre-prohibition"]
+notes = "Ensslin’s 1916 equal-parts whiskey and sherry spec, using amontillado."
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "amontillado-sherry"
+amount = 30
+unit = "ml"
+
+[[ingredients]]
+id = "grand-marnier"
+amount = 2
+unit = "dash"
+
+[[ingredients]]
+id = "angostura"
+amount = 2
+unit = "dash"

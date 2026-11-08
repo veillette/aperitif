@@ -1,0 +1,29 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/30469/cock-n-bull (1951 Saucier recipe quoted in History)
+name = "Cock N’ Bull Special"
+family = "spirit-forward"
+method = "stir"
+glass = "rocks"
+ice = "large-cube"
+garnish = "orange peel"
+tags = ["post-war"]
+notes = "Saucier’s 1951 spec uses Cointreau and no bitters."
+
+[[ingredients]]
+id = "bourbon"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "benedictine"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "cognac"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "cointreau"
+amount = 7.5
+unit = "ml"

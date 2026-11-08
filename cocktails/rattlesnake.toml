@@ -1,0 +1,34 @@
+# Source: https://www.diffordsguide.com/cocktails/recipe/1643/rattlesnake
+name = "Rattlesnake"
+family = "sour"
+method = "shake"
+glass = "coupe"
+ice = "none"
+garnish = "Angostura bitters drawn through the foam"
+tags = ["prohibition era"]
+notes = "Difford’s modern spec uses rich syrup and three dashes of absinthe."
+
+[[ingredients]]
+id = "rye-whiskey"
+amount = 52.5
+unit = "ml"
+
+[[ingredients]]
+id = "lemon-juice"
+amount = 22.5
+unit = "ml"
+
+[[ingredients]]
+id = "rich-simple-syrup"
+amount = 15
+unit = "ml"
+
+[[ingredients]]
+id = "absinthe"
+amount = 3
+unit = "dash"
+
+[[ingredients]]
+id = "egg-white"
+amount = 15
+unit = "ml"
