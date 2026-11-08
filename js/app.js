@@ -1,35 +1,31 @@
 // Index page: the filterable recipe list and the "My bar" view.
-import { h, store, registerServiceWorker, setupDrawer } from "./dom.js";
+import { h, registerServiceWorker, setupDrawer } from "./dom.js";
 import {
   FACETS, SORTS, loadData, parseState, stateToParams, emptyState, activeCount,
-  filterCocktails, facetOptions, facetCounts, isBottle, whatCanIMake, cardMeta, cardSpec,
+  filterCocktails, facetOptions, facetCounts, bottleGroups, whatCanIMake,
 } from "./data.js";
-
+import { loadBar, saveBar as persistBar } from "./preferences.js";
+import { cocktailCard } from "./cards.js";
 import { recipeURL } from "./navigation.js";
 
 const FACET_LABELS = {
   base: "Base spirit", citrus: "Citrus", family: "Family", method: "Method", glass: "Glass", tag: "Tags",
 };
-const BAR_KEY = "aperitif.bar";
 const $ = (id) => document.getElementById(id);
 
 let data;
 let state;
 const chipRefs = {}; // facet -> Map(value -> button)
 const ingRefs = new Map(); // ingredient id -> checkbox
-let bar = new Set(store.get(BAR_KEY, []));
+let bar;
 
 const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
 
 function card(c, extra, group) {
-  return h("li", {},
-    h("a", { class: "card", href: recipeURL(c.slug, group ? "./?view=bar" : `./?${stateToParams(state)}`, group) },
-      h("h3", {}, c.name),
-      h("p", { class: "meta" }, cardMeta(c, data)),
-      h("p", { class: "spec" }, cardSpec(c, data)),
-      extra,
-    ),
-  );
+  return cocktailCard(c, data, {
+    href: recipeURL(c.slug, group ? "./?view=bar" : `./?${stateToParams(state)}`, group),
+    extra,
+  });
 }
 
 // ── Filters ────────────────────────────────────────────────────────────────
@@ -169,13 +165,8 @@ function update() {
 // ── My bar ─────────────────────────────────────────────────────────────────
 
 function buildBottles() {
-  const cats = ["spirit", "liqueur", "fortified-wine", "wine", "bitters"];
-  const groups = cats.map((cat) => {
-    const ids = [...data.usage.keys()]
-      .filter((id) => data.ingredients[id].category === cat && isBottle(data, id))
-      .sort((a, b) => data.ingredients[a].name.localeCompare(data.ingredients[b].name));
-    if (!ids.length) return null;
-    return h("div", { class: "check-group" }, h("h3", {}, data.vocab.category[cat]),
+  const groups = bottleGroups(data).map(({ label, ids }) => {
+    return h("div", { class: "check-group" }, h("h3", {}, label),
       ids.map((id) => h("label", { class: "check", dataset: { name: data.ingredients[id].name.toLocaleLowerCase() } },
         h("input", {
           type: "checkbox", value: id, checked: bar.has(id),
@@ -183,7 +174,7 @@ function buildBottles() {
         }),
         h("span", {}, data.ingredients[id].name),
         h("span", { class: "n" }, String(data.usage.get(id))))));
-  }).filter(Boolean);
+  });
   $("bottle-list").replaceChildren(...groups);
   $("bottle-q").addEventListener("input", (e) => filterChecklist(groups, e.target.value));
   $("bottles-clear").addEventListener("click", () => {
@@ -196,7 +187,7 @@ function buildBottles() {
 }
 
 function saveBar() {
-  store.set(BAR_KEY, [...bar]);
+  persistBar(bar);
   renderBar();
 }
 
@@ -238,6 +229,7 @@ async function main() {
     $("list").replaceChildren(h("li", { class: "empty" }, `Could not load recipes (${err.message}).`));
     return;
   }
+  bar = loadBar(data);
   state = parseState(new URLSearchParams(location.search));
   buildFacets();
   buildBottles();

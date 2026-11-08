@@ -1,8 +1,9 @@
 // Recipe page: recipe.html?c=<slug>
-import { h, store, registerServiceWorker } from "./dom.js";
+import { h, registerServiceWorker } from "./dom.js";
 import { loadData, related, cardMeta, cardSpec } from "./data.js";
+import { loadBar, loadUnit, saveUnit } from "./preferences.js";
+import { cocktailCard } from "./cards.js";
 import { formatAmount } from "./units.js";
-
 import { browseContext, recipeURL, recipeSequence, setupSwipe } from "./navigation.js";
 
 const params = new URLSearchParams(location.search);
@@ -10,13 +11,12 @@ const from = browseContext(params.get("from"), location.href);
 const group = ["ready", "away"].includes(params.get("group")) ? params.get("group") : null;
 let sequence = [];
 
-const UNIT_KEY = "aperitif.unit";
 const $ = (id) => document.getElementById(id);
 const index = (params) => `./?${new URLSearchParams(params)}`;
 
 let data;
 let cocktail;
-let unit = store.get(UNIT_KEY, "ml") === "oz" ? "oz" : "ml";
+let unit = loadUnit();
 
 function specRows() {
   return cocktail.ingredients.map((ing) => {
@@ -77,15 +77,14 @@ function render() {
     others.length
       ? h("section", { class: "related" }, h("h2", {}, "Shares ingredients with"),
           h("ol", { class: "cards" }, others.map((o) =>
-            h("li", {}, h("a", { class: "card", href: recipeURL(o.slug, from, group) },
-              h("h3", {}, o.name), h("p", { class: "meta" }, cardMeta(o, data)), h("p", { class: "spec" }, cardSpec(o, data)))))))
+            cocktailCard(o, data, { href: recipeURL(o.slug, from, group) }))))
       : null,
   );
 }
 
 function setUnit(next) {
   unit = next;
-  store.set(UNIT_KEY, unit);
+  saveUnit(unit);
   for (const btn of document.querySelectorAll("[data-unit]")) {
     btn.setAttribute("aria-pressed", String(btn.dataset.unit === unit));
   }
@@ -114,8 +113,7 @@ async function main() {
     $("recipe").replaceChildren(h("p", { class: "empty" }, "No such drink. ", h("a", { href: "./" }, "Browse all drinks")));
     return;
   }
-  const savedBar = store.get("aperitif.bar", []);
-  sequence = recipeSequence(data, cocktail.slug, from, group, new Set(Array.isArray(savedBar) ? savedBar : []));
+  sequence = recipeSequence(data, cocktail.slug, from, group, loadBar(data));
   render();
   setupSwipe($("recipe"), (direction) => {
     const position = sequence.findIndex((c) => c.slug === cocktail.slug);

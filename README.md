@@ -13,7 +13,7 @@ It's a plain static site (HTML, CSS, ES modules). There is no framework and no c
 Development and CI use Node.js 26 LTS and Python 3.15. The release lines are
 declared in `.nvmrc` and `.python-version`; CI installs the latest patch in each
 line. Run `nvm install && nvm use` for Node.js, and `pyenv install -s` or
-`uv python install` for Python. There are no npm or pip dependencies to install.
+`uv python install` for Python. The site and data build have no dependencies. Optional browser tests use Playwright as a development dependency.
 
 ## Layout
 
@@ -24,6 +24,7 @@ line. Run `nvm install && nvm use` for Node.js, and `pyenv install -s` or
 | `tools/build.py` | Validates everything and writes `data/cocktails.json`. Python 3.15, stdlib only. |
 | `data/cocktails.json` | Generated index the site loads. Committed; never edit by hand. |
 | `js/data.js` | Filtering, sorting, "My bar", related drinks (pure functions). |
+| `js/cards.js`, `js/preferences.js` | Shared recipe cards and validated browser preferences. |
 | `js/units.js` | ml/oz and dash/barspoon formatting. |
 | `js/app.js`, `js/recipe.js` | The two pages. |
 | `tools/tests/` | `node --test` tests for filters, derivations and formatting. |
@@ -86,6 +87,26 @@ python3 -m http.server 8000         # preview at http://localhost:8000
 ```
 
 The service worker doesn't register on `localhost`, so a preview always shows fresh files.
+
+### Browser regression tests
+
+```sh
+npm ci
+npx playwright install chromium
+npm run test:browser
+```
+
+The suite starts its own local server under `/aperitif/` to exercise GitHub Pages
+subpaths. It tests the 360 px mobile layout, filters, drawer focus, swipe navigation,
+history, units, My bar (including beer), malformed or blocked storage, and cold
+offline navigation. Each test uses an isolated browser context. Touch tests dispatch
+browser touch events to the page's DOM listeners; physical device gesture arbitration
+still benefits from a manual phone check. To use an existing Chromium installation,
+set `CHROMIUM_PATH=/path/to/chromium`. On a Linux host missing browser libraries,
+use Playwright's documented `install --with-deps chromium` setup.
+
+Browser tests are separate from the dependency-free `npm run check` command and
+are not added to the deployment workflow.
 
 ## Deploying
 

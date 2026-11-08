@@ -124,6 +124,16 @@ export function facetCounts(data, s, facet) {
 
 export const isBottle = (data, id) => !PANTRY.has(data.ingredients[id].category);
 
+// Checklist and availability calculations share the same bottle rule.
+export function bottleGroups(data) {
+  return Object.entries(data.vocab.category).map(([category, label]) => ({
+    label,
+    ids: [...data.usage.keys()]
+      .filter((id) => data.ingredients[id].category === category && isBottle(data, id))
+      .sort((a, b) => data.ingredients[a].name.localeCompare(data.ingredients[b].name)),
+  })).filter(({ ids }) => ids.length);
+}
+
 // Bottles a drink needs that are not in the bar.
 export function missingBottles(c, bar, data) {
   return [...new Set(c.ingredientIds)].filter((id) => isBottle(data, id) && !bar.has(id));
