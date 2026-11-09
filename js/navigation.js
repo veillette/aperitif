@@ -19,7 +19,7 @@ export function recipeURL(slug, from, group) {
   return `recipe.html?${params}`;
 }
 
-export function recipeSequence(data, slug, from, group, bar) {
+export function recipeSequence(data, slug, from, group, bar, saved = {}) {
   const all = () => filterCocktails(data, emptyState());
   if (!from) return all();
   const params = new URLSearchParams(from.split("?")[1] ?? "");
@@ -28,7 +28,7 @@ export function recipeSequence(data, slug, from, group, bar) {
     const results = whatCanIMake(data, bar);
     list = group === "ready" ? results.ready
       : group === "away" ? results.oneAway.map(({ cocktail }) => cocktail) : [];
-  } else list = filterCocktails(data, parseState(params));
+  } else list = filterCocktails(data, parseState(params), saved);
   return list.some((c) => c.slug === slug) ? list : all();
 }
 

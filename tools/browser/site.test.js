@@ -86,7 +86,7 @@ test("mobile filters preserve context; drawer traps focus and restores it on Esc
   assert.equal(new URL(listURL).searchParams.get("base"), "gin");
   assert.equal(new URL(listURL).searchParams.get("sort"), "family");
   await fits();
-  await page.locator("#list .card").first().click();
+  await page.locator("#list .card a, #list a.card").first().click();
   await page.locator("h1").waitFor();
   assert.equal(new URL(await page.locator("#back").getAttribute("href"), base).href, listURL);
   await page.locator("#back").click();
@@ -96,9 +96,12 @@ test("mobile filters preserve context; drawer traps focus and restores it on Esc
 
 test("swipes and links follow sorted results, stop at ends, retain units and support history", async () => {
   await open("?base=gin&sort=family");
-  const cards = await page.locator("#list .card").evaluateAll((els) => els.map((el) => ({ href: el.href, name: el.querySelector("h3").textContent })));
+  const cards = await page.locator("#list .card").evaluateAll((els) => els.map((el) => {
+    const link = el.matches("a") ? el : el.querySelector("a");
+    return { href: link.href, name: el.querySelector("h3").textContent };
+  }));
   assert.ok(cards.length > 2);
-  await page.locator("#list .card").first().click();
+  await page.locator("#list .card a, #list a.card").first().click();
   await page.locator("h1").waitFor();
   assert.equal(await page.locator(".recipe-navigation [aria-disabled]").count(), 1);
   await swipe(100, 0, false);
@@ -126,7 +129,7 @@ test("swipes and links follow sorted results, stop at ends, retain units and sup
 test("beer can be checked, saved and used to make Mezcalada and Stout Flip", async () => {
   await open("?view=bar");
   await page.locator('#bottle-list input[value="mezcal"]').check();
-  await page.locator('#away .card').filter({ hasText: "Mezcalada" }).waitFor();
+  await page.locator('#away .card').filter({ hasText: "Mezcalada" }).waitFor({ state: "attached" });
   await page.locator('#bottle-list input[value="lager"]').check();
   await page.locator('#bottle-list input[value="stout"]').check();
   await page.locator('#bottle-list input[value="spiced-rum"]').check();
@@ -136,15 +139,18 @@ test("beer can be checked, saved and used to make Mezcalada and Stout Flip", asy
   await page.locator('#ready .card').filter({ hasText: "Mezcalada" }).waitFor();
   assert.equal(await page.locator('#bottle-list input[value="lager"]').isChecked(), true);
   for (const group of ["ready", "away"]) {
+    if (group === "away") {
+      await page.locator("#away details.recommendation").first().evaluate((el) => { el.open = true; });
+    }
     const card = page.locator(`#${group} .card`).first();
     const name = await card.locator("h3").innerText();
-    await card.click();
+    await card.locator("a").or(card).first().click();
     await page.locator("h1").waitFor();
     assert.equal(await page.locator("h1").innerText(), name);
     assert.equal(new URL(page.url()).searchParams.get("group"), group);
     assert.equal(await page.locator("#back").getAttribute("href"), "./?view=bar");
     await page.locator("#back").click();
-    await page.locator(`#${group} .card`).first().waitFor();
+    await page.locator(`#${group} .card`).first().waitFor({ state: group === "away" ? "attached" : "visible" });
   }
   await fits();
 });
@@ -194,7 +200,7 @@ test("a cached installation supports cold offline recipe navigation and shared c
   await page.locator("h1").waitFor();
   const related = page.locator(".related .card").first();
   const name = await related.locator("h3").innerText();
-  await related.click();
+  await related.locator("a").or(related).first().click();
   await page.locator("h1").waitFor();
   assert.equal(await page.locator("h1").innerText(), name);
   await fits();

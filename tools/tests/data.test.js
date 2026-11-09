@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
   prepare, parseState, stateToParams, emptyState, filterCocktails, facetCounts,
-  whatCanIMake, related, sortCocktails,
+  whatCanIMake, bottleRecommendations, isBottle, activeCount, related, sortCocktails,
 } from "../../js/data.js";
 import { fraction, formatAmount } from "../../js/units.js";
 
@@ -111,4 +111,59 @@ test("oz formatting rounds to eighths", () => {
   assert.equal(formatAmount({ amount: 8, unit: "leaf" }), "8 leaves");
   assert.equal(formatAmount({ amount: 0.5, unit: "piece" }), "½");
   assert.equal(formatAmount({ amount: 1, unit: "top" }), "Top");
+});
+
+
+test("saved lists combine with search, facets and facet counts", () => {
+  const saved = { favorites: new Set(["daiquiri", "martini", "deleted-recipe"]), "want-to-try": new Set(["daiquiri"]) };
+  const state = parseState(new URLSearchParams("saved=favorites&base=rum"));
+  assert.deepEqual(slugs(filterCocktails(data, state, saved)), ["daiquiri"]);
+  assert.equal(facetCounts(data, state, "base", saved).get("gin"), 1);
+  assert.equal(activeCount(state), 2);
+  assert.equal(stateToParams(state).toString(), "saved=favorites&base=rum");
+  state.q = "martini";
+  assert.deepEqual(filterCocktails(data, state, saved), []);
+  assert.deepEqual(filterCocktails(data, state), [], "an empty local list never shows all recipes");
+  const want = parseState(new URLSearchParams("saved=want-to-try"));
+  assert.deepEqual(slugs(filterCocktails(data, want, saved)), ["daiquiri"]);
+  saved.favorites.delete("daiquiri");
+  assert.deepEqual(slugs(filterCocktails(data, want, saved)), ["daiquiri"], "lists are independent");
+  for (const invalid of ["unknown", "constructor", "__proto__"]) {
+    assert.equal(parseState(new URLSearchParams({ saved: invalid })).saved, "");
+  }
+});
+
+test("out-of-stock pantry items block ready drinks and bottle recommendations", () => {
+  const bar = new Set(["white-rum"]);
+  const unavailable = new Set(["lime-juice"]);
+  const result = whatCanIMake(data, bar, unavailable);
+  assert.ok(!slugs(result.ready).includes("daiquiri"));
+  assert.deepEqual(result.pantryMissing.find((x) => x.cocktail.slug === "daiquiri")?.missing, ["lime-juice"]);
+  assert.ok(result.ready.every((c) => !c.ingredientIds.includes("lime-juice")));
+  assert.ok(result.oneAway.every(({ cocktail }) => !cocktail.ingredientIds.includes("lime-juice")));
+  assert.ok(slugs(whatCanIMake(data, bar).ready).includes("daiquiri"), "disabling tracking restores pantry assumptions");
+  assert.deepEqual(whatCanIMake(data, bar, new Set(["white-rum"])).ready, whatCanIMake(data, bar).ready,
+    "the pantry cannot mark a bottle out of stock");
+});
+
+test("ranked bottle suggestions count exactly the newly available recipes", () => {
+  const bar = new Set(["white-rum", "london-dry-gin", "sweet-vermouth"]);
+  const unavailable = new Set(["lime-juice"]);
+  const { ready, oneAway } = whatCanIMake(data, bar, unavailable);
+  const recommendations = bottleRecommendations(data, oneAway);
+  assert.ok(recommendations.length > 1);
+  for (const [i, { id, cocktails }] of recommendations.entries()) {
+    assert.ok(isBottle(data, id) && !bar.has(id));
+    const before = new Set(slugs(ready));
+    const after = whatCanIMake(data, new Set([...bar, id]), unavailable).ready;
+    assert.deepEqual(slugs(cocktails), slugs(after.filter((c) => !before.has(c.slug))));
+    if (i) {
+      const previous = recommendations[i - 1];
+      assert.ok(previous.cocktails.length >= cocktails.length);
+      if (previous.cocktails.length === cocktails.length) {
+        assert.ok(data.ingredients[previous.id].name.localeCompare(data.ingredients[id].name) <= 0);
+      }
+    }
+  }
+  assert.deepEqual(bottleRecommendations(data, []), []);
 });

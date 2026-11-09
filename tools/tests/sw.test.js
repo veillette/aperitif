@@ -57,6 +57,7 @@ test("install bypasses the HTTP cache", async () => {
   const { fire, added } = worker({});
   await fire("install", {}).done;
   assert.ok(added.length > 0 && added.every((r) => r.cache === "reload"));
+  assert.ok(added.some((r) => r.url === "js/saved.js"), "saved controls must work offline");
 });
 
 test("a cache hit is served and refreshed in the background", async () => {

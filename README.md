@@ -3,7 +3,8 @@
 Classic cocktail specs for people who already know how to make them. No technique lessons: just the spec, method, glass, ice and garnish, plus a note when one helps.
 
 - **Browse and filter** (`index.html`): search, plus filters for base spirit, citrus (lemon / lime / grapefruit / orange / none), family, method, glass, tags and any ingredient (*all of* / *any of*). Filters live in the URL, so a filtered view can be shared or bookmarked, e.g. `?base=gin&citrus=lemon`.
-- **My bar** (`?view=bar`): tick the bottles you own and see what you can make now, and what one more bottle would unlock. Citrus, juices, syrups, eggs, cream and mixers are assumed on hand. The bottle list stays in your browser.
+- **Saved recipes**: mark drinks as **Favorites** or **Want to try** on cards or recipe pages, then choose either list above the results. Lists stay in your browser and work with the other filters.
+- **My bar** (`?view=bar`): tick the bottles you own and see what you can make now, and what one more bottle would unlock. Bottle suggestions are ranked by how many new drinks they unlock, with expandable recipe lists. Pantry ingredients are assumed on hand by default; enable **Track pantry availability** and uncheck anything you are out of. Missing pantry ingredients block readiness and bottle suggestions. Inventory stays in your browser.
 - **Recipe** (`recipe.html?c=<slug>`): the spec with an **ml / oz** toggle (30 ml = 1 oz, oz rounded to the nearest ⅛), plus links to similar drinks. Swipe left for the next recipe or right for the previous one, or use the Previous / Next links. Navigation follows the originating filters and sort order (or My bar group), and stops at either end. Direct recipe links browse all drinks alphabetically.
 
 Built phone-first: the filters open in a bottom drawer on phones and become a sidebar on wide screens. Once a page has loaded, the site works offline through a service worker.
@@ -27,6 +28,7 @@ line. Run `nvm install && nvm use` for Node.js, and `pyenv install -s` or
 | `js/cards.js`, `js/preferences.js` | Shared recipe cards and validated browser preferences. |
 | `js/units.js` | ml/oz and dash/barspoon formatting. |
 | `js/app.js`, `js/recipe.js` | The two pages. |
+| `js/saved.js` | Local favorites and want-to-try lists, with shared save controls. |
 | `tools/tests/` | `node --test` tests for filters, derivations and formatting. |
 
 ## IBA coverage

@@ -3,8 +3,9 @@
 
 // Facets shown as chip groups. Within a facet, values are OR'ed; facets are AND'ed.
 export const FACETS = ["base", "citrus", "family", "method", "glass", "tag"];
-// Ingredient categories assumed to be on hand in "My bar" (only bottles are tracked).
+// Pantry items are assumed available unless explicitly marked out of stock.
 export const PANTRY = new Set(["citrus", "juice", "sweetener", "dairy-egg", "mixer", "other"]);
+export const SAVED_LISTS = { favorites: "Favorites", "want-to-try": "Want to try" };
 export const SORTS = { name: "Name", base: "Base spirit", family: "Family" };
 
 let cache;
@@ -53,13 +54,14 @@ export function facetOptions(data, facet) {
 }
 
 export function emptyState() {
-  return { q: "", ing: [], match: "all", sort: "name", ...Object.fromEntries(FACETS.map((f) => [f, []])) };
+  return { q: "", saved: "", ing: [], match: "all", sort: "name", ...Object.fromEntries(FACETS.map((f) => [f, []])) };
 }
 
 export function parseState(params) {
   const s = emptyState();
   const list = (k) => (params.get(k) ?? "").split(",").filter(Boolean);
   s.q = params.get("q") ?? "";
+  if (Object.hasOwn(SAVED_LISTS, params.get("saved") ?? "")) s.saved = params.get("saved");
   for (const f of FACETS) s[f] = list(f);
   s.ing = list("ing");
   if (params.get("match") === "any") s.match = "any";
@@ -70,6 +72,7 @@ export function parseState(params) {
 // Only non-default values are written, so URLs stay short.
 export function stateToParams(s) {
   const p = new URLSearchParams();
+  if (s.saved) p.set("saved", s.saved);
   if (s.q.trim()) p.set("q", s.q.trim());
   for (const f of FACETS) if (s[f].length) p.set(f, s[f].join(","));
   if (s.ing.length) p.set("ing", s.ing.join(","));
@@ -79,10 +82,11 @@ export function stateToParams(s) {
 }
 
 export function activeCount(s) {
-  return FACETS.reduce((n, f) => n + s[f].length, 0) + s.ing.length + (s.q.trim() ? 1 : 0);
+  return FACETS.reduce((n, f) => n + s[f].length, 0) + s.ing.length + (s.q.trim() ? 1 : 0) + (s.saved ? 1 : 0);
 }
 
-export function matches(c, s) {
+export function matches(c, s, saved = {}) {
+  if (s.saved && !saved[s.saved]?.has(c.slug)) return false;
   for (const f of FACETS) {
     if (s[f].length && !facetValues(c, f).some((v) => s[f].includes(v))) return false;
   }
@@ -107,16 +111,16 @@ export function sortCocktails(list, sort, data) {
   return [...list].sort(rank ? (a, b) => rank(a) - rank(b) || byName(a, b) : byName);
 }
 
-export function filterCocktails(data, s) {
-  return sortCocktails(data.cocktails.filter((c) => matches(c, s)), s.sort, data);
+export function filterCocktails(data, s, saved = {}) {
+  return sortCocktails(data.cocktails.filter((c) => matches(c, s, saved)), s.sort, data);
 }
 
 // How many drinks each facet value would show, given every other active filter.
-export function facetCounts(data, s, facet) {
+export function facetCounts(data, s, facet, saved = {}) {
   const others = { ...s, [facet]: [] };
   const counts = new Map();
   for (const c of data.cocktails) {
-    if (!matches(c, others)) continue;
+    if (!matches(c, others, saved)) continue;
     for (const v of new Set(facetValues(c, facet))) counts.set(v, (counts.get(v) ?? 0) + 1);
   }
   return counts;
@@ -139,19 +143,39 @@ export function missingBottles(c, bar, data) {
   return [...new Set(c.ingredientIds)].filter((id) => isBottle(data, id) && !bar.has(id));
 }
 
-// { ready: [...], oneAway: [{ cocktail, missing }] }, both sorted by name.
-export function whatCanIMake(data, bar) {
+// Out-of-stock pantry items block readiness and bottle recommendations.
+export function whatCanIMake(data, bar, unavailable = new Set()) {
   const ready = [];
   const oneAway = [];
+  const pantryMissing = [];
   for (const c of data.cocktails) {
     const missing = missingBottles(c, bar, data);
+    const pantry = [...new Set(c.ingredientIds)].filter((id) => !isBottle(data, id) && unavailable.has(id));
+    if (pantry.length) {
+      if (!missing.length) pantryMissing.push({ cocktail: c, missing: pantry });
+      continue;
+    }
     if (missing.length === 0) ready.push(c);
     else if (missing.length === 1) oneAway.push({ cocktail: c, missing: missing[0] });
   }
   const byName = (a, b) => a.name.localeCompare(b.name);
   ready.sort(byName);
   oneAway.sort((a, b) => byName(a.cocktail, b.cocktail));
-  return { ready, oneAway };
+  pantryMissing.sort((a, b) => byName(a.cocktail, b.cocktail));
+  return { ready, oneAway, pantryMissing };
+}
+
+// Most new recipes first; alphabetical bottle names break ties.
+export function bottleRecommendations(data, oneAway) {
+  const groups = new Map();
+  for (const { cocktail, missing } of oneAway) {
+    if (!groups.has(missing)) groups.set(missing, new Map());
+    groups.get(missing).set(cocktail.slug, cocktail);
+  }
+  return [...groups].map(([id, cocktails]) => ({
+    id, cocktails: [...cocktails.values()].sort((a, b) => a.name.localeCompare(b.name)),
+  })).sort((a, b) => b.cocktails.length - a.cocktails.length
+    || data.ingredients[a.id].name.localeCompare(data.ingredients[b.id].name));
 }
 
 // Drinks sharing the most ingredients (Jaccard), excluding the drink itself.

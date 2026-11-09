@@ -1,16 +1,19 @@
 // Index page: the filterable recipe list and the "My bar" view.
-import { h, registerServiceWorker, setupDrawer } from "./dom.js";
+import { h, store, registerServiceWorker, setupDrawer } from "./dom.js";
 import {
-  FACETS, SORTS, loadData, parseState, stateToParams, emptyState, activeCount,
-  filterCocktails, facetOptions, facetCounts, bottleGroups, whatCanIMake,
+  FACETS, SORTS, SAVED_LISTS, loadData, parseState, stateToParams, emptyState, activeCount,
+  bottleRecommendations, filterCocktails, facetOptions, facetCounts, bottleGroups, isBottle,
+  whatCanIMake,
 } from "./data.js";
 import { loadBar, saveBar as persistBar } from "./preferences.js";
 import { cocktailCard } from "./cards.js";
 import { recipeURL } from "./navigation.js";
+import { readSaved, saveControls, syncSaveControls } from "./saved.js";
 
 const FACET_LABELS = {
   base: "Base spirit", citrus: "Citrus", family: "Family", method: "Method", glass: "Glass", tag: "Tags",
 };
+const PANTRY_KEY = "aperitif.pantry";
 const $ = (id) => document.getElementById(id);
 
 let data;
@@ -18,6 +21,10 @@ let state;
 const chipRefs = {}; // facet -> Map(value -> button)
 const ingRefs = new Map(); // ingredient id -> checkbox
 let bar;
+let saved = readSaved();
+const pantryState = store.get(PANTRY_KEY, {});
+let trackPantry = pantryState?.enabled === true;
+const unavailable = new Set(Array.isArray(pantryState?.unavailable) ? pantryState.unavailable : []);
 
 const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
 
@@ -25,6 +32,12 @@ function card(c, extra, group) {
   return cocktailCard(c, data, {
     href: recipeURL(c.slug, group ? "./?view=bar" : `./?${stateToParams(state)}`, group),
     extra,
+    actions: saveControls(c, saved, () => {
+      if (state.saved && !$("recipes").hidden) {
+        update();
+        $("saved-filter").focus({ preventScroll: true });
+      }
+    }),
   });
 }
 
@@ -105,7 +118,7 @@ function filterChecklist(groups, query) {
 
 function syncFacets() {
   for (const [facet, refs] of Object.entries(chipRefs)) {
-    const counts = facetCounts(data, state, facet);
+    const counts = facetCounts(data, state, facet, saved);
     for (const [value, btn] of refs) {
       const on = state[facet].includes(value);
       const n = counts.get(value) ?? 0;
@@ -124,6 +137,7 @@ function renderActive() {
   const chip = (label, onRemove) =>
     h("button", { type: "button", class: "chip active", "aria-label": `Remove ${label}`, onclick: onRemove }, label, " ✕");
   const chips = [];
+  if (state.saved) chips.push(chip(SAVED_LISTS[state.saved], () => { state.saved = ""; update(); }));
   if (state.q.trim()) chips.push(chip(`“${state.q.trim()}”`, () => { state.q = ""; $("q").value = ""; update(); }));
   for (const facet of FACETS) {
     for (const value of state[facet]) {
@@ -145,7 +159,7 @@ function clearAll() {
 }
 
 function update() {
-  const results = filterCocktails(data, state);
+  const results = filterCocktails(data, state, saved);
   const n = activeCount(state);
   $("count").textContent = plural(results.length, "drink");
   $("show-results").textContent = `Show ${plural(results.length, "drink")}`;
@@ -155,6 +169,7 @@ function update() {
     ? results.map((c) => card(c))
     : [h("li", { class: "empty" }, "No drinks match these filters. ",
         h("button", { type: "button", class: "link-btn", onclick: clearAll }, "Clear filters"))]));
+  $("saved-filter").value = state.saved;
   syncFacets();
   renderActive();
   const params = stateToParams(state);
@@ -192,15 +207,54 @@ function saveBar() {
 }
 
 function renderBar() {
-  const { ready, oneAway } = whatCanIMake(data, bar);
+  const { ready, oneAway, pantryMissing } = whatCanIMake(data, bar, trackPantry ? unavailable : new Set());
+  const recommendations = bottleRecommendations(data, oneAway);
   $("bottle-count").textContent = `(${bar.size})`;
   $("ready-count").textContent = `(${ready.length})`;
-  $("away-count").textContent = `(${oneAway.length})`;
+  $("away-count").textContent = `(${recommendations.length})`;
   const none = (text) => [h("li", { class: "empty" }, text)];
-  $("ready").replaceChildren(...(ready.length ? ready.map((c) => card(c, null, "ready")) : none(bar.size ? "Nothing yet. Check the list below for what to buy next." : "Tick a few bottles to start.")));
-  $("away").replaceChildren(...(oneAway.length
-    ? oneAway.map(({ cocktail, missing }) => card(cocktail, h("p", { class: "need" }, `Need: ${data.ingredients[missing].name}`), "away"))
-    : none("—")));
+  $("ready").replaceChildren(...(ready.length
+    ? ready.map((c) => card(c, null, "ready"))
+    : none(bar.size ? "Nothing ready. Check the pantry and bottle suggestions below." : "Tick a few bottles to start.")));
+  $("away").replaceChildren(...(recommendations.length
+    ? recommendations.map(({ id, cocktails }) => h("li", {},
+        h("details", { class: "recommendation" },
+          h("summary", {}, h("span", {}, data.ingredients[id].name),
+            h("span", { class: "muted" }, `Unlocks ${plural(cocktails.length, "drink")}`)),
+          h("ol", { class: "cards" }, cocktails.map((c) => card(c, null, "away"))))))
+    : none("No single bottle unlocks another drink with your current pantry.")));
+  $("pantry-missing-section").hidden = !pantryMissing.length;
+  $("pantry-missing-count").textContent = `(${pantryMissing.length})`;
+  $("pantry-missing").replaceChildren(...pantryMissing.map(({ cocktail, missing }) =>
+    card(cocktail, h("p", { class: "need" }, `Need: ${missing.map((id) => data.ingredients[id].name).join(", ")}`), "ready")));
+}
+
+function buildPantry() {
+  $("track-pantry").checked = trackPantry;
+  $("pantry-options").hidden = !trackPantry;
+  const groups = Object.entries(data.vocab.category).map(([category, label]) => {
+    const ids = [...data.usage.keys()].filter((id) => !isBottle(data, id) && data.ingredients[id].category === category)
+      .sort((a, b) => data.ingredients[a].name.localeCompare(data.ingredients[b].name));
+    if (!ids.length) return null;
+    return h("div", { class: "check-group" }, h("h3", {}, label), ids.map((id) =>
+      h("label", { class: "check", dataset: { name: data.ingredients[id].name.toLocaleLowerCase() } },
+        h("input", { type: "checkbox", checked: !unavailable.has(id), onchange: (e) => {
+          e.target.checked ? unavailable.delete(id) : unavailable.add(id);
+          savePantry();
+        }}), h("span", {}, data.ingredients[id].name))));
+  }).filter(Boolean);
+  $("pantry-list").replaceChildren(...groups);
+  $("pantry-q").addEventListener("input", (e) => filterChecklist(groups, e.target.value));
+  $("track-pantry").addEventListener("change", (e) => {
+    trackPantry = e.target.checked;
+    $("pantry-options").hidden = !trackPantry;
+    savePantry();
+  });
+}
+
+function savePantry() {
+  store.set(PANTRY_KEY, { enabled: trackPantry, unavailable: [...unavailable] });
+  renderBar();
 }
 
 // ── Views ──────────────────────────────────────────────────────────────────
@@ -233,6 +287,18 @@ async function main() {
   state = parseState(new URLSearchParams(location.search));
   buildFacets();
   buildBottles();
+  buildPantry();
+  $("saved-filter").replaceChildren(h("option", { value: "" }, "All recipes"),
+    ...Object.entries(SAVED_LISTS).map(([value, label]) => h("option", { value }, label)));
+  $("saved-filter").addEventListener("change", (e) => { state.saved = e.target.value; update(); });
+  const refreshSaved = () => {
+    saved = readSaved();
+    syncSaveControls(saved);
+    if (!$("recipes").hidden) update();
+    else renderBar();
+  };
+  addEventListener("pageshow", refreshSaved);
+  addEventListener("storage", refreshSaved);
   $("sort").replaceChildren(...Object.entries(SORTS).map(([v, label]) => h("option", { value: v }, `Sort: ${label}`)));
   $("sort").addEventListener("change", (e) => { state.sort = e.target.value; update(); });
   $("q").addEventListener("input", (e) => { state.q = e.target.value; update(); });

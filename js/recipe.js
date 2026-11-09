@@ -5,11 +5,13 @@ import { loadBar, loadUnit, saveUnit } from "./preferences.js";
 import { cocktailCard } from "./cards.js";
 import { formatAmount } from "./units.js";
 import { browseContext, recipeURL, recipeSequence, setupSwipe } from "./navigation.js";
+import { readSaved, saveControls, syncSaveControls } from "./saved.js";
 
 const params = new URLSearchParams(location.search);
 const from = browseContext(params.get("from"), location.href);
 const group = ["ready", "away"].includes(params.get("group")) ? params.get("group") : null;
 let sequence = [];
+let saved = readSaved();
 
 const $ = (id) => document.getElementById(id);
 const index = (params) => `./?${new URLSearchParams(params)}`;
@@ -61,6 +63,7 @@ function render() {
   $("recipe").replaceChildren(
     h("article", { class: "recipe" },
       h("h1", {}, c.name),
+      saveControls(c, saved),
       h("p", { class: "meta" }, cardMeta(c, data)),
       h("table", { class: "spec" }, h("caption", { class: "visually-hidden" }, "Ingredients"), h("tbody", { id: "spec" }, specRows())),
       h("dl", { class: "service" }, service.map(([k, val]) => h("div", {}, h("dt", {}, k), h("dd", {}, val)))),
@@ -77,7 +80,10 @@ function render() {
     others.length
       ? h("section", { class: "related" }, h("h2", {}, "Shares ingredients with"),
           h("ol", { class: "cards" }, others.map((o) =>
-            cocktailCard(o, data, { href: recipeURL(o.slug, from, group) }))))
+            cocktailCard(o, data, {
+              href: recipeURL(o.slug, from, group),
+              actions: saveControls(o, saved),
+            }))))
       : null,
   );
 }
@@ -113,13 +119,16 @@ async function main() {
     $("recipe").replaceChildren(h("p", { class: "empty" }, "No such drink. ", h("a", { href: "./" }, "Browse all drinks")));
     return;
   }
-  sequence = recipeSequence(data, cocktail.slug, from, group, loadBar(data));
+  sequence = recipeSequence(data, cocktail.slug, from, group, loadBar(data), saved);
   render();
   setupSwipe($("recipe"), (direction) => {
     const position = sequence.findIndex((c) => c.slug === cocktail.slug);
     const next = sequence[position + direction];
     if (next) location.assign(recipeURL(next.slug, from, group));
   });
+  const refreshSaved = () => { saved = readSaved(); render(); syncSaveControls(saved); };
+  addEventListener("pageshow", refreshSaved);
+  addEventListener("storage", refreshSaved);
 }
 
 main();

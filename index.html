@@ -52,26 +52,46 @@
           <select id="sort"></select>
         </label>
       </div>
+      <label class="saved-filter">Show
+        <select id="saved-filter" aria-label="Recipe list"></select>
+      </label>
       <div id="active" class="active-chips"></div>
       <ol id="list" class="cards"></ol>
     </section>
   </main>
 
   <main id="bar" class="bar-layout" data-for="bar" hidden>
-    <details class="bottles" id="bottles" open>
-      <summary><h2>Your bottles <span id="bottle-count" class="muted"></span></h2></summary>
-      <p class="muted small">Tick what you have. Citrus, juices, syrups, eggs, cream and mixers are assumed on hand.</p>
-      <div class="bottle-actions">
-        <input id="bottle-q" type="search" placeholder="Find a bottle…" autocomplete="off" aria-label="Find a bottle">
-        <button type="button" class="link-btn" id="bottles-clear">Clear</button>
-      </div>
-      <div id="bottle-list"></div>
-    </details>
+    <div class="bar-inventory">
+      <details class="bottles" id="bottles" open>
+        <summary><h2>Your bottles <span id="bottle-count" class="muted"></span></h2></summary>
+        <p class="muted small">Tick what you have. Use the pantry below to track citrus, syrups and other supplies.</p>
+        <div class="bottle-actions">
+          <input id="bottle-q" type="search" placeholder="Find a bottle…" autocomplete="off" aria-label="Find a bottle">
+          <button type="button" class="link-btn" id="bottles-clear">Clear</button>
+        </div>
+        <div id="bottle-list"></div>
+      </details>
+      <details class="bottles pantry" id="pantry">
+        <summary><h2>Your pantry</h2></summary>
+        <label class="check"><input type="checkbox" id="track-pantry"><span>Track pantry availability</span></label>
+        <p class="muted small">By default, all pantry ingredients are assumed on hand. Enable tracking and uncheck anything you’re out of. Your choices stay in this browser.</p>
+        <div id="pantry-options" hidden>
+          <input id="pantry-q" type="search" placeholder="Find a pantry ingredient…" autocomplete="off" aria-label="Find a pantry ingredient">
+          <div id="pantry-list"></div>
+        </div>
+      </details>
+    </div>
     <section class="bar-results">
       <h2>Ready to make <span id="ready-count" class="muted"></span></h2>
       <ol id="ready" class="cards"></ol>
-      <h2>One bottle away <span id="away-count" class="muted"></span></h2>
-      <ol id="away" class="cards"></ol>
+      <h2>What to buy next <span id="away-count" class="muted"></span></h2>
+      <p class="muted small">Bottles ranked by the number of new drinks they unlock with your current pantry. Open a bottle to see the recipes.</p>
+      <ol id="away" class="recommendations"></ol>
+      <section id="pantry-missing-section" hidden>
+        <h2>Missing pantry ingredients <span id="pantry-missing-count" class="muted"></span></h2>
+        <p class="muted small">You have the bottles for these drinks.</p>
+        <ol id="pantry-missing" class="cards"></ol>
+      </section>
     </section>
   </main>
 
