@@ -13,6 +13,6 @@
     "test:browser": "node --test --test-timeout=60000 tools/browser/*.test.js"
   },
   "devDependencies": {
-    "playwright": "1.62.1"
+    "playwright": "1.65.0"
   }
 }
