@@ -259,6 +259,9 @@ input[type="search"]::placeholder { color: var(--muted); }
   text-decoration: none;
   transition: border-color 0.15s, transform 0.15s;
 }
+.card-content { display: flex; align-items: flex-start; gap: 12px; }
+.card-content > div { min-width: 0; }
+.card-photo { flex: none; object-fit: cover; border-radius: 8px; }
 .card:hover { border-color: var(--accent); }
 .card:active { transform: scale(0.99); }
 .card h3 { font-size: 1.2rem; margin-bottom: 2px; }
@@ -292,6 +295,14 @@ input[type="search"]::placeholder { color: var(--muted); }
 /* ── Recipe page ─────────────────────────────────────────────────────────── */
 
 .recipe-page { max-width: 760px; }
+.recipe-photo {
+  width: min(100%, 192px); height: auto; aspect-ratio: 1;
+  object-fit: cover; border-radius: var(--radius); margin-bottom: 16px;
+}
+@media (min-width: 640px) {
+  .recipe-spec { display: flex; align-items: flex-start; gap: 24px; }
+  .recipe-photo { flex: none; }
+}
 .recipe h1 { font-size: clamp(2rem, 9vw, 3rem); margin: 8px 0 4px; }
 .recipe > .meta { margin: 0 0 20px; color: var(--accent); font-weight: 600; }
 .spec {

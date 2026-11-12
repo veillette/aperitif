@@ -45,7 +45,7 @@ jobs:
       - name: Assemble the site (without sources and tools)
         run: |
           rsync -a ./ _site/ \
-            --exclude .git --exclude .github --exclude _site --exclude __pycache__ \
+            --exclude .git --exclude .github --exclude /.agents --exclude _site --exclude __pycache__ \
             --exclude /tools --exclude /cocktails --exclude /ingredients.toml \
             --exclude /node_modules --exclude /package-lock.json --exclude /package.json --exclude /.nvmrc --exclude /.python-version --exclude '/*.md'
 

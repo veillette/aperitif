@@ -2,7 +2,7 @@
 import { h, registerServiceWorker } from "./dom.js";
 import { loadData, related, cardMeta, cardSpec } from "./data.js";
 import { loadBar, loadUnit, saveUnit } from "./preferences.js";
-import { cocktailCard } from "./cards.js";
+import { cocktailCard, cocktailPhoto } from "./cards.js";
 import { formatAmount } from "./units.js";
 import { browseContext, recipeURL, recipeSequence, setupSwipe } from "./navigation.js";
 import { readSaved, saveControls, syncSaveControls } from "./saved.js";
@@ -65,7 +65,9 @@ function render() {
       h("h1", {}, c.name),
       saveControls(c, saved),
       h("p", { class: "meta" }, cardMeta(c, data)),
-      h("table", { class: "spec" }, h("caption", { class: "visually-hidden" }, "Ingredients"), h("tbody", { id: "spec" }, specRows())),
+      h("div", { class: "recipe-spec" },
+        cocktailPhoto(c, { className: "recipe-photo", size: 192, alt: `${c.name} (${v.glass[c.glass]})` }),
+        h("table", { class: "spec" }, h("caption", { class: "visually-hidden" }, "Ingredients"), h("tbody", { id: "spec" }, specRows()))),
       h("dl", { class: "service" }, service.map(([k, val]) => h("div", {}, h("dt", {}, k), h("dd", {}, val)))),
       c.notes ? h("p", { class: "notes" }, c.notes) : null,
       c.tags.length

@@ -13,6 +13,8 @@ A static cocktail-recipe site for GitHub Pages. See `README.md` for the layout a
 - No framework, bundler or runtime dependencies. Build-time tooling is stdlib Python. Tests use `node --test`.
 - Build DOM with `h()` from `js/dom.js` (text only, no `innerHTML`). Wrap all localStorage access in `store`.
 
+When adding a cocktail or its photo, follow [Add Cocktail](.agents/skills/add-cocktail/SKILL.md).
+
 ## Verify
 
 ```sh

@@ -23,6 +23,7 @@ line. Run `nvm install && nvm use` for Node.js, and `pyenv install -s` or
 | `cocktails/<slug>.toml` | One file per drink: **the source of truth**. |
 | `ingredients.toml` | The ingredient vocabulary: ids, display names, categories, spirit group, citrus. |
 | `tools/build.py` | Validates everything and writes `data/cocktails.json`. Python 3.15, stdlib only. |
+| `images/cocktails/<slug>.webp` | Small serving photos, matched to recipes by slug. |
 | `data/cocktails.json` | Generated index the site loads. Committed; never edit by hand. |
 | `js/data.js` | Filtering, sorting, "My bar", related drinks (pure functions). |
 | `js/cards.js`, `js/preferences.js` | Shared recipe cards and validated browser preferences. |
@@ -69,7 +70,8 @@ Filter by `modern classic` for drinks such as Paper Plane, Naked and Famous, Pen
    ```
 
 2. If an ingredient isn't in `ingredients.toml` yet, add it there. Reuse existing ids wherever possible; filtering depends on "lime juice" being a single ingredient.
-3. Run `python3 tools/build.py` and commit both the TOML file and `data/cocktails.json`.
+3. Add the serving photo as `images/cocktails/<slug>.webp`. Follow the [cocktail photo guide](.agents/skills/add-cocktail/SKILL.md).
+4. Run `python3 tools/build.py` and commit the photo, TOML file and `data/cocktails.json`.
 
 The allowed values for `family`, `method`, `glass`, `ice` and `unit` are listed in `VOCAB` at the top of `tools/build.py`. The build names the file and field of any mistake.
 

@@ -201,6 +201,9 @@ def load_cocktail(path, vocab_ings, errors):
         if raw.get(key):
             out[key] = raw[key]
     out["tags"] = raw.get("tags", [])
+    photo = f"images/cocktails/{slug}.webp"
+    if (ROOT / photo).is_file():
+        out["photo"] = photo
     return out
 
 
