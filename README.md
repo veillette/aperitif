@@ -27,10 +27,19 @@ line. Run `nvm install && nvm use` for Node.js, and `pyenv install -s` or
 | `data/cocktails.json` | Generated index the site loads. Committed; never edit by hand. |
 | `js/data.js` | Filtering, sorting, "My bar", related drinks (pure functions). |
 | `js/cards.js`, `js/preferences.js` | Shared recipe cards and validated browser preferences. |
+| `js/checklist.js` | Shared ingredient checklists and search for filters, bottles and pantry. |
+| `js/bar.js` | My bar controls, inventory state and results. |
+| `js/navigation.js` | Browse context, recipe sequences and swipe handling. |
 | `js/units.js` | ml/oz and dash/barspoon formatting. |
 | `js/app.js`, `js/recipe.js` | The two pages. |
 | `js/saved.js` | Local favorites and want-to-try lists, with shared save controls. |
 | `tools/tests/` | `node --test` tests for filters, derivations and formatting. |
+
+Keep availability and grouping rules in `js/data.js`, browser storage validation in
+`js/preferences.js`, and DOM rendering in the view modules. Recipe navigation uses
+the same availability calculation as My bar, including tracked pantry shortages.
+When adding a browser module, include it in `CORE` in `sw.js` for cold offline loads;
+the service worker tests check that every module is included.
 
 ## IBA coverage
 

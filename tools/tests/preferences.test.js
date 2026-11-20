@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { prepare, bottleGroups, isBottle, whatCanIMake } from "../../js/data.js";
-import { loadBar, saveBar, loadUnit, saveUnit } from "../../js/preferences.js";
+import { loadBar, saveBar, loadPantry, savePantry, loadUnit, saveUnit } from "../../js/preferences.js";
 
 const data = prepare(JSON.parse(readFileSync(new URL("../../data/cocktails.json", import.meta.url), "utf8")));
 
@@ -33,10 +33,20 @@ test("preferences tolerate invalid JSON, wrong shapes, stale IDs and blocked sto
   for (const value of [null, "{", "null", "{}", "42", '"gin"', "true"]) {
     saved = value;
     assert.deepEqual([...loadBar(data)], []);
+    assert.deepEqual(loadPantry(data), { enabled: false, unavailable: new Set() });
     assert.equal(loadUnit(), "ml");
   }
   saved = JSON.stringify(["lager", "stout", "lager", "lime-juice", "removed", "__proto__", null, 1, {}]);
   assert.deepEqual([...loadBar(data)], ["lager", "stout"]);
+  saved = JSON.stringify({ enabled: true, unavailable: ["lime-juice", "lime-juice", "lager", "removed", "__proto__", null, 1, {}] });
+  assert.deepEqual(loadPantry(data), { enabled: true, unavailable: new Set(["lime-juice"]) });
+  savePantry({ enabled: false, unavailable: new Set(["lime-juice"]) });
+  assert.deepEqual(loadPantry(data), { enabled: false, unavailable: new Set(["lime-juice"]) },
+    "disabling tracking preserves out-of-stock selections");
+  for (const value of [{ enabled: "true", unavailable: {} }, { enabled: 1, unavailable: "lime-juice" }, []]) {
+    saved = JSON.stringify(value);
+    assert.deepEqual(loadPantry(data), { enabled: false, unavailable: new Set() });
+  }
   saveBar(new Set(["lager"]));
   assert.deepEqual([...loadBar(data)], ["lager"]);
   saveUnit("oz");
@@ -45,7 +55,9 @@ test("preferences tolerate invalid JSON, wrong shapes, stale IDs and blocked sto
   assert.equal(loadUnit(), "ml");
   Object.defineProperty(globalThis, "localStorage", { configurable: true, get() { throw new Error("blocked"); } });
   assert.deepEqual([...loadBar(data)], []);
+  assert.deepEqual(loadPantry(data), { enabled: false, unavailable: new Set() });
   assert.equal(loadUnit(), "ml");
   assert.doesNotThrow(() => saveBar(new Set(["lager"])));
+  assert.doesNotThrow(() => savePantry({ enabled: true, unavailable: new Set(["lime-juice"]) }));
   assert.doesNotThrow(() => saveUnit("oz"));
 });

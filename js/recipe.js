@@ -1,7 +1,7 @@
 // Recipe page: recipe.html?c=<slug>
 import { h, registerServiceWorker } from "./dom.js";
 import { loadData, related, cardMeta, cardSpec } from "./data.js";
-import { loadBar, loadUnit, saveUnit } from "./preferences.js";
+import { loadBar, loadPantry, loadUnit, saveUnit } from "./preferences.js";
 import { cocktailCard, cocktailPhoto } from "./cards.js";
 import { formatAmount } from "./units.js";
 import { browseContext, recipeURL, recipeSequence, setupSwipe } from "./navigation.js";
@@ -9,7 +9,7 @@ import { readSaved, saveControls, syncSaveControls } from "./saved.js";
 
 const params = new URLSearchParams(location.search);
 const from = browseContext(params.get("from"), location.href);
-const group = ["ready", "away"].includes(params.get("group")) ? params.get("group") : null;
+const group = ["ready", "away", "pantry"].includes(params.get("group")) ? params.get("group") : null;
 let sequence = [];
 let saved = readSaved();
 
@@ -99,6 +99,17 @@ function setUnit(next) {
   if (cocktail) $("spec").replaceChildren(...specRows());
 }
 
+function refresh() {
+  saved = readSaved();
+  const pantry = loadPantry(data);
+  sequence = recipeSequence(data, {
+    slug: cocktail.slug, from, group, bar: loadBar(data), saved,
+    unavailable: pantry.enabled ? pantry.unavailable : new Set(),
+  });
+  render();
+  syncSaveControls(saved);
+}
+
 async function main() {
   registerServiceWorker();
   for (const btn of document.querySelectorAll("[data-unit]")) {
@@ -121,16 +132,14 @@ async function main() {
     $("recipe").replaceChildren(h("p", { class: "empty" }, "No such drink. ", h("a", { href: "./" }, "Browse all drinks")));
     return;
   }
-  sequence = recipeSequence(data, cocktail.slug, from, group, loadBar(data), saved);
-  render();
+  refresh();
   setupSwipe($("recipe"), (direction) => {
     const position = sequence.findIndex((c) => c.slug === cocktail.slug);
     const next = sequence[position + direction];
     if (next) location.assign(recipeURL(next.slug, from, group));
   });
-  const refreshSaved = () => { saved = readSaved(); render(); syncSaveControls(saved); };
-  addEventListener("pageshow", refreshSaved);
-  addEventListener("storage", refreshSaved);
+  addEventListener("pageshow", refresh);
+  addEventListener("storage", refresh);
 }
 
 main();

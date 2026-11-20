@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import vm from "node:vm";
 
 test("activation removes only old Aperitif caches and claims clients", async () => {
@@ -58,6 +58,9 @@ test("install bypasses the HTTP cache", async () => {
   await fire("install", {}).done;
   assert.ok(added.length > 0 && added.every((r) => r.cache === "reload"));
   assert.ok(added.some((r) => r.url === "js/saved.js"), "saved controls must work offline");
+  for (const file of readdirSync(new URL("../../js/", import.meta.url)).filter((name) => name.endsWith(".js"))) {
+    assert.ok(added.some((r) => r.url === `js/${file}`), `${file} must be available on a cold offline load`);
+  }
 });
 
 test("a cache hit is served and refreshed in the background", async () => {

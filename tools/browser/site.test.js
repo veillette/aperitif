@@ -155,6 +155,71 @@ test("beer can be checked, saved and used to make Mezcalada and Stout Flip", asy
   await fits();
 });
 
+test("recommendation navigation crosses bottles in the order shown in My bar", async () => {
+  await open("?view=bar");
+  await page.locator('#bottle-list input[value="white-rum"]').check();
+  const bottles = page.locator("#away details.recommendation");
+  const lastInFirst = bottles.nth(0).locator(".card a").last();
+  const firstInSecond = bottles.nth(1).locator(".card a").first();
+  const previousURL = new URL(await lastInFirst.getAttribute("href"), base).href;
+  const nextURL = new URL(await firstInSecond.getAttribute("href"), base).href;
+
+  await bottles.nth(0).locator("summary").click();
+  await lastInFirst.click();
+  await page.locator("h1").waitFor();
+  assert.equal(page.url(), previousURL);
+  assert.equal(new URL(await page.locator('[rel="next"]').getAttribute("href"), base).href, nextURL);
+
+  await swipe(-100);
+  assert.equal(page.url(), nextURL);
+  await page.locator('[rel="prev"]').click();
+  await page.waitForURL(previousURL);
+});
+
+test("checklist searches and pantry tracking preserve My bar recipe navigation", async () => {
+  await open("?view=bar");
+  await page.locator("#bottle-q").fill("white rum");
+  assert.equal(await page.locator("#bottle-list label:visible").count(), 1);
+  await page.locator('#bottle-list input[value="white-rum"]').check();
+  await page.locator("#bottle-q").fill("no matching bottle");
+  assert.equal(await page.locator("#bottle-list .check-group:visible").count(), 0);
+  await page.locator("#bottle-q").fill("");
+  assert.ok(await page.locator("#bottle-list .check-group:visible").count() > 1);
+  await page.locator('#bottle-list input[value="london-dry-gin"]').check();
+
+  await page.locator("#pantry summary").click();
+  await page.locator("#track-pantry").check();
+  await page.locator("#pantry-q").fill("lime juice");
+  assert.equal(await page.locator("#pantry-list label:visible").count(), 1);
+  await page.locator('#pantry-list input[value="lime-juice"]').uncheck();
+  assert.equal(await page.locator("#ready .card").filter({ hasText: "Daiquiri" }).count(), 0);
+  await page.locator("#pantry-missing .card").filter({ hasText: /^Daiquiri/ }).waitFor();
+  await fits();
+
+  for (const [id, group] of [["ready", "ready"], ["pantry-missing", "pantry"]]) {
+    const links = await page.locator(`#${id} .card a`).evaluateAll((els) => els.map((el) => ({ href: el.href, name: el.querySelector("h3").textContent })));
+    assert.ok(links.length > 1);
+    await page.goto(links[0].href);
+    await page.locator("h1").waitFor();
+    assert.equal(new URL(page.url()).searchParams.get("group"), group);
+    assert.equal(await page.locator('[rel="prev"]').count(), 0);
+    assert.equal(new URL(await page.locator('[rel="next"]').getAttribute("href"), base).href, links[1].href);
+    await page.locator('[rel="next"]').click();
+    await page.waitForURL(links[1].href);
+    assert.equal(await page.locator("h1").innerText(), links[1].name);
+    await page.locator("#back").click();
+    await page.locator(`#${id} .card`).first().waitFor();
+  }
+
+  await page.locator("#pantry summary").click();
+  assert.equal(await page.locator("#track-pantry").isChecked(), true);
+  assert.equal(await page.locator('#pantry-list input[value="lime-juice"]').isChecked(), false);
+  await page.locator("#track-pantry").uncheck();
+  await page.locator("#ready .card").filter({ hasText: /^Daiquiri/ }).waitFor();
+  await page.locator("#track-pantry").check();
+  assert.equal(await page.locator("#ready .card").filter({ hasText: /^Daiquiri/ }).count(), 0);
+});
+
 for (const saved of ["null", "{}", '"gin"', "{", '["lager","stout","lager","removed",null,{},"lime-juice"]']) {
   test(`malformed or stale preferences do not break either page: ${saved}`, async () => {
     await context.addInitScript((value) => {
@@ -203,5 +268,8 @@ test("a cached installation supports cold offline recipe navigation and shared c
   await related.locator("a").or(related).first().click();
   await page.locator("h1").waitFor();
   assert.equal(await page.locator("h1").innerText(), name);
+  await page.goto(base + "?view=bar");
+  await page.locator('#bottle-list input[value="white-rum"]').check();
+  await page.locator("#ready .card").filter({ hasText: /^Daiquiri/ }).waitFor();
   await fits();
 });

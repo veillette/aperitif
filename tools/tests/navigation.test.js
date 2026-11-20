@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { prepare, emptyState, filterCocktails, parseState, whatCanIMake } from "../../js/data.js";
+import { prepare, bottleRecommendations, emptyState, filterCocktails, parseState, whatCanIMake } from "../../js/data.js";
 import { browseContext, recipeURL, recipeSequence, swipeDirection, setupSwipe } from "../../js/navigation.js";
 
 const data = prepare(JSON.parse(readFileSync(new URL("../../data/cocktails.json", import.meta.url), "utf8")));
@@ -21,11 +21,11 @@ test("context accepts only this deployment's index and round trips through recip
 
 test("sequences follow filters and sorting, falling back for direct or excluded drinks", () => {
   const expected = filterCocktails(data, parseState(new URLSearchParams("base=gin&sort=family")));
-  assert.deepEqual(recipeSequence(data, expected[0].slug, "./?base=gin&sort=family", null, new Set()), expected);
+  assert.deepEqual(recipeSequence(data, { slug: expected[0].slug, from: "./?base=gin&sort=family" }), expected);
   const all = filterCocktails(data, emptyState());
-  assert.deepEqual(recipeSequence(data, "adonis", null, null, new Set()), all);
-  assert.deepEqual(recipeSequence(data, "adonis", "./?base=gin", null, new Set()), all);
-  const singleton = recipeSequence(data, "adonis", "./?q=Adonis", null, new Set());
+  assert.deepEqual(recipeSequence(data, { slug: "adonis" }), all);
+  assert.deepEqual(recipeSequence(data, { slug: "adonis", from: "./?base=gin" }), all);
+  const singleton = recipeSequence(data, { slug: "adonis", from: "./?q=Adonis" });
   assert.equal(singleton.length, 1);
   assert.equal(singleton[-1], undefined);
   assert.equal(singleton[1], undefined);
@@ -33,11 +33,30 @@ test("sequences follow filters and sorting, falling back for direct or excluded 
 
 test("My bar groups remain separate and reflect current bottles", () => {
   const bar = new Set(["gin", "sweet-vermouth", "dry-vermouth", "campari"]);
-  const groups = whatCanIMake(data, bar);
-  for (const [group, list] of [["ready", groups.ready], ["away", groups.oneAway.map((o) => o.cocktail)]]) {
+  const { ready, oneAway } = whatCanIMake(data, bar);
+  const away = bottleRecommendations(data, oneAway).flatMap(({ cocktails }) => cocktails);
+  for (const [group, list] of [["ready", ready], ["away", away]]) {
     assert.ok(list.length);
-    assert.deepEqual(recipeSequence(data, list[0].slug, "./?view=bar", group, bar), list);
+    assert.deepEqual(recipeSequence(data, { slug: list[0].slug, from: "./?view=bar", group, bar }), list);
   }
+});
+
+test("My bar navigation honors pantry availability in every group", () => {
+  const bar = new Set(["white-rum"]);
+  const unavailable = new Set(["lime-juice"]);
+  const results = whatCanIMake(data, bar, unavailable);
+  const groups = {
+    ready: results.ready,
+    away: bottleRecommendations(data, results.oneAway).flatMap(({ cocktails }) => cocktails),
+    pantry: results.pantryMissing.map(({ cocktail }) => cocktail),
+  };
+  for (const [group, list] of Object.entries(groups)) {
+    assert.ok(list.length, group);
+    assert.deepEqual(recipeSequence(data, {
+      slug: list[0].slug, from: "./?view=bar", group, bar, unavailable,
+    }), list, group);
+  }
+  assert.ok(groups.pantry.some((c) => c.slug === "daiquiri"));
 });
 
 test("swipe direction requires sufficient horizontal movement", () => {

@@ -1,11 +1,11 @@
 // Index page: the filterable recipe list and the "My bar" view.
-import { h, store, registerServiceWorker, setupDrawer } from "./dom.js";
+import { h, registerServiceWorker, setupDrawer } from "./dom.js";
 import {
   FACETS, SORTS, SAVED_LISTS, loadData, parseState, stateToParams, emptyState, activeCount,
-  bottleRecommendations, filterCocktails, facetOptions, facetCounts, bottleGroups, isBottle,
-  whatCanIMake,
+  filterCocktails, facetOptions, facetCounts,
 } from "./data.js";
-import { loadBar, saveBar as persistBar } from "./preferences.js";
+import { setupBarView } from "./bar.js";
+import { ingredientChecklist, filterChecklist } from "./checklist.js";
 import { cocktailCard } from "./cards.js";
 import { recipeURL } from "./navigation.js";
 import { readSaved, saveControls, syncSaveControls } from "./saved.js";
@@ -13,19 +13,14 @@ import { readSaved, saveControls, syncSaveControls } from "./saved.js";
 const FACET_LABELS = {
   base: "Base spirit", citrus: "Citrus", family: "Family", method: "Method", glass: "Glass", tag: "Tags",
 };
-const PANTRY_KEY = "aperitif.pantry";
 const $ = (id) => document.getElementById(id);
 
 let data;
 let state;
 const chipRefs = {}; // facet -> Map(value -> button)
-const ingRefs = new Map(); // ingredient id -> checkbox
-let bar;
+let ingRefs; // ingredient id -> checkbox
+let barView;
 let saved = readSaved();
-const pantryState = store.get(PANTRY_KEY, {});
-let trackPantry = pantryState?.enabled === true;
-const unavailable = new Set(Array.isArray(pantryState?.unavailable) ? pantryState.unavailable : []);
-
 const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
 
 function card(c, extra, group) {
@@ -78,22 +73,10 @@ function buildFacets() {
     "aria-label": "Find an ingredient",
     oninput: (e) => filterChecklist(groups, e.target.value),
   });
-  const groups = Object.entries(data.vocab.category).map(([cat, label]) => {
-    const ids = Object.keys(data.ingredients)
-      .filter((id) => data.ingredients[id].category === cat && data.usage.has(id))
-      .sort((a, b) => data.ingredients[a].name.localeCompare(data.ingredients[b].name));
-    if (!ids.length) return null;
-    const items = ids.map((id) => {
-      const box = h("input", {
-        type: "checkbox", value: id,
-        onchange: () => { toggle(state.ing, id); update(); },
-      });
-      ingRefs.set(id, box);
-      return h("label", { class: "check", dataset: { name: data.ingredients[id].name.toLocaleLowerCase() } },
-        box, h("span", {}, data.ingredients[id].name), h("span", { class: "n" }, String(data.usage.get(id))));
-    });
-    return h("div", { class: "check-group" }, h("h3", {}, label), items);
-  }).filter(Boolean);
+  const { groups, inputs } = ingredientChecklist(data, {
+    onChange: (id) => { toggle(state.ing, id); update(); },
+  });
+  ingRefs = inputs;
 
   root.append(h("fieldset", { class: "facet" },
     h("legend", {}, "Ingredients"),
@@ -101,19 +84,6 @@ function buildFacets() {
     find,
     h("div", { class: "checklist" }, groups),
   ));
-}
-
-function filterChecklist(groups, query) {
-  const q = query.trim().toLocaleLowerCase();
-  for (const group of groups) {
-    let shown = 0;
-    for (const label of group.querySelectorAll("label")) {
-      const hit = !q || label.dataset.name.includes(q);
-      label.hidden = !hit;
-      shown += hit;
-    }
-    group.hidden = shown === 0;
-  }
 }
 
 function syncFacets() {
@@ -177,86 +147,6 @@ function update() {
   history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
 }
 
-// ── My bar ─────────────────────────────────────────────────────────────────
-
-function buildBottles() {
-  const groups = bottleGroups(data).map(({ label, ids }) => {
-    return h("div", { class: "check-group" }, h("h3", {}, label),
-      ids.map((id) => h("label", { class: "check", dataset: { name: data.ingredients[id].name.toLocaleLowerCase() } },
-        h("input", {
-          type: "checkbox", value: id, checked: bar.has(id),
-          onchange: (e) => { e.target.checked ? bar.add(id) : bar.delete(id); saveBar(); },
-        }),
-        h("span", {}, data.ingredients[id].name),
-        h("span", { class: "n" }, String(data.usage.get(id))))));
-  });
-  $("bottle-list").replaceChildren(...groups);
-  $("bottle-q").addEventListener("input", (e) => filterChecklist(groups, e.target.value));
-  $("bottles-clear").addEventListener("click", () => {
-    bar.clear();
-    for (const box of $("bottle-list").querySelectorAll("input")) box.checked = false;
-    saveBar();
-  });
-  // Collapse the checklist on phones once a bar is set up, so results come first.
-  if (bar.size && matchMedia("(max-width: 1023px)").matches) $("bottles").open = false;
-}
-
-function saveBar() {
-  persistBar(bar);
-  renderBar();
-}
-
-function renderBar() {
-  const { ready, oneAway, pantryMissing } = whatCanIMake(data, bar, trackPantry ? unavailable : new Set());
-  const recommendations = bottleRecommendations(data, oneAway);
-  $("bottle-count").textContent = `(${bar.size})`;
-  $("ready-count").textContent = `(${ready.length})`;
-  $("away-count").textContent = `(${recommendations.length})`;
-  const none = (text) => [h("li", { class: "empty" }, text)];
-  $("ready").replaceChildren(...(ready.length
-    ? ready.map((c) => card(c, null, "ready"))
-    : none(bar.size ? "Nothing ready. Check the pantry and bottle suggestions below." : "Tick a few bottles to start.")));
-  $("away").replaceChildren(...(recommendations.length
-    ? recommendations.map(({ id, cocktails }) => h("li", {},
-        h("details", { class: "recommendation" },
-          h("summary", {}, h("span", {}, data.ingredients[id].name),
-            h("span", { class: "muted" }, `Unlocks ${plural(cocktails.length, "drink")}`)),
-          h("ol", { class: "cards" }, cocktails.map((c) => card(c, null, "away"))))))
-    : none("No single bottle unlocks another drink with your current pantry.")));
-  $("pantry-missing-section").hidden = !pantryMissing.length;
-  $("pantry-missing-count").textContent = `(${pantryMissing.length})`;
-  $("pantry-missing").replaceChildren(...pantryMissing.map(({ cocktail, missing }) =>
-    card(cocktail, h("p", { class: "need" }, `Need: ${missing.map((id) => data.ingredients[id].name).join(", ")}`), "ready")));
-}
-
-function buildPantry() {
-  $("track-pantry").checked = trackPantry;
-  $("pantry-options").hidden = !trackPantry;
-  const groups = Object.entries(data.vocab.category).map(([category, label]) => {
-    const ids = [...data.usage.keys()].filter((id) => !isBottle(data, id) && data.ingredients[id].category === category)
-      .sort((a, b) => data.ingredients[a].name.localeCompare(data.ingredients[b].name));
-    if (!ids.length) return null;
-    return h("div", { class: "check-group" }, h("h3", {}, label), ids.map((id) =>
-      h("label", { class: "check", dataset: { name: data.ingredients[id].name.toLocaleLowerCase() } },
-        h("input", { type: "checkbox", checked: !unavailable.has(id), onchange: (e) => {
-          e.target.checked ? unavailable.delete(id) : unavailable.add(id);
-          savePantry();
-        }}), h("span", {}, data.ingredients[id].name))));
-  }).filter(Boolean);
-  $("pantry-list").replaceChildren(...groups);
-  $("pantry-q").addEventListener("input", (e) => filterChecklist(groups, e.target.value));
-  $("track-pantry").addEventListener("change", (e) => {
-    trackPantry = e.target.checked;
-    $("pantry-options").hidden = !trackPantry;
-    savePantry();
-  });
-}
-
-function savePantry() {
-  store.set(PANTRY_KEY, { enabled: trackPantry, unavailable: [...unavailable] });
-  renderBar();
-}
-
 // ── Views ──────────────────────────────────────────────────────────────────
 
 function showView() {
@@ -266,7 +156,7 @@ function showView() {
     if (a.dataset.view === view) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   }
-  if (view === "bar") renderBar();
+  if (view === "bar") barView.render();
   else {
     state = parseState(new URLSearchParams(location.search));
     $("q").value = state.q;
@@ -283,11 +173,9 @@ async function main() {
     $("list").replaceChildren(h("li", { class: "empty" }, `Could not load recipes (${err.message}).`));
     return;
   }
-  bar = loadBar(data);
   state = parseState(new URLSearchParams(location.search));
   buildFacets();
-  buildBottles();
-  buildPantry();
+  barView = setupBarView({ data, card });
   $("saved-filter").replaceChildren(h("option", { value: "" }, "All recipes"),
     ...Object.entries(SAVED_LISTS).map(([value, label]) => h("option", { value }, label)));
   $("saved-filter").addEventListener("change", (e) => { state.saved = e.target.value; update(); });
@@ -295,7 +183,7 @@ async function main() {
     saved = readSaved();
     syncSaveControls(saved);
     if (!$("recipes").hidden) update();
-    else renderBar();
+    else barView.render();
   };
   addEventListener("pageshow", refreshSaved);
   addEventListener("storage", refreshSaved);

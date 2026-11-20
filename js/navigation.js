@@ -1,4 +1,4 @@
-import { emptyState, filterCocktails, parseState, whatCanIMake } from "./data.js";
+import { bottleRecommendations, emptyState, filterCocktails, parseState, whatCanIMake } from "./data.js";
 
 // Context is a relative index URL within the current deployment directory.
 export function browseContext(value, pageURL) {
@@ -19,15 +19,16 @@ export function recipeURL(slug, from, group) {
   return `recipe.html?${params}`;
 }
 
-export function recipeSequence(data, slug, from, group, bar, saved = {}) {
+export function recipeSequence(data, { slug, from, group, bar = new Set(), saved = {}, unavailable = new Set() }) {
   const all = () => filterCocktails(data, emptyState());
   if (!from) return all();
   const params = new URLSearchParams(from.split("?")[1] ?? "");
   let list;
   if (params.get("view") === "bar") {
-    const results = whatCanIMake(data, bar);
+    const results = whatCanIMake(data, bar, unavailable);
     list = group === "ready" ? results.ready
-      : group === "away" ? results.oneAway.map(({ cocktail }) => cocktail) : [];
+      : group === "away" ? bottleRecommendations(data, results.oneAway).flatMap(({ cocktails }) => cocktails)
+      : group === "pantry" ? results.pantryMissing.map(({ cocktail }) => cocktail) : [];
   } else list = filterCocktails(data, parseState(params), saved);
   return list.some((c) => c.slug === slug) ? list : all();
 }

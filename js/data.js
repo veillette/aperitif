@@ -128,14 +128,18 @@ export function facetCounts(data, s, facet, saved = {}) {
 
 export const isBottle = (data, id) => !PANTRY.has(data.ingredients[id].category);
 
-// Checklist and availability calculations share the same bottle rule.
-export function bottleGroups(data) {
+// Every ingredient checklist uses vocabulary order and the same name sorting.
+export function ingredientGroups(data, include = () => true) {
   return Object.entries(data.vocab.category).map(([category, label]) => ({
     label,
     ids: [...data.usage.keys()]
-      .filter((id) => data.ingredients[id].category === category && isBottle(data, id))
+      .filter((id) => data.ingredients[id].category === category && include(id))
       .sort((a, b) => data.ingredients[a].name.localeCompare(data.ingredients[b].name)),
   })).filter(({ ids }) => ids.length);
+}
+
+export function bottleGroups(data) {
+  return ingredientGroups(data, (id) => isBottle(data, id));
 }
 
 // Bottles a drink needs that are not in the bar.
