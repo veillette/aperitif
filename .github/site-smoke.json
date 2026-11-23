@@ -1,0 +1,14 @@
+{
+  "shell": "CORE",
+  "shellRoots": [
+    "js",
+    "css"
+  ],
+  "routes": [
+    {
+      "path": "recipe.html?c=negroni",
+      "selector": "#recipe h1",
+      "text": "Negroni"
+    }
+  ]
+}

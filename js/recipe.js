@@ -64,6 +64,8 @@ function render() {
     h("article", { class: "recipe" },
       h("h1", {}, c.name),
       saveControls(c, saved),
+      h("button", { class: "chip", type: "button", "data-copy-link": recipeURL(c.slug) }, "Copy recipe link"),
+      h("span", { class: "copy-status", role: "status" }),
       h("p", { class: "meta" }, cardMeta(c, data)),
       h("div", { class: "recipe-spec" },
         cocktailPhoto(c, { className: "recipe-photo", size: 192, alt: `${c.name} (${v.glass[c.glass]})` }),
