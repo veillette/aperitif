@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
-# Assemble the GitHub Pages artifact without sources, tools, or package metadata.
+# Assemble the GitHub Pages artifact: only the public site files, stamped SW.
 set -euo pipefail
 
 root="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$root"
 
-rm -rf _site
-mkdir -p _site
-rsync -a ./ _site/ \
-  --exclude .git --exclude .github --exclude /.agents --exclude _site --exclude __pycache__ \
-  --exclude /tools --exclude /cocktails --exclude /ingredients.toml \
-  --exclude /node_modules --exclude /package-lock.json --exclude /package.json \
-  --exclude /.nvmrc --exclude /.python-version --exclude '/*.md'
+rsync -a --delete --delete-excluded \
+  --include='/index.html' --include='/recipe.html' \
+  --include='/manifest.webmanifest' --include='/sw.js' \
+  --include='/css/***' --include='/data/***' --include='/icons/***' \
+  --include='/images/***' --include='/js/***' --exclude='*' ./ _site/
 
-version="${GITHUB_SHA:-dev}"
-version="${version:0:12}"
-sed -i "s/^const VERSION = .*/const VERSION = \"${version}\";/" _site/sw.js
-grep -q "^const VERSION = \"${version}\";" _site/sw.js
+revision="${GITHUB_SHA:-$(git rev-parse HEAD)}"
+revision="${revision:0:12}"
+sed -i "s/^const VERSION = .*/const VERSION = \"${revision}\";/" _site/sw.js
+grep -q "^const VERSION = \"${revision}\";" _site/sw.js

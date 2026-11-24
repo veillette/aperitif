@@ -7,7 +7,6 @@
     "node": ">=26"
   },
   "scripts": {
-    "build:site": "bash .github/build-site.sh",
     "build": "python3 tools/build.py",
     "check": "python3 tools/build.py --check && node --test tools/tests/*.test.js",
     "prepare:site": "bash tools/prepare-site.sh",

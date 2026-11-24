@@ -102,7 +102,7 @@ Use Node.js and Python versions from `.nvmrc` and `.python-version`, plus rsync.
 
 ```sh
 npm run check
-npm run build:site
+npm run prepare:site
 python3 -m http.server 8000 --directory _site
 ```
 

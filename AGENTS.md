@@ -11,7 +11,15 @@ A static cocktail-recipe site for GitHub Pages. See `README.md` for the layout a
 - Volumes are stored in ml (¾ oz = 22.5 ml). Prefer classic or IBA specs and say so in a note when deviating.
 - Phone first: keep tap targets ≥ 44 px, inputs at ≥ 16 px font, and no horizontal scroll at 360 px. The filter UI is a drawer below 1024 px and a sidebar at 1024 px and up.
 - No framework, bundler or runtime dependencies. Build-time tooling is stdlib Python. Tests use `node --test`.
-- Build DOM with `h()` from `js/dom.js` (text only, no `innerHTML`). Wrap all localStorage access in `store`.
+- Build DOM with `h()` from `js/dom.js` (text only, no `innerHTML`). Wrap all
+  localStorage access in `store` from `js/storage.js`.
+- **`js/storage.js` is the fleet-canonical browser storage helper.** Edit it
+  here, then from the Origami checkout run
+  `node tools/sync-site-helpers.mjs --write` so A-Table, origami, sketchbook,
+  and ukulele-first-strum receive the copy. Do not fork a second `store`
+  helper in those repos.
+- Assemble the Pages artifact only with `npm run prepare:site`
+  (`tools/prepare-site.sh`). There is no second build-site script.
 
 When adding a cocktail or its photo, follow [Add Cocktail](.agents/skills/add-cocktail/SKILL.md).
 
@@ -19,7 +27,7 @@ When adding a cocktail or its photo, follow [Add Cocktail](.agents/skills/add-co
 
 ```sh
 npm run check
-bash tools/prepare-site.sh
+npm run prepare:site
 node .github/site-smoke.mjs _site --assets-only
 ```
 
