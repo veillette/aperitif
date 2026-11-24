@@ -43,6 +43,10 @@ the same availability calculation as My bar, including tracked pantry shortages.
 When adding a browser module, include it in `CORE` in `sw.js` for cold offline loads;
 the service worker tests check that every module is included.
 
+The shared JSON storage helper lives in `js/storage.js`. Update its local copies
+with `node tools/sync-site-helpers.mjs --write` from the Origami checkout.
+Aperitif’s keys and value validation stay in the site’s own modules.
+
 ## IBA coverage
 
 The collection includes all 102 cocktails on the [official IBA list](https://iba-world.com/cocktails/all-cocktails/) (checked 2026-11-08), plus other classics. Filter by the `IBA` tag to see the current list. Existing URLs are retained for Alexander (Brandy Alexander), Spritz (Aperol Spritz), Hemingway Special (Hemingway Daiquiri), Ramos Fizz (Ramos Gin Fizz), and South Side (Southside).
