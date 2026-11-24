@@ -9,6 +9,7 @@
   "scripts": {
     "build": "python3 tools/build.py",
     "check": "python3 tools/build.py --check && node --test tools/tests/*.test.js",
+    "prepare:site": "bash tools/prepare-site.sh",
     "serve": "python3 -m http.server 8000",
     "test:browser": "node --test --test-timeout=60000 tools/browser/*.test.js"
   },

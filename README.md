@@ -118,9 +118,13 @@ still benefits from a manual phone check. To use an existing Chromium installati
 set `CHROMIUM_PATH=/path/to/chromium`. On a Linux host missing browser libraries,
 use Playwright's documented `install --with-deps chromium` setup.
 
-Browser tests are separate from the dependency-free `npm run check` command and
-are not added to the deployment workflow.
+Browser tests are separate from the dependency-free `npm run check` command. CI
+runs them after the shared deployment smoke test.
 
 ## Deploying
 
-On every push to `main`, `.github/workflows/pages.yml` validates the data, runs the tests and publishes to GitHub Pages without `tools/` or the TOML sources. In the repository settings, set **Pages → Source** to **GitHub Actions**.
+On every pull request and push to `main`, `.github/workflows/pages.yml` validates
+the data, runs unit and Playwright browser tests, prepares `_site/` with
+`tools/prepare-site.sh`, runs the shared deployment smoke test, and publishes to
+GitHub Pages without `tools/` or the TOML sources. In the repository settings,
+set **Pages → Source** to **GitHub Actions**.

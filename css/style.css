@@ -69,6 +69,8 @@ button, input, select { font: inherit; color: inherit; }
   clip: rect(0 0 0 0); white-space: nowrap;
 }
 .muted { color: var(--muted); font-weight: 400; }
+.copy-status:not(:empty) { color: var(--muted); font-size: 0.9rem; margin-left: 0.5rem; }
+.recipe .share { margin: 0.25rem 0 0; }
 .small { font-size: 0.9rem; }
 
 /* ── Top bar ─────────────────────────────────────────────────────────────── */

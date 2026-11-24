@@ -18,7 +18,13 @@ When adding a cocktail or its photo, follow [Add Cocktail](.agents/skills/add-co
 ## Verify
 
 ```sh
-python3 tools/build.py --check && node --test tools/tests/*.test.js
+npm run check
+bash tools/prepare-site.sh
+node .github/site-smoke.mjs _site --assets-only
 ```
+
+After installing Playwright Chromium (`npx playwright install --only-shell chromium`),
+run `npm run test:browser`. Shared Pages CI and smoke helpers come from Origami;
+edit them there and sync with `node tools/sync-site-helpers.mjs --write`.
 
 Branch: `main`. Commit or push only when asked.

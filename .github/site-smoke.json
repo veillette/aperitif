@@ -1,0 +1,14 @@
+{
+  "shell": "CORE",
+  "shellRoots": [
+    "js",
+    "css"
+  ],
+  "routes": [
+    {
+      "path": "recipe.html?c=daiquiri",
+      "selector": "h1",
+      "text": "Daiquiri"
+    }
+  ]
+}
