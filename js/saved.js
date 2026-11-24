@@ -1,5 +1,6 @@
 // Shared local recipe lists and accessible save controls.
-import { h, store } from "./dom.js";
+import { h } from "./dom.js";
+import { store } from "./storage.js";
 import { SAVED_LISTS } from "./data.js";
 
 export function readSaved() {

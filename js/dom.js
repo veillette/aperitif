@@ -12,25 +12,6 @@ export function h(tag, attrs = {}, ...children) {
   return el;
 }
 
-// localStorage can be missing or throw (private mode, blocked storage).
-export const store = {
-  get(key, fallback) {
-    try {
-      const v = localStorage.getItem(key);
-      return v == null ? fallback : JSON.parse(v);
-    } catch {
-      return fallback;
-    }
-  },
-  set(key, value) {
-    try {
-      localStorage.setItem(key, JSON.stringify(value));
-    } catch {
-      /* not persisted; the page still works */
-    }
-  },
-};
-
 // A modal drawer on small screens; the panel becomes a normal sidebar on desktop.
 export function setupDrawer({ panel, trigger, backdrop, dismiss, background, desktop }) {
   const doc = panel.ownerDocument;

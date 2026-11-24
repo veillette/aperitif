@@ -65,7 +65,7 @@ function render() {
       h("h1", {}, c.name),
       saveControls(c, saved),
       h("p", { class: "share" },
-        h("button", { class: "link-btn", type: "button", "data-copy-link": `recipe.html?c=${encodeURIComponent(c.slug)}` }, "Copy recipe link"),
+        h("button", { class: "link-btn", type: "button", "data-copy-link": recipeURL(c.slug) }, "Copy recipe link"),
         h("span", { class: "copy-status", role: "status" })),
       h("p", { class: "meta" }, cardMeta(c, data)),
       h("div", { class: "recipe-spec" },

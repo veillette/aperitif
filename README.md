@@ -16,6 +16,8 @@ declared in `.nvmrc` and `.python-version`; CI installs the latest patch in each
 line. Run `nvm install && nvm use` for Node.js, and `pyenv install -s` or
 `uv python install` for Python. The site and data build have no dependencies. Optional browser tests use Playwright as a development dependency.
 
+Use **Copy recipe link** on a cocktail page to share the recipe without your current browse filters.
+
 ## Layout
 
 | Path | What it is |
@@ -40,6 +42,10 @@ Keep availability and grouping rules in `js/data.js`, browser storage validation
 the same availability calculation as My bar, including tracked pantry shortages.
 When adding a browser module, include it in `CORE` in `sw.js` for cold offline loads;
 the service worker tests check that every module is included.
+
+The shared JSON storage helper lives in `js/storage.js`. Update its local copies
+with `node tools/sync-site-helpers.mjs --write` from the Origami checkout.
+Aperitif’s keys and value validation stay in the site’s own modules.
 
 ## IBA coverage
 
@@ -90,16 +96,21 @@ The allowed values for `family`, `method`, `glass`, `ice` and `unit` are listed 
 
 **Units:** `ml`, `dash`, `drop`, `barspoon`, `tsp`, `pinch`, `piece` (½ lime, 1 egg white), `leaf`, `rinse`, `top`. Store volumes in ml. Classic ounce specs convert as ¾ oz = 22.5 ml, ½ oz = 15 ml, ¼ oz = 7.5 ml.
 
-## Commands
+## Check, build, and preview
+
+Use Node.js and Python versions from `.nvmrc` and `.python-version`, plus rsync.
 
 ```sh
-python3 tools/build.py              # validate + regenerate data/cocktails.json
-python3 tools/build.py --check      # validate + fail if the JSON is stale (CI)
-node --test tools/tests/*.test.js   # tests
-python3 -m http.server 8000         # preview at http://localhost:8000
+npm run check
+npm run build:site
+python3 -m http.server 8000 --directory _site
 ```
 
-The service worker doesn't register on `localhost`, so a preview always shows fresh files.
+The Pages workflow runs the deployment smoke test against `_site/`. Run `node .github/site-smoke.mjs _site --assets-only` to check the offline file list locally.
+
+Use `npm run build` to regenerate `data/cocktails.json` after recipe changes.
+
+The service worker skips automatic registration on `localhost` so a preview shows fresh files. The deployment smoke test registers the production worker explicitly.
 
 ### Browser regression tests
 

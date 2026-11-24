@@ -1,4 +1,4 @@
-import { store } from "./dom.js";
+import { store } from "./storage.js";
 import { isBottle } from "./data.js";
 
 const BAR_KEY = "aperitif.bar";
